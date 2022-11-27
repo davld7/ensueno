@@ -34,5 +34,29 @@ namespace ensueno.Properties {
                 this["dark_mode"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string data_source {
+            get {
+                return ((string)(this["data_source"]));
+            }
+            set {
+                this["data_source"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string initial_catalog {
+            get {
+                return ((string)(this["initial_catalog"]));
+            }
+            set {
+                this["initial_catalog"] = value;
+            }
+        }
     }
 }

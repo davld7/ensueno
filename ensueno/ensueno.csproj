@@ -55,6 +55,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Presentation\Login\Form_database.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Login\Form_database.Designer.cs">
+      <DependentUpon>Form_database.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Login\Form_login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +69,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Presentation\Login\Form_database.resx">
+      <DependentUpon>Form_database.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Login\Form_login.resx">
       <DependentUpon>Form_login.cs</DependentUpon>
     </EmbeddedResource>
@@ -92,6 +101,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logo.ico" />
+    <Content Include="Resources\Login\database.png" />
     <Content Include="Resources\Login\day_and_night.png" />
     <Content Include="Resources\Login\password.png" />
     <Content Include="Resources\Login\user.png" />

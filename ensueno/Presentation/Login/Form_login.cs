@@ -16,6 +16,8 @@ namespace ensueno.Presentation.Login
         {
             InitializeComponent();
             Apply_dark_mode();
+            Switch_dark_mode.Checked = Properties.Settings.Default.dark_mode;
+            TextBox_user.Select();
         }
         private void Apply_dark_mode()
         {
@@ -28,6 +30,12 @@ namespace ensueno.Presentation.Login
                 this.BackColor = Color.FromArgb(238, 238, 238);
             }
         }
+        private void Button_dark_mode_Click(object sender, EventArgs e)
+        {
+            Switch_dark_mode.Checked = !Switch_dark_mode.Checked;
+            Properties.Settings.Default.dark_mode = Switch_dark_mode.Checked;
+            Apply_dark_mode();
+        }
         private void Switch_dark_mode_CheckedChanged(object sender, EventArgs e)
         {
             Properties.Settings.Default.dark_mode = Switch_dark_mode.Checked;
@@ -37,12 +45,15 @@ namespace ensueno.Presentation.Login
         {
             this.Refresh();
         }
-
+        private void Button_database_Click(object sender, EventArgs e)
+        {
+            Form_database fd = new Form_database();
+            fd.ShowDialog();
+        }
         private void Form_login_FormClosed(object sender, FormClosedEventArgs e)
         {
             Properties.Settings.Default.Save();
         }
 
-        
     }
 }
