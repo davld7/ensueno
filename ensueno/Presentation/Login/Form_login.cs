@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ensueno.Presentation.Main;
+using ensueno.Sql.Stored_procedures;
+using ensueno.Sql;
 
 namespace ensueno.Presentation.Login
 {
@@ -15,6 +17,9 @@ namespace ensueno.Presentation.Login
     {
         private Form_database fd;
         private Form_main fm;
+        private Builder builder;
+        private Employees employees;
+        private DataRow data_row;
         public Form_login()
         {
             InitializeComponent();
@@ -59,9 +64,46 @@ namespace ensueno.Presentation.Login
         }
         private void Button_login_Click(object sender, EventArgs e)
         {
+            Login();
+        }
+        private void Login()
+        {
+            builder = new Builder();
+            builder.Build(TextBox_user.Text, TextBox_password.Text);
+            employees = new Employees();
+            if (employees.Connect())
+            {
+                data_row = employees.Read_by_user(TextBox_user.Text);
+                Clear_textboxes();
+                employees.Disconnect();
+                MessageBox.Show("Bienvenido " + data_row.ItemArray[2] +" " + data_row.ItemArray[3] +".");
+                //Show_form_welcome(data_row.ItemArray[2].ToString(), data_row.ItemArray[3].ToString());
+                Properties.Settings.Default.admin = bool.Parse(data_row.ItemArray[7].ToString());
+                Show_form_main();
+            }
+            else
+            {
+                Clear_textboxes();
+                MessageBox.Show("Conexión fallida.");
+            }
+        }
+        private void Clear_textboxes()
+        {
+            TextBox_user.Clear();
+            TextBox_password.Clear();
+        }
+        //private void Show_form_welcome(string employee_name, string employee_last_name)
+        //{
+        //    Form_welcome fw = new Form_welcome();
+        //    fw.Welcome(employee_name, employee_last_name);
+        //    fw.ShowDialog();
+        //}
+
+        private void Show_form_main()
+        {
             fm = new Form_main();
             fm.ShowDialog();
-        }        
-        
+        }
+
     }
 }

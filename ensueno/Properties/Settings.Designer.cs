@@ -58,5 +58,28 @@ namespace ensueno.Properties {
                 this["initial_catalog"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Data.SqlClient.SqlConnection connection {
+            get {
+                return ((global::System.Data.SqlClient.SqlConnection)(this["connection"]));
+            }
+            set {
+                this["connection"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool admin {
+            get {
+                return ((bool)(this["admin"]));
+            }
+            set {
+                this["admin"] = value;
+            }
+        }
     }
 }

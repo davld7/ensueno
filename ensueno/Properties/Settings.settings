@@ -11,5 +11,11 @@
     <Setting Name="initial_catalog" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="connection" Type="System.Data.SqlClient.SqlConnection" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="admin" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

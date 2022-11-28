@@ -34,6 +34,7 @@
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.Switch_dark_mode = new Guna.UI2.WinForms.Guna2ToggleSwitch();
+            this.Button_dark_mode = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.Button_login = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -41,7 +42,6 @@
             this.Button_database = new Guna.UI2.WinForms.Guna2CircleButton();
             this.TextBox_password = new Guna.UI2.WinForms.Guna2TextBox();
             this.TextBox_user = new Guna.UI2.WinForms.Guna2TextBox();
-            this.Button_dark_mode = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
@@ -65,7 +65,7 @@
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(550, 50);
-            this.guna2Panel1.TabIndex = 1;
+            this.guna2Panel1.TabIndex = 8;
             // 
             // Switch_dark_mode
             // 
@@ -76,12 +76,32 @@
             this.Switch_dark_mode.Location = new System.Drawing.Point(59, 12);
             this.Switch_dark_mode.Name = "Switch_dark_mode";
             this.Switch_dark_mode.Size = new System.Drawing.Size(35, 20);
-            this.Switch_dark_mode.TabIndex = 4;
+            this.Switch_dark_mode.TabIndex = 3;
             this.Switch_dark_mode.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.Switch_dark_mode.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.Switch_dark_mode.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
             this.Switch_dark_mode.UncheckedState.InnerColor = System.Drawing.Color.White;
             this.Switch_dark_mode.CheckedChanged += new System.EventHandler(this.Switch_dark_mode_CheckedChanged);
+            // 
+            // Button_dark_mode
+            // 
+            this.Button_dark_mode.Animated = true;
+            this.Button_dark_mode.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.Button_dark_mode.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.Button_dark_mode.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Button_dark_mode.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.Button_dark_mode.FillColor = System.Drawing.Color.Transparent;
+            this.Button_dark_mode.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Button_dark_mode.ForeColor = System.Drawing.Color.White;
+            this.Button_dark_mode.Image = global::ensueno.Properties.Resources.day_and_night;
+            this.Button_dark_mode.ImageSize = new System.Drawing.Size(48, 48);
+            this.Button_dark_mode.IndicateFocus = true;
+            this.Button_dark_mode.Location = new System.Drawing.Point(3, 0);
+            this.Button_dark_mode.Name = "Button_dark_mode";
+            this.Button_dark_mode.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.Button_dark_mode.Size = new System.Drawing.Size(50, 50);
+            this.Button_dark_mode.TabIndex = 4;
+            this.Button_dark_mode.Click += new System.EventHandler(this.Button_dark_mode_Click);
             // 
             // guna2ControlBox2
             // 
@@ -93,7 +113,7 @@
             this.guna2ControlBox2.Location = new System.Drawing.Point(442, 3);
             this.guna2ControlBox2.Name = "guna2ControlBox2";
             this.guna2ControlBox2.Size = new System.Drawing.Size(45, 29);
-            this.guna2ControlBox2.TabIndex = 5;
+            this.guna2ControlBox2.TabIndex = 6;
             // 
             // guna2ControlBox1
             // 
@@ -104,7 +124,7 @@
             this.guna2ControlBox1.Location = new System.Drawing.Point(493, 3);
             this.guna2ControlBox1.Name = "guna2ControlBox1";
             this.guna2ControlBox1.Size = new System.Drawing.Size(45, 29);
-            this.guna2ControlBox1.TabIndex = 6;
+            this.guna2ControlBox1.TabIndex = 7;
             // 
             // Button_login
             // 
@@ -122,7 +142,7 @@
             this.Button_login.Location = new System.Drawing.Point(308, 192);
             this.Button_login.Name = "Button_login";
             this.Button_login.Size = new System.Drawing.Size(230, 45);
-            this.Button_login.TabIndex = 3;
+            this.Button_login.TabIndex = 2;
             this.Button_login.Text = "LOGIN";
             this.Button_login.Click += new System.EventHandler(this.Button_login_Click);
             // 
@@ -149,7 +169,7 @@
             this.Button_database.Name = "Button_database";
             this.Button_database.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.Button_database.Size = new System.Drawing.Size(50, 50);
-            this.Button_database.TabIndex = 7;
+            this.Button_database.TabIndex = 5;
             this.Button_database.Click += new System.EventHandler(this.Button_database_Click);
             // 
             // TextBox_password
@@ -175,7 +195,7 @@
             this.TextBox_password.PlaceholderText = "Contraseña";
             this.TextBox_password.SelectedText = "";
             this.TextBox_password.Size = new System.Drawing.Size(230, 45);
-            this.TextBox_password.TabIndex = 2;
+            this.TextBox_password.TabIndex = 1;
             this.TextBox_password.UseSystemPasswordChar = true;
             // 
             // TextBox_user
@@ -201,27 +221,7 @@
             this.TextBox_user.PlaceholderText = "Usuario";
             this.TextBox_user.SelectedText = "";
             this.TextBox_user.Size = new System.Drawing.Size(230, 45);
-            this.TextBox_user.TabIndex = 1;
-            // 
-            // Button_dark_mode
-            // 
-            this.Button_dark_mode.Animated = true;
-            this.Button_dark_mode.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.Button_dark_mode.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.Button_dark_mode.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.Button_dark_mode.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.Button_dark_mode.FillColor = System.Drawing.Color.Transparent;
-            this.Button_dark_mode.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.Button_dark_mode.ForeColor = System.Drawing.Color.White;
-            this.Button_dark_mode.Image = global::ensueno.Properties.Resources.day_and_night;
-            this.Button_dark_mode.ImageSize = new System.Drawing.Size(48, 48);
-            this.Button_dark_mode.IndicateFocus = true;
-            this.Button_dark_mode.Location = new System.Drawing.Point(3, 0);
-            this.Button_dark_mode.Name = "Button_dark_mode";
-            this.Button_dark_mode.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.Button_dark_mode.Size = new System.Drawing.Size(50, 50);
-            this.Button_dark_mode.TabIndex = 4;
-            this.Button_dark_mode.Click += new System.EventHandler(this.Button_dark_mode_Click);
+            this.TextBox_user.TabIndex = 0;
             // 
             // guna2PictureBox1
             // 

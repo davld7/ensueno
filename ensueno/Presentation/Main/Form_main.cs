@@ -16,6 +16,7 @@ namespace ensueno.Presentation.Main
         {
             InitializeComponent();
             Apply_dark_mode();
+            Admin();
             this.Select();
         }
         private void Apply_dark_mode()
@@ -27,6 +28,21 @@ namespace ensueno.Presentation.Main
             else
             {
                 this.BackColor = Color.FromArgb(238, 238, 238);
+            }
+        }
+        private void Admin()
+        {
+            
+            if (Properties.Settings.Default.admin)
+            {
+                
+                Label_user_role.Text = "Rol de usuario: Administrador";
+            }
+            else
+            {
+                Separator_slide_panel.Visible = false;
+                Button_employees.Visible = false;
+                Label_user_role.Text = "Rol de usuario: Empleado";
             }
         }
 
