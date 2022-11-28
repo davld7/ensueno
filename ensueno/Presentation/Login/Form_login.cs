@@ -17,6 +17,7 @@ namespace ensueno.Presentation.Login
     {
         private Form_database fd;
         private Form_welcome fw;
+        private Form_login_error fl;
         private Form_main fm;
         private Builder builder;
         private Employees employees;
@@ -86,7 +87,8 @@ namespace ensueno.Presentation.Login
             else
             {
                 Clear_textboxes();
-                MessageBox.Show("Conexión fallida.");
+                fl = new Form_login_error();
+                fl.ShowDialog();
             }
         }
         private void Clear_textboxes()
