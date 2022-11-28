@@ -44,7 +44,7 @@ namespace ensueno.Sql.Stored_procedures
         public DataRow Read_by_user(string user)
         {
             try
-            {                
+            {
                 Connect();
                 command = new SqlCommand($"exec employee_read_by_user @employee_user='" + user + "'")
                 {

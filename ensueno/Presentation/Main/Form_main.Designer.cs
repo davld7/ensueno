@@ -42,8 +42,8 @@
             this.Button_hide = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.Label_user_role = new System.Windows.Forms.Label();
+            this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.Slide_panel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -203,12 +203,6 @@
             this.guna2ControlBox1.Size = new System.Drawing.Size(45, 29);
             this.guna2ControlBox1.TabIndex = 13;
             // 
-            // guna2DragControl1
-            // 
-            this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
-            this.guna2DragControl1.TargetControl = this;
-            this.guna2DragControl1.UseTransparentDrag = true;
-            // 
             // Label_user_role
             // 
             this.Label_user_role.AutoSize = true;
@@ -220,6 +214,12 @@
             this.Label_user_role.Size = new System.Drawing.Size(132, 21);
             this.Label_user_role.TabIndex = 14;
             this.Label_user_role.Text = "Rol de usuario";
+            // 
+            // guna2DragControl1
+            // 
+            this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2DragControl1.TargetControl = this;
+            this.guna2DragControl1.UseTransparentDrag = true;
             // 
             // Form_main
             // 
@@ -239,6 +239,7 @@
             this.Name = "Form_main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_main_FormClosed);
             this.Slide_panel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

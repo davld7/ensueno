@@ -16,6 +16,7 @@ namespace ensueno.Presentation.Login
     public partial class Form_login : Form
     {
         private Form_database fd;
+        private Form_welcome fw;
         private Form_main fm;
         private Builder builder;
         private Employees employees;
@@ -76,8 +77,9 @@ namespace ensueno.Presentation.Login
                 data_row = employees.Read_by_user(TextBox_user.Text);
                 Clear_textboxes();
                 employees.Disconnect();
-                MessageBox.Show("Bienvenido " + data_row.ItemArray[2] +" " + data_row.ItemArray[3] +".");
-                //Show_form_welcome(data_row.ItemArray[2].ToString(), data_row.ItemArray[3].ToString());
+                string employee_name = data_row.ItemArray[2].ToString();
+                string employee_last_name = data_row.ItemArray[3].ToString();
+                Show_form_welcome(employee_name, employee_last_name);
                 Properties.Settings.Default.admin = bool.Parse(data_row.ItemArray[7].ToString());
                 Show_form_main();
             }
@@ -92,12 +94,12 @@ namespace ensueno.Presentation.Login
             TextBox_user.Clear();
             TextBox_password.Clear();
         }
-        //private void Show_form_welcome(string employee_name, string employee_last_name)
-        //{
-        //    Form_welcome fw = new Form_welcome();
-        //    fw.Welcome(employee_name, employee_last_name);
-        //    fw.ShowDialog();
-        //}
+        private void Show_form_welcome(string employee_name, string employee_last_name)
+        {
+            fw = new Form_welcome();
+            fw.Welcome(employee_name, employee_last_name);
+            fw.ShowDialog();
+        }
 
         private void Show_form_main()
         {
