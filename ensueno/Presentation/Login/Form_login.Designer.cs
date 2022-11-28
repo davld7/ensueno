@@ -124,6 +124,7 @@
             this.Button_login.Size = new System.Drawing.Size(230, 45);
             this.Button_login.TabIndex = 3;
             this.Button_login.Text = "LOGIN";
+            this.Button_login.Click += new System.EventHandler(this.Button_login_Click);
             // 
             // guna2DragControl1
             // 

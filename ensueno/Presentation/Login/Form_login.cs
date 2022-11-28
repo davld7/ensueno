@@ -7,17 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ensueno.Presentation.Main;
 
 namespace ensueno.Presentation.Login
 {
     public partial class Form_login : Form
     {
+        private Form_database fd;
+        private Form_main fm;
         public Form_login()
         {
             InitializeComponent();
             Apply_dark_mode();
             Switch_dark_mode.Checked = Properties.Settings.Default.dark_mode;
             TextBox_user.Select();
+        }
+        private void Form_login_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Properties.Settings.Default.Save();
         }
         private void Apply_dark_mode()
         {
@@ -47,13 +54,14 @@ namespace ensueno.Presentation.Login
         }
         private void Button_database_Click(object sender, EventArgs e)
         {
-            Form_database fd = new Form_database();
+            fd = new Form_database();
             fd.ShowDialog();
         }
-        private void Form_login_FormClosed(object sender, FormClosedEventArgs e)
+        private void Button_login_Click(object sender, EventArgs e)
         {
-            Properties.Settings.Default.Save();
-        }
-
+            fm = new Form_main();
+            fm.ShowDialog();
+        }        
+        
     }
 }

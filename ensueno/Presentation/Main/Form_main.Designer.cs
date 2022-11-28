@@ -1,0 +1,262 @@
+﻿namespace ensueno.Presentation.Main
+{
+    partial class Form_main
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            Guna.UI2.AnimatorNS.Animation animation5 = new Guna.UI2.AnimatorNS.Animation();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_main));
+            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
+            this.Slide_panel = new Guna.UI2.WinForms.Guna2Panel();
+            this.Button_employees = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.Separator_slide_panel = new Guna.UI2.WinForms.Guna2Separator();
+            this.Transition_slide_panel = new Guna.UI2.WinForms.Guna2Transition();
+            this.Button_hide = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.Button_show = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.Container_panel = new Guna.UI2.WinForms.Guna2Panel();
+            this.Slide_panel.SuspendLayout();
+            this.guna2Panel1.SuspendLayout();
+            this.Container_panel.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // guna2Elipse1
+            // 
+            this.guna2Elipse1.TargetControl = this;
+            // 
+            // guna2ShadowForm1
+            // 
+            this.guna2ShadowForm1.TargetForm = this;
+            // 
+            // Slide_panel
+            // 
+            this.Slide_panel.Controls.Add(this.Separator_slide_panel);
+            this.Slide_panel.Controls.Add(this.Button_employees);
+            this.Transition_slide_panel.SetDecoration(this.Slide_panel, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.Slide_panel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.Slide_panel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.Slide_panel.Location = new System.Drawing.Point(0, 0);
+            this.Slide_panel.Name = "Slide_panel";
+            this.Slide_panel.Size = new System.Drawing.Size(50, 500);
+            this.Slide_panel.TabIndex = 0;
+            // 
+            // Button_employees
+            // 
+            this.Button_employees.Animated = true;
+            this.Button_employees.CustomImages.Image = global::ensueno.Properties.Resources.employees;
+            this.Button_employees.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.Button_employees.CustomImages.ImageSize = new System.Drawing.Size(32, 32);
+            this.Transition_slide_panel.SetDecoration(this.Button_employees, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.Button_employees.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.Button_employees.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.Button_employees.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Button_employees.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Button_employees.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.Button_employees.Font = new System.Drawing.Font("Britannic Bold", 14.25F);
+            this.Button_employees.ForeColor = System.Drawing.Color.White;
+            this.Button_employees.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Button_employees.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(165)))));
+            this.Button_employees.IndicateFocus = true;
+            this.Button_employees.Location = new System.Drawing.Point(0, 29);
+            this.Button_employees.Name = "Button_employees";
+            this.Button_employees.Size = new System.Drawing.Size(175, 45);
+            this.Button_employees.TabIndex = 4;
+            this.Button_employees.Text = "EMPLEADOS";
+            this.Button_employees.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // Separator_slide_panel
+            // 
+            this.Separator_slide_panel.BackColor = System.Drawing.Color.Transparent;
+            this.Transition_slide_panel.SetDecoration(this.Separator_slide_panel, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.Separator_slide_panel.FillColor = System.Drawing.Color.Gray;
+            this.Separator_slide_panel.FillThickness = 2;
+            this.Separator_slide_panel.Location = new System.Drawing.Point(0, 79);
+            this.Separator_slide_panel.Name = "Separator_slide_panel";
+            this.Separator_slide_panel.Size = new System.Drawing.Size(175, 10);
+            this.Separator_slide_panel.TabIndex = 9;
+            // 
+            // Transition_slide_panel
+            // 
+            this.Transition_slide_panel.AnimationType = Guna.UI2.AnimatorNS.AnimationType.HorizBlind;
+            this.Transition_slide_panel.Cursor = null;
+            animation5.AnimateOnlyDifferences = true;
+            animation5.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.BlindCoeff")));
+            animation5.LeafCoeff = 0F;
+            animation5.MaxTime = 1F;
+            animation5.MinTime = 0F;
+            animation5.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.MosaicCoeff")));
+            animation5.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation5.MosaicShift")));
+            animation5.MosaicSize = 0;
+            animation5.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            animation5.RotateCoeff = 0F;
+            animation5.RotateLimit = 0F;
+            animation5.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.ScaleCoeff")));
+            animation5.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.SlideCoeff")));
+            animation5.TimeCoeff = 0F;
+            animation5.TransparencyCoeff = 0F;
+            this.Transition_slide_panel.DefaultAnimation = animation5;
+            // 
+            // Button_hide
+            // 
+            this.Button_hide.Animated = true;
+            this.Button_hide.BackColor = System.Drawing.Color.Transparent;
+            this.Transition_slide_panel.SetDecoration(this.Button_hide, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.Button_hide.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.Button_hide.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.Button_hide.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Button_hide.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.Button_hide.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.Button_hide.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Button_hide.ForeColor = System.Drawing.Color.White;
+            this.Button_hide.Image = global::ensueno.Properties.Resources.left_arrow;
+            this.Button_hide.ImageSize = new System.Drawing.Size(48, 48);
+            this.Button_hide.IndicateFocus = true;
+            this.Button_hide.Location = new System.Drawing.Point(125, 3);
+            this.Button_hide.Name = "Button_hide";
+            this.Button_hide.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.Button_hide.Size = new System.Drawing.Size(50, 50);
+            this.Button_hide.TabIndex = 9;
+            this.Button_hide.Visible = false;
+            this.Button_hide.Click += new System.EventHandler(this.Button_hide_Click);
+            // 
+            // Button_show
+            // 
+            this.Button_show.Animated = true;
+            this.Button_show.BackColor = System.Drawing.Color.Transparent;
+            this.Transition_slide_panel.SetDecoration(this.Button_show, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.Button_show.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.Button_show.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.Button_show.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Button_show.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.Button_show.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.Button_show.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Button_show.ForeColor = System.Drawing.Color.White;
+            this.Button_show.Image = global::ensueno.Properties.Resources.right_arrow;
+            this.Button_show.ImageSize = new System.Drawing.Size(48, 48);
+            this.Button_show.IndicateFocus = true;
+            this.Button_show.Location = new System.Drawing.Point(3, 3);
+            this.Button_show.Name = "Button_show";
+            this.Button_show.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.Button_show.Size = new System.Drawing.Size(50, 50);
+            this.Button_show.TabIndex = 8;
+            this.Button_show.Click += new System.EventHandler(this.Button_show_Click);
+            // 
+            // guna2DragControl1
+            // 
+            this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2DragControl1.TargetControl = this.guna2Panel1;
+            this.guna2DragControl1.UseTransparentDrag = true;
+            // 
+            // guna2Panel1
+            // 
+            this.guna2Panel1.Controls.Add(this.guna2ControlBox2);
+            this.guna2Panel1.Controls.Add(this.guna2ControlBox1);
+            this.Transition_slide_panel.SetDecoration(this.guna2Panel1, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Panel1.Location = new System.Drawing.Point(50, 0);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Size = new System.Drawing.Size(860, 50);
+            this.guna2Panel1.TabIndex = 10;
+            // 
+            // guna2ControlBox2
+            // 
+            this.guna2ControlBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2ControlBox2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ControlBox2.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
+            this.Transition_slide_panel.SetDecoration(this.guna2ControlBox2, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.guna2ControlBox2.FillColor = System.Drawing.Color.Transparent;
+            this.guna2ControlBox2.IconColor = System.Drawing.Color.Gray;
+            this.guna2ControlBox2.Location = new System.Drawing.Point(752, 0);
+            this.guna2ControlBox2.Name = "guna2ControlBox2";
+            this.guna2ControlBox2.Size = new System.Drawing.Size(45, 29);
+            this.guna2ControlBox2.TabIndex = 5;
+            // 
+            // guna2ControlBox1
+            // 
+            this.guna2ControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2ControlBox1.BackColor = System.Drawing.Color.Transparent;
+            this.Transition_slide_panel.SetDecoration(this.guna2ControlBox1, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.guna2ControlBox1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2ControlBox1.IconColor = System.Drawing.Color.Gray;
+            this.guna2ControlBox1.Location = new System.Drawing.Point(803, 0);
+            this.guna2ControlBox1.Name = "guna2ControlBox1";
+            this.guna2ControlBox1.Size = new System.Drawing.Size(45, 29);
+            this.guna2ControlBox1.TabIndex = 6;
+            // 
+            // Container_panel
+            // 
+            this.Container_panel.Controls.Add(this.Button_show);
+            this.Container_panel.Controls.Add(this.Button_hide);
+            this.Transition_slide_panel.SetDecoration(this.Container_panel, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.Container_panel.Location = new System.Drawing.Point(56, 56);
+            this.Container_panel.Name = "Container_panel";
+            this.Container_panel.Size = new System.Drawing.Size(850, 440);
+            this.Container_panel.TabIndex = 11;
+            // 
+            // Form_main
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(910, 500);
+            this.Controls.Add(this.guna2Panel1);
+            this.Controls.Add(this.Slide_panel);
+            this.Controls.Add(this.Container_panel);
+            this.Transition_slide_panel.SetDecoration(this, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "Form_main";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Main";
+            this.Slide_panel.ResumeLayout(false);
+            this.guna2Panel1.ResumeLayout(false);
+            this.Container_panel.ResumeLayout(false);
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
+        private Guna.UI2.WinForms.Guna2Panel Slide_panel;
+        private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
+        private Guna.UI2.WinForms.Guna2GradientButton Button_employees;
+        private Guna.UI2.WinForms.Guna2CircleButton Button_show;
+        private Guna.UI2.WinForms.Guna2Separator Separator_slide_panel;
+        private Guna.UI2.WinForms.Guna2Transition Transition_slide_panel;
+        private Guna.UI2.WinForms.Guna2CircleButton Button_hide;
+        private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox2;
+        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
+        private Guna.UI2.WinForms.Guna2Panel Container_panel;
+    }
+}

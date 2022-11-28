@@ -1,0 +1,51 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace ensueno.Presentation.Main
+{
+    public partial class Form_main : Form
+    {
+        public Form_main()
+        {
+            InitializeComponent();
+            Apply_dark_mode();
+            this.Select();
+        }
+        private void Apply_dark_mode()
+        {
+            if (Properties.Settings.Default.dark_mode)
+            {
+                this.BackColor = Color.FromArgb(31, 31, 31);
+            }
+            else
+            {
+                this.BackColor = Color.FromArgb(238, 238, 238);
+            }
+        }
+
+        private void Button_show_Click(object sender, EventArgs e)
+        {
+            Button_show.Visible = false;
+            Button_hide.Visible = true;
+            Slide_panel.Visible = false;
+            Slide_panel.Width = 175;
+            Transition_slide_panel.ShowSync(Slide_panel);
+        }
+
+        private void Button_hide_Click(object sender, EventArgs e)
+        {
+            Button_hide.Visible = false;
+            Button_show.Visible = true;
+            Slide_panel.Visible = false;
+            Slide_panel.Width = 50;
+            Transition_slide_panel.ShowSync(Slide_panel);
+        }
+    }
+}
