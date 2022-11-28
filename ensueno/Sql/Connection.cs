@@ -10,16 +10,14 @@ using System.Windows.Forms;
 namespace ensueno.Sql
 {
     internal class Connection
-    {
-        private readonly SqlConnection connection = Properties.Settings.Default.connection;
-
+    {        
         public bool Connect()
         {
             try
             {
-                if (connection.State == ConnectionState.Closed)
+                if (Properties.Settings.Default.connection.State == ConnectionState.Closed)
                 {
-                    connection.Open();
+                    Properties.Settings.Default.connection.Open();
                     return true;
                 }
                 else
@@ -39,9 +37,9 @@ namespace ensueno.Sql
         {
             try
             {
-                if (connection.State == ConnectionState.Open)
+                if (Properties.Settings.Default.connection.State == ConnectionState.Open)
                 {
-                    connection.Close();
+                    Properties.Settings.Default.connection.Close();
                 }
             }
             catch (Exception ex)
@@ -52,7 +50,7 @@ namespace ensueno.Sql
 
         public SqlConnection Get_connection()
         {
-            return connection;
+            return Properties.Settings.Default.connection;
         }
     }
 }

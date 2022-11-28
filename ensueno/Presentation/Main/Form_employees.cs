@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ensueno.Sql.Stored_procedures;
 
 namespace ensueno.Presentation.Main
 {
     public partial class Form_employees : Form
     {
+        private Employees employees;
         public Form_employees()
         {
             InitializeComponent();
@@ -27,6 +29,17 @@ namespace ensueno.Presentation.Main
             {
                 this.BackColor = Color.FromArgb(238, 238, 238);
             }
+        }
+        private void Read()
+        {
+            employees = new Employees();
+            DataGridView_employees.DataSource = employees.Read();
+        }
+
+        private void Form_employees_Load(object sender, EventArgs e)
+        {
+            Read();
+            TextBox_search_name.Select();
         }
     }
 }

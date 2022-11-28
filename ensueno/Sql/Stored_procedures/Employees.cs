@@ -46,7 +46,7 @@ namespace ensueno.Sql.Stored_procedures
             try
             {
                 Connect();
-                command = new SqlCommand($"exec employee_read_by_user @employee_user='" + user + "'")
+                command = new SqlCommand($"exec employee_read_by_user @employee_user={user}")
                 {
                     Connection = Get_connection()
                 };
@@ -66,5 +66,6 @@ namespace ensueno.Sql.Stored_procedures
                 Disconnect();
             }
         }
+
     }
 }
