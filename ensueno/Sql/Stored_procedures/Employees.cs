@@ -67,5 +67,38 @@ namespace ensueno.Sql.Stored_procedures
             }
         }
 
+        public bool Create(string id_card, string name, string last_name, string phone, string address, string user, string password, bool admin)
+        {
+            try
+            {
+                Connect();
+                command = new SqlCommand($"exec employee_create @employee_id_card='{id_card}', @employee_name='{name}', @employee_last_name='{last_name}', @employee_phone='{phone}', @employee_address='{address}', @employee_user='{user}', @employee_admin={admin}")
+                {
+                    Connection = Get_connection()
+                };
+                command.ExecuteNonQuery();
+                command = new SqlCommand($"create login {user} with password = '{password}'")
+                {
+                    Connection = Get_connection()
+                };
+                command.ExecuteNonQuery();
+                command = new SqlCommand($"exec [sys].[sp_addsrvrolemember] {user}, 'sysadmin'")
+                {
+                    Connection = Get_connection()
+                };
+                command.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            finally
+            {
+                Disconnect();
+            }
+        }
+
     }
 }

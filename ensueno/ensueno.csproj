@@ -152,6 +152,7 @@
     <Content Include="Resources\Logo\logo_with_letters.png" />
     <Content Include="Resources\Main\left_arrow.png" />
     <Content Include="Resources\Main\right_arrow.png" />
+    <Content Include="Sql\Querys\ensueno_employees.sql" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

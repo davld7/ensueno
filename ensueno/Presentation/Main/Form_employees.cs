@@ -39,7 +39,35 @@ namespace ensueno.Presentation.Main
         private void Form_employees_Load(object sender, EventArgs e)
         {
             Read();
+            TextBox_id.Enabled = false;
             TextBox_search_name.Select();
+        }
+
+        private void Button_create_Click(object sender, EventArgs e)
+        {
+            employees = new Employees();
+            if(employees.Create(TextBox_id_card.Text, TextBox_name.Text, TextBox_last_name.Text, TextBox_phone.Text, TextBox_address.Text, TextBox_user.Text, TextBox_password.Text, CheckBox_admin.Checked))
+            {
+                MessageBox.Show("Se ha creado el registro del empleado.");
+                Clear_textboxes();
+                Read();
+            }
+            else
+            {
+                MessageBox.Show("No se ha creado el registro del empleado.");
+            }
+        }
+        private void Clear_textboxes()
+        {
+            TextBox_id.Clear();
+            TextBox_id_card.Clear();
+            TextBox_name.Clear();
+            TextBox_last_name.Clear();
+            TextBox_phone.Clear();
+            TextBox_address.Clear();
+            TextBox_user.Clear();
+            TextBox_password.Clear();
+            CheckBox_admin.Checked = false;
         }
     }
 }
