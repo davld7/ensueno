@@ -47,5 +47,24 @@ namespace ensueno.Presentation.Main
             Slide_panel.Width = 50;
             Transition_slide_panel.ShowSync(Slide_panel);
         }
+
+        private void Open_form_panel(object form_panel)
+        {
+            if (Container_panel.Controls.Count > 0)
+            {
+                Container_panel.Controls.RemoveAt(0);
+            }
+            Form fp = form_panel as Form;
+            fp.TopLevel = false;
+            fp.Dock = DockStyle.Fill;            
+            Container_panel.Controls.Add(fp);
+            Container_panel.Tag = fp;
+            fp.Show();
+        }
+
+        private void Button_employees_Click(object sender, EventArgs e)
+        {
+            Open_form_panel(new Form_employees());
+        }
     }
 }
