@@ -71,6 +71,12 @@ namespace ensueno.Sql.Stored_procedures
         {
             try
             {
+                Connect();                
+                command = new SqlCommand($"exec employee_create @employee_id_card='{id_card}', @employee_name='{name}', @employee_last_name='{last_name}', @employee_phone='{phone}', @employee_address='{address}', @employee_user='{user}', @employee_admin={admin}")
+                {
+                    Connection = Get_connection()
+                };                                
+                command.ExecuteNonQuery();
                 command = new SqlCommand($"create login {user} with password = '{password}'")
                 {
                     Connection = Get_connection()
@@ -80,13 +86,6 @@ namespace ensueno.Sql.Stored_procedures
                 {
                     Connection = Get_connection()
                 };
-                Connect();
-                command = new SqlCommand($"exec employee_create @employee_id_card='{id_card}', @employee_name='{name}', @employee_last_name='{last_name}', @employee_phone='{phone}', @employee_address='{address}', @employee_user='{user}', @employee_admin={admin}")
-                {
-                    Connection = Get_connection()
-                };
-                command.ExecuteNonQuery();
-                
                 command.ExecuteNonQuery();
                 return true;
             }
