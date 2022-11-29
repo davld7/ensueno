@@ -197,6 +197,7 @@
             this.TextBox_password.Size = new System.Drawing.Size(230, 45);
             this.TextBox_password.TabIndex = 1;
             this.TextBox_password.UseSystemPasswordChar = true;
+            this.TextBox_password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBox_password_KeyDown);
             // 
             // TextBox_user
             // 

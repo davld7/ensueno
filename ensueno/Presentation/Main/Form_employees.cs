@@ -14,6 +14,7 @@ namespace ensueno.Presentation.Main
     public partial class Form_employees : Form
     {
         private Employees employees;
+        private string old_user;
         public Form_employees()
         {
             InitializeComponent();
@@ -55,6 +56,23 @@ namespace ensueno.Presentation.Main
             else
             {
                 MessageBox.Show("No se ha creado el registro del empleado.");
+                Clear_textboxes();
+            }
+        }
+
+        private void Button_update_Click(object sender, EventArgs e)
+        {
+            employees = new Employees();
+            if (employees.Update(int.Parse(TextBox_id.Text), TextBox_id_card.Text, TextBox_name.Text, TextBox_last_name.Text, TextBox_phone.Text, TextBox_address.Text, TextBox_user.Text, TextBox_password.Text, CheckBox_admin.Checked, old_user))
+            {
+                MessageBox.Show("Se ha actualizado el registro del empleado.");
+                Clear_textboxes();
+                Read();
+            }
+            else
+            {
+                MessageBox.Show("No se ha actualizado el registro del empleado.");
+                Clear_textboxes();
             }
         }
 
@@ -91,6 +109,7 @@ namespace ensueno.Presentation.Main
                     TextBox_address.Text = DataGridView_employees.Rows[e.RowIndex].Cells[5].Value.ToString();
                     TextBox_user.Text = DataGridView_employees.Rows[e.RowIndex].Cells[6].Value.ToString();
                     CheckBox_admin.Checked = bool.Parse(DataGridView_employees.Rows[e.RowIndex].Cells[7].Value.ToString());
+                    old_user= DataGridView_employees.Rows[e.RowIndex].Cells[6].Value.ToString();
                 }
             }
             catch(Exception ex)
@@ -98,5 +117,6 @@ namespace ensueno.Presentation.Main
                 MessageBox.Show(ex.Message);
             }
         }
+        
     }
 }

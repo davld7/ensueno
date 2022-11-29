@@ -71,12 +71,6 @@ namespace ensueno.Sql.Stored_procedures
         {
             try
             {
-                Connect();
-                command = new SqlCommand($"exec employee_create @employee_id_card='{id_card}', @employee_name='{name}', @employee_last_name='{last_name}', @employee_phone='{phone}', @employee_address='{address}', @employee_user='{user}', @employee_admin={admin}")
-                {
-                    Connection = Get_connection()
-                };
-                command.ExecuteNonQuery();
                 command = new SqlCommand($"create login {user} with password = '{password}'")
                 {
                     Connection = Get_connection()
@@ -86,8 +80,61 @@ namespace ensueno.Sql.Stored_procedures
                 {
                     Connection = Get_connection()
                 };
+                Connect();
+                command = new SqlCommand($"exec employee_create @employee_id_card='{id_card}', @employee_name='{name}', @employee_last_name='{last_name}', @employee_phone='{phone}', @employee_address='{address}', @employee_user='{user}', @employee_admin={admin}")
+                {
+                    Connection = Get_connection()
+                };
+                command.ExecuteNonQuery();
+                
                 command.ExecuteNonQuery();
                 return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            finally
+            {
+                Disconnect();
+            }
+        }
+
+        public bool Update(int id, string id_card, string name, string last_name, string phone, string address, string user, string password, bool admin, string old_user)
+        {
+            try
+            {
+                if (old_user == Properties.Settings.Default.active_user)
+                {
+                    MessageBox.Show("No puedes actualizar tu registro usando tus credenciales en la conexión actual.");
+                    return false;
+                }
+                else
+                {
+                    Connect();
+                    command = new SqlCommand($"drop login {old_user}")
+                    {
+                        Connection = Get_connection()
+                    };
+                    command.ExecuteNonQuery();
+                    command = new SqlCommand($"create login {user} with password = '{password}'")
+                    {
+                        Connection = Get_connection()
+                    };
+                    command.ExecuteNonQuery();
+                    command = new SqlCommand($"exec [sys].[sp_addsrvrolemember] {user}, 'sysadmin'")
+                    {
+                        Connection = Get_connection()
+                    };
+                    command.ExecuteNonQuery();
+                    command = new SqlCommand($"exec employee_update @employee_id={id}, @employee_id_card='{id_card}', @employee_name='{name}', @employee_last_name='{last_name}', @employee_phone='{phone}', @employee_address='{address}', @employee_user='{user}', @employee_admin={admin}")
+                    {
+                        Connection = Get_connection()
+                    };
+                    command.ExecuteNonQuery();
+                    return true;
+                }
             }
             catch (Exception ex)
             {

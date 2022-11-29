@@ -81,6 +81,7 @@ namespace ensueno.Presentation.Login
                 string employee_name = data_row.ItemArray[2].ToString();
                 string employee_last_name = data_row.ItemArray[3].ToString();
                 Show_form_welcome(employee_name, employee_last_name);
+                Properties.Settings.Default.active_user = data_row.ItemArray[6].ToString();
                 Properties.Settings.Default.admin = bool.Parse(data_row.ItemArray[7].ToString());
                 Show_form_main();
             }
@@ -109,5 +110,12 @@ namespace ensueno.Presentation.Login
             fm.ShowDialog();
         }
 
+        private void TextBox_password_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                Login();
+            }
+        }
     }
 }

@@ -81,5 +81,17 @@ namespace ensueno.Properties {
                 this["admin"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string active_user {
+            get {
+                return ((string)(this["active_user"]));
+            }
+            set {
+                this["active_user"] = value;
+            }
+        }
     }
 }

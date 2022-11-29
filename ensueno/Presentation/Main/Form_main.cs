@@ -36,13 +36,13 @@ namespace ensueno.Presentation.Main
             if (Properties.Settings.Default.admin)
             {
                 
-                Label_user_role.Text = "Rol de usuario: Administrador";
+                Label_user_role.Text = $"Rol de usuario: Administrador ({Properties.Settings.Default.active_user})";
             }
             else
             {
                 Separator_slide_panel.Visible = false;
                 Button_employees.Visible = false;
-                Label_user_role.Text = "Rol de usuario: Empleado";
+                Label_user_role.Text = $"Rol de usuario: Empleado ({Properties.Settings.Default.active_user})";
             }
         }
 

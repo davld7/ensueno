@@ -211,7 +211,7 @@
             this.Transition_slide_panel.SetDecoration(this.Label_user_role, Guna.UI2.AnimatorNS.DecorationType.None);
             this.Label_user_role.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label_user_role.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.Label_user_role.Location = new System.Drawing.Point(346, 9);
+            this.Label_user_role.Location = new System.Drawing.Point(267, 8);
             this.Label_user_role.Name = "Label_user_role";
             this.Label_user_role.Size = new System.Drawing.Size(132, 21);
             this.Label_user_role.TabIndex = 14;
