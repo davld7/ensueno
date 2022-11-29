@@ -61,7 +61,7 @@ namespace ensueno.Presentation.Main
 
         private void Clear_textboxes()
         {
-            TextBox_id.Clear();
+            TextBox_id.Text="";
             TextBox_id_card.Clear();
             TextBox_name.Clear();
             TextBox_last_name.Clear();
