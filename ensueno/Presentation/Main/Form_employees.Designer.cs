@@ -138,6 +138,7 @@
             this.DataGridView_employees.ThemeStyle.RowsStyle.Height = 22;
             this.DataGridView_employees.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(129)))), ((int)(((byte)(121)))));
             this.DataGridView_employees.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.DataGridView_employees.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_employees_CellClick);
             // 
             // TextBox_id
             // 
