@@ -85,7 +85,7 @@ namespace ensueno.Presentation.Main
 
         private void Form_main_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Properties.Settings.Default.connection.Close();
+            Properties.Settings.Default.connection=null;
         }
     }
 }

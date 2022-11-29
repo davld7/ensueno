@@ -14,16 +14,9 @@ namespace ensueno.Sql
         public bool Connect()
         {
             try
-            {
-                if (Properties.Settings.Default.connection.State == ConnectionState.Closed)
-                {
-                    Properties.Settings.Default.connection.Open();
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+            {               
+                Properties.Settings.Default.connection.Open();
+                return true;                
             }
             catch (Exception ex)
             {

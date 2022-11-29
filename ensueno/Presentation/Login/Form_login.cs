@@ -75,9 +75,9 @@ namespace ensueno.Presentation.Login
             employees = new Employees();
             if (employees.Connect())
             {
-                data_row = employees.Read_by_user(TextBox_user.Text);
-                Clear_textboxes();
                 employees.Disconnect();
+                data_row = employees.Read_by_user(TextBox_user.Text);
+                Clear_textboxes();                
                 string employee_name = data_row.ItemArray[2].ToString();
                 string employee_last_name = data_row.ItemArray[3].ToString();
                 Show_form_welcome(employee_name, employee_last_name);
