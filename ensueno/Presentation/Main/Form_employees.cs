@@ -150,5 +150,10 @@ namespace ensueno.Presentation.Main
             employees = new Employees();
             DataGridView_employees.DataSource = employees.Read_by_last_name(TextBox_read_by_last_name.Text);
         }
+
+        private void Button_clear_Click(object sender, EventArgs e)
+        {
+            Clear_textboxes();
+        }
     }
 }

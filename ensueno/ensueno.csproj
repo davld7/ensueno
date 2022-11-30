@@ -151,6 +151,7 @@
     <Content Include="logo.ico" />
     <Content Include="Resources\Login\error.png" />
     <Content Include="Resources\Login\smile.png" />
+    <Content Include="Resources\Main\clean.png" />
     <Content Include="Resources\Main\employees.png" />
     <Content Include="Resources\Login\database.png" />
     <Content Include="Resources\Login\day_and_night.png" />
