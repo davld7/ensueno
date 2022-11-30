@@ -13,9 +13,9 @@ namespace ensueno.Presentation.Main
 {
     public partial class Form_employees : Form
     {
-        private Employees employees;
-        private string old_user;
+        private readonly Employees employees = new Employees();
         private Form_employees_history fh;
+        private string old_user;
         public Form_employees()
         {
             InitializeComponent();
@@ -34,20 +34,16 @@ namespace ensueno.Presentation.Main
         }
         private void Read()
         {
-            employees = new Employees();
             DataGridView_employees.DataSource = employees.Read();
         }
-
         private void Form_employees_Load(object sender, EventArgs e)
         {
             Read();
             TextBox_id.Enabled = false;
             TextBox_read_by_name.Select();
         }
-
         private void Button_create_Click(object sender, EventArgs e)
         {
-            employees = new Employees();
             try
             {
                 DataTable validate_id_card = employees.Validate_id_card(TextBox_id_card.Text);
@@ -74,15 +70,13 @@ namespace ensueno.Presentation.Main
                     Clear_textboxes();
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
-
         private void Button_update_Click(object sender, EventArgs e)
         {
-            employees = new Employees();
             try
             {
                 DataTable validate_id_card = employees.Validate_id_card(TextBox_id_card.Text);
@@ -114,14 +108,13 @@ namespace ensueno.Presentation.Main
                     Clear_textboxes();
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
         private void Button_delete_Click(object sender, EventArgs e)
         {
-            employees = new Employees();
             try
             {
                 if (old_user == Properties.Settings.Default.active_user)
@@ -141,24 +134,11 @@ namespace ensueno.Presentation.Main
                     Clear_textboxes();
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-        private void Clear_textboxes()
-        {
-            TextBox_id.Text="";
-            TextBox_id_card.Clear();
-            TextBox_name.Clear();
-            TextBox_last_name.Clear();
-            TextBox_phone.Clear();
-            TextBox_address.Clear();
-            TextBox_user.Clear();
-            TextBox_password.Clear();
-            CheckBox_admin.Checked = false;
-        }
-
+        }        
         private void DataGridView_employees_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -178,34 +158,40 @@ namespace ensueno.Presentation.Main
                     TextBox_address.Text = DataGridView_employees.Rows[e.RowIndex].Cells[5].Value.ToString();
                     TextBox_user.Text = DataGridView_employees.Rows[e.RowIndex].Cells[6].Value.ToString();
                     CheckBox_admin.Checked = bool.Parse(DataGridView_employees.Rows[e.RowIndex].Cells[7].Value.ToString());
-                    old_user= DataGridView_employees.Rows[e.RowIndex].Cells[6].Value.ToString();
+                    old_user = DataGridView_employees.Rows[e.RowIndex].Cells[6].Value.ToString();
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }        
+        private void TextBox_search_name_TextChanged(object sender, EventArgs e)
+        {
+            DataGridView_employees.DataSource = employees.Read_by_name(TextBox_read_by_name.Text);
         }
-
+        private void TextBox_search_last_name_TextChanged(object sender, EventArgs e)
+        {
+            DataGridView_employees.DataSource = employees.Read_by_last_name(TextBox_read_by_last_name.Text);
+        }
         private void Button_history_Click(object sender, EventArgs e)
         {
             fh = new Form_employees_history();
             fh.ShowDialog();
             Read();
         }
-
-        private void TextBox_search_name_TextChanged(object sender, EventArgs e)
+        private void Clear_textboxes()
         {
-            employees = new Employees();
-            DataGridView_employees.DataSource = employees.Read_by_name(TextBox_read_by_name.Text);
+            TextBox_id.Text = "";
+            TextBox_id_card.Clear();
+            TextBox_name.Clear();
+            TextBox_last_name.Clear();
+            TextBox_phone.Clear();
+            TextBox_address.Clear();
+            TextBox_user.Clear();
+            TextBox_password.Clear();
+            CheckBox_admin.Checked = false;
         }
-
-        private void TextBox_search_last_name_TextChanged(object sender, EventArgs e)
-        {
-            employees = new Employees();
-            DataGridView_employees.DataSource = employees.Read_by_last_name(TextBox_read_by_last_name.Text);
-        }
-
         private void Button_clear_Click(object sender, EventArgs e)
         {
             Clear_textboxes();

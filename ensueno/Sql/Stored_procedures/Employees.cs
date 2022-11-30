@@ -170,7 +170,7 @@ namespace ensueno.Sql.Stored_procedures
             try
             {
                 Connect();
-                command = new SqlCommand($"exec employee_read_by_user @employee_user={user}")
+                command = new SqlCommand($"exec employee_read_by_user '{user}'")
                 {
                     Connection = Get_connection()
                 };
@@ -196,7 +196,7 @@ namespace ensueno.Sql.Stored_procedures
             try
             {
                 Connect();
-                command = new SqlCommand($"exec employee_create @employee_id_card='{id_card}', @employee_name='{name}', @employee_last_name='{last_name}', @employee_phone='{phone}', @employee_address='{address}', @employee_user='{user}', @employee_admin={admin}")
+                command = new SqlCommand($"exec employee_create '{id_card}','{name}','{last_name}','{phone}','{address}','{user}',{admin}")
                 {
                     Connection = Get_connection()
                 };
@@ -244,13 +244,12 @@ namespace ensueno.Sql.Stored_procedures
                     Connection = Get_connection()
                 };
                 command.ExecuteNonQuery();
-                command = new SqlCommand($"exec employee_update @employee_id={id}, @employee_id_card='{id_card}', @employee_name='{name}', @employee_last_name='{last_name}', @employee_phone='{phone}', @employee_address='{address}', @employee_user='{user}', @employee_admin={admin}")
+                command = new SqlCommand($"exec employee_update {id},'{id_card}','{name}','{last_name}','{phone}','{address}','{user}',{admin}")
                 {
                     Connection = Get_connection()
                 };
                 command.ExecuteNonQuery();
                 return true;
-
             }
             catch (Exception ex)
             {
@@ -305,7 +304,7 @@ namespace ensueno.Sql.Stored_procedures
                     Connection = Get_connection()
                 };
                 command.ExecuteNonQuery();
-                command = new SqlCommand($"exec employee_activate {id}, {user}")
+                command = new SqlCommand($"exec employee_activate {id},'{user}'")
                 {
                     Connection = Get_connection()
                 };
