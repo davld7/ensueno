@@ -85,6 +85,12 @@
     <Compile Include="Presentation\Main\Form_employees.Designer.cs">
       <DependentUpon>Form_employees.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Main\Form_employees_history.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Main\Form_employees_history.Designer.cs">
+      <DependentUpon>Form_employees_history.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Main\Form_main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Main\Form_employees.resx">
       <DependentUpon>Form_employees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Main\Form_employees_history.resx">
+      <DependentUpon>Form_employees_history.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Main\Form_main.resx">
       <DependentUpon>Form_main.cs</DependentUpon>

@@ -40,7 +40,31 @@ namespace ensueno.Sql.Stored_procedures
                 Disconnect();
             }
         }
+        public DataTable Read_history()
+        {
 
+            try
+            {
+                Connect();
+                command = new SqlCommand("exec employees_read_history")
+                {
+                    Connection = Get_connection()
+                };
+                data_adapter = new SqlDataAdapter(command);
+                data_table = new DataTable();
+                data_adapter.Fill(data_table);
+                return data_table;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+            finally
+            {
+                Disconnect();
+            }
+        }
         public DataRow Read_by_user(string user)
         {
             try
@@ -71,11 +95,11 @@ namespace ensueno.Sql.Stored_procedures
         {
             try
             {
-                Connect();                
+                Connect();
                 command = new SqlCommand($"exec employee_create @employee_id_card='{id_card}', @employee_name='{name}', @employee_last_name='{last_name}', @employee_phone='{phone}', @employee_address='{address}', @employee_user='{user}', @employee_admin={admin}")
                 {
                     Connection = Get_connection()
-                };                                
+                };
                 command.ExecuteNonQuery();
                 command = new SqlCommand($"create login {user} with password = '{password}'")
                 {
@@ -145,6 +169,72 @@ namespace ensueno.Sql.Stored_procedures
                 Disconnect();
             }
         }
-
+        public bool Delete(int id, string old_user)
+        {
+            try
+            {
+                if (old_user == Properties.Settings.Default.active_user)
+                {
+                    MessageBox.Show("No puedes eliminar tu registro usando tus credenciales en la conexión actual.");
+                    return false;
+                }
+                else
+                {
+                    Connect();
+                    command = new SqlCommand($"exec employee_deactivate {id}")
+                    {
+                        Connection = Get_connection()
+                    };
+                    command.ExecuteNonQuery();
+                    command = new SqlCommand($"drop login {old_user}")
+                    {
+                        Connection = Get_connection()
+                    };
+                    command.ExecuteNonQuery();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            finally
+            {
+                Disconnect();
+            }
+        }
+        public bool Restore(int id, string user, string password)
+        {
+            try
+            {
+                Connect();
+                command = new SqlCommand($"create login {user} with password = '{password}'")
+                {
+                    Connection = Get_connection()
+                };
+                command.ExecuteNonQuery();
+                command = new SqlCommand($"exec [sys].[sp_addsrvrolemember] {user}, 'sysadmin'")
+                {
+                    Connection = Get_connection()
+                };
+                command.ExecuteNonQuery();
+                command = new SqlCommand($"exec employee_activate @employee_id={id}")
+                {
+                    Connection = Get_connection()
+                };
+                command.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            finally
+            {
+                Disconnect();
+            }
+        }
     }
 }

@@ -15,6 +15,7 @@ namespace ensueno.Presentation.Main
     {
         private Employees employees;
         private string old_user;
+        private Form_employees_history fh;
         public Form_employees()
         {
             InitializeComponent();
@@ -75,8 +76,21 @@ namespace ensueno.Presentation.Main
                 Clear_textboxes();
             }
         }
-
-
+        private void Button_delete_Click(object sender, EventArgs e)
+        {
+            employees = new Employees();
+            if (employees.Delete(int.Parse(TextBox_id.Text), old_user))
+            {
+                MessageBox.Show("Se ha borrado el registro del empleado.");
+                Clear_textboxes();
+                Read();
+            }
+            else
+            {
+                MessageBox.Show("No se ha borrado el registro del empleado.");
+                Clear_textboxes();
+            }
+        }
         private void Clear_textboxes()
         {
             TextBox_id.Text="";
@@ -117,6 +131,12 @@ namespace ensueno.Presentation.Main
                 MessageBox.Show(ex.Message);
             }
         }
-        
+
+        private void Button_history_Click(object sender, EventArgs e)
+        {
+            fh = new Form_employees_history();
+            fh.ShowDialog();
+            Read();
+        }
     }
 }
