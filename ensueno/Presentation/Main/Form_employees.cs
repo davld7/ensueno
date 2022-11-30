@@ -144,5 +144,11 @@ namespace ensueno.Presentation.Main
             employees = new Employees();
             DataGridView_employees.DataSource = employees.Read_by_name(TextBox_read_by_name.Text);
         }
+
+        private void TextBox_search_last_name_TextChanged(object sender, EventArgs e)
+        {
+            employees = new Employees();
+            DataGridView_employees.DataSource = employees.Read_by_last_name(TextBox_read_by_last_name.Text);
+        }
     }
 }

@@ -49,7 +49,7 @@
             this.Button_update = new Guna.UI2.WinForms.Guna2GradientButton();
             this.Button_delete = new Guna.UI2.WinForms.Guna2GradientButton();
             this.TextBox_read_by_name = new Guna.UI2.WinForms.Guna2TextBox();
-            this.TextBox_search_last_name = new Guna.UI2.WinForms.Guna2TextBox();
+            this.TextBox_read_by_last_name = new Guna.UI2.WinForms.Guna2TextBox();
             this.Button_history = new Guna.UI2.WinForms.Guna2GradientButton();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_employees)).BeginInit();
             this.SuspendLayout();
@@ -437,29 +437,30 @@
             this.TextBox_read_by_name.TabIndex = 0;
             this.TextBox_read_by_name.TextChanged += new System.EventHandler(this.TextBox_search_name_TextChanged);
             // 
-            // TextBox_search_last_name
+            // TextBox_read_by_last_name
             // 
-            this.TextBox_search_last_name.Animated = true;
-            this.TextBox_search_last_name.BorderColor = System.Drawing.Color.Crimson;
-            this.TextBox_search_last_name.BorderRadius = 11;
-            this.TextBox_search_last_name.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TextBox_search_last_name.DefaultText = "";
-            this.TextBox_search_last_name.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.TextBox_search_last_name.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.TextBox_search_last_name.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.TextBox_search_last_name.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.TextBox_search_last_name.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TextBox_search_last_name.Font = new System.Drawing.Font("Britannic Bold", 11.25F);
-            this.TextBox_search_last_name.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.TextBox_search_last_name.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TextBox_search_last_name.Location = new System.Drawing.Point(427, 42);
-            this.TextBox_search_last_name.Name = "TextBox_search_last_name";
-            this.TextBox_search_last_name.PasswordChar = '\0';
-            this.TextBox_search_last_name.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
-            this.TextBox_search_last_name.PlaceholderText = "Buscar por Apellido";
-            this.TextBox_search_last_name.SelectedText = "";
-            this.TextBox_search_last_name.Size = new System.Drawing.Size(200, 35);
-            this.TextBox_search_last_name.TabIndex = 1;
+            this.TextBox_read_by_last_name.Animated = true;
+            this.TextBox_read_by_last_name.BorderColor = System.Drawing.Color.Crimson;
+            this.TextBox_read_by_last_name.BorderRadius = 11;
+            this.TextBox_read_by_last_name.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TextBox_read_by_last_name.DefaultText = "";
+            this.TextBox_read_by_last_name.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.TextBox_read_by_last_name.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.TextBox_read_by_last_name.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TextBox_read_by_last_name.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TextBox_read_by_last_name.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TextBox_read_by_last_name.Font = new System.Drawing.Font("Britannic Bold", 11.25F);
+            this.TextBox_read_by_last_name.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.TextBox_read_by_last_name.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TextBox_read_by_last_name.Location = new System.Drawing.Point(427, 42);
+            this.TextBox_read_by_last_name.Name = "TextBox_read_by_last_name";
+            this.TextBox_read_by_last_name.PasswordChar = '\0';
+            this.TextBox_read_by_last_name.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
+            this.TextBox_read_by_last_name.PlaceholderText = "Buscar por Apellido";
+            this.TextBox_read_by_last_name.SelectedText = "";
+            this.TextBox_read_by_last_name.Size = new System.Drawing.Size(200, 35);
+            this.TextBox_read_by_last_name.TabIndex = 1;
+            this.TextBox_read_by_last_name.TextChanged += new System.EventHandler(this.TextBox_search_last_name_TextChanged);
             // 
             // Button_history
             // 
@@ -487,7 +488,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(850, 500);
             this.Controls.Add(this.Button_history);
-            this.Controls.Add(this.TextBox_search_last_name);
+            this.Controls.Add(this.TextBox_read_by_last_name);
             this.Controls.Add(this.TextBox_read_by_name);
             this.Controls.Add(this.Button_delete);
             this.Controls.Add(this.Button_update);
@@ -530,7 +531,7 @@
         private Guna.UI2.WinForms.Guna2GradientButton Button_delete;
         private Guna.UI2.WinForms.Guna2GradientButton Button_update;
         private Guna.UI2.WinForms.Guna2GradientButton Button_create;
-        private Guna.UI2.WinForms.Guna2TextBox TextBox_search_last_name;
+        private Guna.UI2.WinForms.Guna2TextBox TextBox_read_by_last_name;
         private Guna.UI2.WinForms.Guna2TextBox TextBox_read_by_name;
         private Guna.UI2.WinForms.Guna2GradientButton Button_history;
     }
