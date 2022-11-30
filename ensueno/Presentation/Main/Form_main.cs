@@ -82,10 +82,14 @@ namespace ensueno.Presentation.Main
         {
             Open_form_panel(new Form_employees());
         }
-
+        private void Button_clients_Click(object sender, EventArgs e)
+        {
+            Open_form_panel(new Form_clients());
+        }
         private void Form_main_FormClosed(object sender, FormClosedEventArgs e)
         {
             Properties.Settings.Default.connection.Close();
         }
+        
     }
 }

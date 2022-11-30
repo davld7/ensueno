@@ -38,12 +38,13 @@
             this.Button_employees = new Guna.UI2.WinForms.Guna2GradientButton();
             this.Transition_slide_panel = new Guna.UI2.WinForms.Guna2Transition();
             this.Container_panel = new Guna.UI2.WinForms.Guna2Panel();
-            this.Button_show = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.Button_hide = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.Label_user_role = new System.Windows.Forms.Label();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+            this.Button_clients = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.Button_hide = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.Button_show = new Guna.UI2.WinForms.Guna2CircleButton();
             this.Slide_panel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,6 +58,7 @@
             // 
             // Slide_panel
             // 
+            this.Slide_panel.Controls.Add(this.Button_clients);
             this.Slide_panel.Controls.Add(this.Separator_slide_panel);
             this.Slide_panel.Controls.Add(this.Button_employees);
             this.Transition_slide_panel.SetDecoration(this.Slide_panel, Guna.UI2.AnimatorNS.DecorationType.None);
@@ -95,7 +97,7 @@
             this.Button_employees.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Button_employees.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(165)))));
             this.Button_employees.IndicateFocus = true;
-            this.Button_employees.Location = new System.Drawing.Point(0, 29);
+            this.Button_employees.Location = new System.Drawing.Point(0, 28);
             this.Button_employees.Name = "Button_employees";
             this.Button_employees.Size = new System.Drawing.Size(175, 45);
             this.Button_employees.TabIndex = 4;
@@ -132,51 +134,6 @@
             this.Container_panel.Name = "Container_panel";
             this.Container_panel.Size = new System.Drawing.Size(850, 500);
             this.Container_panel.TabIndex = 11;
-            // 
-            // Button_show
-            // 
-            this.Button_show.Animated = true;
-            this.Button_show.BackColor = System.Drawing.Color.Transparent;
-            this.Transition_slide_panel.SetDecoration(this.Button_show, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.Button_show.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.Button_show.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.Button_show.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.Button_show.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.Button_show.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.Button_show.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.Button_show.ForeColor = System.Drawing.Color.White;
-            this.Button_show.Image = global::ensueno.Properties.Resources.right_arrow;
-            this.Button_show.ImageSize = new System.Drawing.Size(48, 48);
-            this.Button_show.Location = new System.Drawing.Point(56, 59);
-            this.Button_show.Name = "Button_show";
-            this.Button_show.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.Button_show.Size = new System.Drawing.Size(50, 50);
-            this.Button_show.TabIndex = 8;
-            this.Button_show.UseTransparentBackground = true;
-            this.Button_show.Click += new System.EventHandler(this.Button_show_Click);
-            // 
-            // Button_hide
-            // 
-            this.Button_hide.Animated = true;
-            this.Button_hide.BackColor = System.Drawing.Color.Transparent;
-            this.Transition_slide_panel.SetDecoration(this.Button_hide, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.Button_hide.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.Button_hide.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.Button_hide.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.Button_hide.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.Button_hide.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.Button_hide.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.Button_hide.ForeColor = System.Drawing.Color.White;
-            this.Button_hide.Image = global::ensueno.Properties.Resources.left_arrow;
-            this.Button_hide.ImageSize = new System.Drawing.Size(48, 48);
-            this.Button_hide.Location = new System.Drawing.Point(181, 59);
-            this.Button_hide.Name = "Button_hide";
-            this.Button_hide.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.Button_hide.Size = new System.Drawing.Size(50, 50);
-            this.Button_hide.TabIndex = 9;
-            this.Button_hide.UseTransparentBackground = true;
-            this.Button_hide.Visible = false;
-            this.Button_hide.Click += new System.EventHandler(this.Button_hide_Click);
             // 
             // guna2ControlBox2
             // 
@@ -221,6 +178,76 @@
             this.guna2DragControl1.TargetControl = this;
             this.guna2DragControl1.UseTransparentDrag = true;
             // 
+            // Button_clients
+            // 
+            this.Button_clients.Animated = true;
+            this.Button_clients.CustomImages.Image = global::ensueno.Properties.Resources.clients;
+            this.Button_clients.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.Button_clients.CustomImages.ImageSize = new System.Drawing.Size(32, 32);
+            this.Transition_slide_panel.SetDecoration(this.Button_clients, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.Button_clients.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.Button_clients.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.Button_clients.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Button_clients.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Button_clients.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.Button_clients.Font = new System.Drawing.Font("Britannic Bold", 14.25F);
+            this.Button_clients.ForeColor = System.Drawing.Color.White;
+            this.Button_clients.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Button_clients.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(165)))));
+            this.Button_clients.IndicateFocus = true;
+            this.Button_clients.Location = new System.Drawing.Point(0, 204);
+            this.Button_clients.Name = "Button_clients";
+            this.Button_clients.Size = new System.Drawing.Size(175, 45);
+            this.Button_clients.TabIndex = 10;
+            this.Button_clients.Text = "CLIENTES";
+            this.Button_clients.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.Button_clients.Click += new System.EventHandler(this.Button_clients_Click);
+            // 
+            // Button_hide
+            // 
+            this.Button_hide.Animated = true;
+            this.Button_hide.BackColor = System.Drawing.Color.Transparent;
+            this.Transition_slide_panel.SetDecoration(this.Button_hide, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.Button_hide.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.Button_hide.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.Button_hide.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Button_hide.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.Button_hide.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.Button_hide.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Button_hide.ForeColor = System.Drawing.Color.White;
+            this.Button_hide.Image = global::ensueno.Properties.Resources.left_arrow;
+            this.Button_hide.ImageSize = new System.Drawing.Size(48, 48);
+            this.Button_hide.Location = new System.Drawing.Point(181, 59);
+            this.Button_hide.Name = "Button_hide";
+            this.Button_hide.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.Button_hide.Size = new System.Drawing.Size(50, 50);
+            this.Button_hide.TabIndex = 9;
+            this.Button_hide.UseTransparentBackground = true;
+            this.Button_hide.Visible = false;
+            this.Button_hide.Click += new System.EventHandler(this.Button_hide_Click);
+            // 
+            // Button_show
+            // 
+            this.Button_show.Animated = true;
+            this.Button_show.BackColor = System.Drawing.Color.Transparent;
+            this.Transition_slide_panel.SetDecoration(this.Button_show, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.Button_show.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.Button_show.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.Button_show.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Button_show.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.Button_show.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.Button_show.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Button_show.ForeColor = System.Drawing.Color.White;
+            this.Button_show.Image = global::ensueno.Properties.Resources.right_arrow;
+            this.Button_show.ImageSize = new System.Drawing.Size(48, 48);
+            this.Button_show.Location = new System.Drawing.Point(56, 59);
+            this.Button_show.Name = "Button_show";
+            this.Button_show.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.Button_show.Size = new System.Drawing.Size(50, 50);
+            this.Button_show.TabIndex = 8;
+            this.Button_show.UseTransparentBackground = true;
+            this.Button_show.Click += new System.EventHandler(this.Button_show_Click);
+            // 
             // Form_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -261,5 +288,6 @@
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox2;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
         private System.Windows.Forms.Label Label_user_role;
+        private Guna.UI2.WinForms.Guna2GradientButton Button_clients;
     }
 }
