@@ -90,6 +90,56 @@ namespace ensueno.Sql.Stored_procedures
                 Disconnect();
             }
         }
+        public DataTable Validate_id_card(string id_card)
+        {
+
+            try
+            {
+                Connect();
+                command = new SqlCommand($"exec employee_read_by_id_card '{id_card}'")
+                {
+                    Connection = Get_connection()
+                };
+                data_adapter = new SqlDataAdapter(command);
+                data_table = new DataTable();
+                data_adapter.Fill(data_table);
+                return data_table;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+            finally
+            {
+                Disconnect();
+            }
+        }
+        public DataTable Validate_user(string user)
+        {
+
+            try
+            {
+                Connect();
+                command = new SqlCommand($"exec employee_read_by_user '{user}'")
+                {
+                    Connection = Get_connection()
+                };
+                data_adapter = new SqlDataAdapter(command);
+                data_table = new DataTable();
+                data_adapter.Fill(data_table);
+                return data_table;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+            finally
+            {
+                Disconnect();
+            }
+        }
         public DataTable Read_history()
         {
 
@@ -178,36 +228,29 @@ namespace ensueno.Sql.Stored_procedures
         {
             try
             {
-                if (old_user == Properties.Settings.Default.active_user)
+                Connect();
+                command = new SqlCommand($"drop login {old_user}")
                 {
-                    MessageBox.Show("No puedes actualizar tu registro usando tus credenciales en la conexión actual.");
-                    return false;
-                }
-                else
+                    Connection = Get_connection()
+                };
+                command.ExecuteNonQuery();
+                command = new SqlCommand($"create login {user} with password = '{password}'")
                 {
-                    Connect();
-                    command = new SqlCommand($"drop login {old_user}")
-                    {
-                        Connection = Get_connection()
-                    };
-                    command.ExecuteNonQuery();
-                    command = new SqlCommand($"create login {user} with password = '{password}'")
-                    {
-                        Connection = Get_connection()
-                    };
-                    command.ExecuteNonQuery();
-                    command = new SqlCommand($"exec [sys].[sp_addsrvrolemember] {user}, 'sysadmin'")
-                    {
-                        Connection = Get_connection()
-                    };
-                    command.ExecuteNonQuery();
-                    command = new SqlCommand($"exec employee_update @employee_id={id}, @employee_id_card='{id_card}', @employee_name='{name}', @employee_last_name='{last_name}', @employee_phone='{phone}', @employee_address='{address}', @employee_user='{user}', @employee_admin={admin}")
-                    {
-                        Connection = Get_connection()
-                    };
-                    command.ExecuteNonQuery();
-                    return true;
-                }
+                    Connection = Get_connection()
+                };
+                command.ExecuteNonQuery();
+                command = new SqlCommand($"exec [sys].[sp_addsrvrolemember] {user}, 'sysadmin'")
+                {
+                    Connection = Get_connection()
+                };
+                command.ExecuteNonQuery();
+                command = new SqlCommand($"exec employee_update @employee_id={id}, @employee_id_card='{id_card}', @employee_name='{name}', @employee_last_name='{last_name}', @employee_phone='{phone}', @employee_address='{address}', @employee_user='{user}', @employee_admin={admin}")
+                {
+                    Connection = Get_connection()
+                };
+                command.ExecuteNonQuery();
+                return true;
+
             }
             catch (Exception ex)
             {
@@ -223,26 +266,19 @@ namespace ensueno.Sql.Stored_procedures
         {
             try
             {
-                if (old_user == Properties.Settings.Default.active_user)
+                Connect();
+                command = new SqlCommand($"exec employee_deactivate {id}")
                 {
-                    MessageBox.Show("No puedes eliminar tu registro usando tus credenciales en la conexión actual.");
-                    return false;
-                }
-                else
+                    Connection = Get_connection()
+                };
+                command.ExecuteNonQuery();
+                command = new SqlCommand($"drop login {old_user}")
                 {
-                    Connect();
-                    command = new SqlCommand($"exec employee_deactivate {id}")
-                    {
-                        Connection = Get_connection()
-                    };
-                    command.ExecuteNonQuery();
-                    command = new SqlCommand($"drop login {old_user}")
-                    {
-                        Connection = Get_connection()
-                    };
-                    command.ExecuteNonQuery();
-                    return true;
-                }
+                    Connection = Get_connection()
+                };
+                command.ExecuteNonQuery();
+                return true;
+
             }
             catch (Exception ex)
             {
@@ -269,7 +305,7 @@ namespace ensueno.Sql.Stored_procedures
                     Connection = Get_connection()
                 };
                 command.ExecuteNonQuery();
-                command = new SqlCommand($"exec employee_activate @employee_id={id}")
+                command = new SqlCommand($"exec employee_activate {id}, {user}")
                 {
                     Connection = Get_connection()
                 };

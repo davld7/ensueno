@@ -48,47 +48,102 @@ namespace ensueno.Presentation.Main
         private void Button_create_Click(object sender, EventArgs e)
         {
             employees = new Employees();
-            if(employees.Create(TextBox_id_card.Text, TextBox_name.Text, TextBox_last_name.Text, TextBox_phone.Text, TextBox_address.Text, TextBox_user.Text, TextBox_password.Text, CheckBox_admin.Checked))
+            try
             {
-                MessageBox.Show("Se ha creado el registro del empleado.");
-                Clear_textboxes();
-                Read();
+                DataTable validate_id_card = employees.Validate_id_card(TextBox_id_card.Text);
+                DataTable validate_user = employees.Validate_user(TextBox_user.Text);
+                if (validate_id_card.Rows.Count > 0)
+                {
+                    MessageBox.Show("Ya existe la cédula.");
+                    Clear_textboxes();
+                }
+                else if (validate_user.Rows.Count > 0)
+                {
+                    MessageBox.Show("Ya existe el usuario.");
+                    Clear_textboxes();
+                }
+                else if (employees.Create(TextBox_id_card.Text, TextBox_name.Text, TextBox_last_name.Text, TextBox_phone.Text, TextBox_address.Text, TextBox_user.Text, TextBox_password.Text, CheckBox_admin.Checked))
+                {
+                    MessageBox.Show("Se ha creado el registro del empleado.");
+                    Clear_textboxes();
+                    Read();
+                }
+                else
+                {
+                    MessageBox.Show("No se ha creado el registro del empleado.");
+                    Clear_textboxes();
+                }
             }
-            else
+            catch(Exception ex)
             {
-                MessageBox.Show("No se ha creado el registro del empleado.");
-                Clear_textboxes();
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void Button_update_Click(object sender, EventArgs e)
         {
             employees = new Employees();
-            if (employees.Update(int.Parse(TextBox_id.Text), TextBox_id_card.Text, TextBox_name.Text, TextBox_last_name.Text, TextBox_phone.Text, TextBox_address.Text, TextBox_user.Text, TextBox_password.Text, CheckBox_admin.Checked, old_user))
+            try
             {
-                MessageBox.Show("Se ha actualizado el registro del empleado.");
-                Clear_textboxes();
-                Read();
+                DataTable validate_id_card = employees.Validate_id_card(TextBox_id_card.Text);
+                DataTable validate_user = employees.Validate_user(TextBox_user.Text);
+                if (old_user == Properties.Settings.Default.active_user)
+                {
+                    MessageBox.Show("No puedes actualizar tu registro usando tus credenciales en la conexión actual.");
+                    Clear_textboxes();
+                }
+                else if (validate_id_card.Rows.Count > 0)
+                {
+                    MessageBox.Show("Ya existe la cédula.");
+                    Clear_textboxes();
+                }
+                else if (validate_user.Rows.Count > 0)
+                {
+                    MessageBox.Show("Ya existe el usuario.");
+                    Clear_textboxes();
+                }
+                else if (employees.Update(int.Parse(TextBox_id.Text), TextBox_id_card.Text, TextBox_name.Text, TextBox_last_name.Text, TextBox_phone.Text, TextBox_address.Text, TextBox_user.Text, TextBox_password.Text, CheckBox_admin.Checked, old_user))
+                {
+                    MessageBox.Show("Se ha actualizado el registro del empleado.");
+                    Clear_textboxes();
+                    Read();
+                }
+                else
+                {
+                    MessageBox.Show("No se ha actualizado el registro del empleado.");
+                    Clear_textboxes();
+                }
             }
-            else
+            catch(Exception ex)
             {
-                MessageBox.Show("No se ha actualizado el registro del empleado.");
-                Clear_textboxes();
+                MessageBox.Show(ex.Message);
             }
         }
         private void Button_delete_Click(object sender, EventArgs e)
         {
             employees = new Employees();
-            if (employees.Delete(int.Parse(TextBox_id.Text), old_user))
+            try
             {
-                MessageBox.Show("Se ha borrado el registro del empleado.");
-                Clear_textboxes();
-                Read();
+                if (old_user == Properties.Settings.Default.active_user)
+                {
+                    MessageBox.Show("No puedes eliminar tu registro usando tus credenciales en la conexión actual.");
+                    Clear_textboxes();
+                }
+                else if (employees.Delete(int.Parse(TextBox_id.Text), old_user))
+                {
+                    MessageBox.Show("Se ha borrado el registro del empleado.");
+                    Clear_textboxes();
+                    Read();
+                }
+                else
+                {
+                    MessageBox.Show("No se ha borrado el registro del empleado.");
+                    Clear_textboxes();
+                }
             }
-            else
+            catch(Exception ex)
             {
-                MessageBox.Show("No se ha borrado el registro del empleado.");
-                Clear_textboxes();
+                MessageBox.Show(ex.Message);
             }
         }
         private void Clear_textboxes()

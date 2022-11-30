@@ -33,6 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_employees_history));
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.DataGridView_employees_history = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -265,9 +266,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.DataGridView_employees_history);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_employees_history";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form_employees_history";
+            this.Text = "History";
             this.Load += new System.EventHandler(this.Form_employees_history_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_employees_history)).EndInit();
             this.guna2Panel1.ResumeLayout(false);

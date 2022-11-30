@@ -72,8 +72,14 @@ namespace ensueno.Presentation.Main
 
         private void Button_restore_Click(object sender, EventArgs e)
         {
-            employees = new Employees();            
-            if (employees.Restore(int.Parse(TextBox_id.Text), TextBox_user.Text, TextBox_password.Text))
+            employees = new Employees();
+            DataTable validate_user = employees.Validate_user(TextBox_user.Text);
+            if (validate_user.Rows.Count > 0)
+            {
+                MessageBox.Show("Ya existe el usuario.");
+                Clear_textboxes();
+            }
+            else if (employees.Restore(int.Parse(TextBox_id.Text), TextBox_user.Text, TextBox_password.Text))
             {
                 MessageBox.Show("Se ha restaurado el registro del empleado.");
                 Clear_textboxes();

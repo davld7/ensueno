@@ -81,7 +81,6 @@ go
 exec [sys].[sp_addsrvrolemember] 'st3v', 'sysadmin'
 go
 
-
 --Leer empleados activos.
 
 create procedure employees_read
@@ -91,9 +90,6 @@ begin
     from EMPLOYEES as e
     where employee_active=1
 end
-go
-
-exec employees_read
 go
 
 --Leer por user.
@@ -106,15 +102,6 @@ begin
     from EMPLOYEES
     where employee_user=@employee_user
 end
-go
-
-exec employee_read_by_user @employee_user='dav7'
-go
-
-exec employee_read_by_user @employee_user='ponc3'
-go
-
-exec employee_read_by_user @employee_user='st3v'
 go
 
 --Actualizar empleado.
@@ -132,5 +119,73 @@ begin
     update EMPLOYEES
     set employee_id_card=@employee_id_card, employee_name=@employee_name, employee_last_name=@employee_last_name, employee_phone=@employee_phone, employee_address=@employee_address, employee_user=@employee_user, employee_admin=@employee_admin
 	where employee_id=@employee_id
+end
+go
+
+--Cambiar estado del empleado a desactivado.
+create procedure employee_deactivate
+    @employee_id int
+as
+begin
+    update EMPLOYEES
+    set employee_active=0
+	where employee_id=@employee_id
+end
+go
+
+--Cambiar estado del empleado a activado.
+create procedure employee_activate
+    @employee_id int,
+    @employee_user nvarchar (20)
+as
+begin
+    update EMPLOYEES
+    set employee_active=1, employee_user=@employee_user
+	where employee_id=@employee_id
+end
+go
+
+--Leer historial de empleados.
+
+create procedure employees_read_history
+as
+begin
+    select e.employee_id as 'ID', e.employee_id_card as 'Cédula', e.employee_name as 'Nombre', e.employee_last_name as 'Apellido', e.employee_phone as 'Teléfono', e.employee_address as 'Dirección', e.employee_user as 'Usuario', e.employee_admin as 'Administrador'
+    from EMPLOYEES as e
+    where employee_active=0
+end
+go
+
+--Autocompletar por nombre.
+create procedure employees_read_by_name
+    @employee_name nvarchar (50)
+as
+begin
+    select e.employee_id as 'ID', e.employee_id_card as 'Cédula', e.employee_name as 'Nombre', e.employee_last_name as 'Apellido', e.employee_phone as 'Teléfono', e.employee_address as 'Dirección', e.employee_user as 'Usuario', e.employee_admin as 'Administrador'
+    from EMPLOYEES as e
+    where employee_name like '%'+@employee_name+'%' and employee_active=1
+end
+go
+
+
+--Autocompletar por apellido.
+create procedure employees_read_by_last_name
+    @employee_last_name nvarchar (50)
+as
+begin
+    select e.employee_id as 'ID', e.employee_id_card as 'Cédula', e.employee_name as 'Nombre', e.employee_last_name as 'Apellido', e.employee_phone as 'Teléfono', e.employee_address as 'Dirección', e.employee_user as 'Usuario', e.employee_admin as 'Administrador'
+    from EMPLOYEES as e
+    where employee_last_name like '%'+@employee_last_name+'%' and employee_active=1
+end
+go
+
+--Leer por cédula
+create procedure employee_read_by_id_card
+    @employee_id_card nvarchar(20)
+as
+begin
+    select *
+    from EMPLOYEES
+    where employee_id_card=@employee_id_card
 end
 go
