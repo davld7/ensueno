@@ -42,7 +42,7 @@ namespace ensueno.Presentation.Main
         {
             Read();
             TextBox_id.Enabled = false;
-            TextBox_search_name.Select();
+            TextBox_read_by_name.Select();
         }
 
         private void Button_create_Click(object sender, EventArgs e)
@@ -137,6 +137,12 @@ namespace ensueno.Presentation.Main
             fh = new Form_employees_history();
             fh.ShowDialog();
             Read();
+        }
+
+        private void TextBox_search_name_TextChanged(object sender, EventArgs e)
+        {
+            employees = new Employees();
+            DataGridView_employees.DataSource = employees.Read_by_name(TextBox_read_by_name.Text);
         }
     }
 }

@@ -40,6 +40,31 @@ namespace ensueno.Sql.Stored_procedures
                 Disconnect();
             }
         }
+        public DataTable Read_by_name(string name)
+        {
+
+            try
+            {
+                Connect();
+                command = new SqlCommand($"exec employees_read_by_name '{name}'")
+                {
+                    Connection = Get_connection()
+                };
+                data_adapter = new SqlDataAdapter(command);
+                data_table = new DataTable();
+                data_adapter.Fill(data_table);
+                return data_table;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+            finally
+            {
+                Disconnect();
+            }
+        }
         public DataTable Read_history()
         {
 
