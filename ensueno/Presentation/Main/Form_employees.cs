@@ -35,13 +35,7 @@ namespace ensueno.Presentation.Main
         private void Read()
         {
             DataGridView_employees.DataSource = employees.Read();
-        }
-        private void Form_employees_Load(object sender, EventArgs e)
-        {
-            Read();
-            TextBox_id.Enabled = false;
-            TextBox_read_by_name.Select();
-        }
+        }        
         private void Button_create_Click(object sender, EventArgs e)
         {
             try
@@ -195,6 +189,27 @@ namespace ensueno.Presentation.Main
         private void Button_clear_Click(object sender, EventArgs e)
         {
             Clear_textboxes();
+        }
+        private void Form_employees_Load(object sender, EventArgs e)
+        {
+            Read();
+            TextBox_id.Enabled = false;
+            Button_update.Enabled = false;
+            Button_delete.Enabled = false;
+            TextBox_read_by_name.Select();
+        }
+        private void TextBox_id_TextChanged(object sender, EventArgs e)
+        {
+            if (TextBox_id.Text != string.Empty)
+            {
+                Button_update.Enabled = true;
+                Button_delete.Enabled = true;
+            }
+            else
+            {
+                Button_update.Enabled = false;
+                Button_delete.Enabled = false;
+            }
         }
     }
 }
