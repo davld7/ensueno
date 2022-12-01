@@ -70,24 +70,32 @@ namespace ensueno.Presentation.Login
         }
         private void Login()
         {
-            builder = new Builder();
-            builder.Build(TextBox_user.Text, TextBox_password.Text);
-            if (employees.Connect())
+            try
             {
-                data_row = employees.Read_by_user(TextBox_user.Text);
-                Clear_textboxes();
-                string employee_name = data_row.ItemArray[2].ToString();
-                string employee_last_name = data_row.ItemArray[3].ToString();
-                Show_form_welcome(employee_name, employee_last_name);
-                Properties.Settings.Default.active_user = data_row.ItemArray[6].ToString();
-                Properties.Settings.Default.admin = bool.Parse(data_row.ItemArray[7].ToString());
-                Show_form_main();
+                builder = new Builder();
+                builder.Build(TextBox_user.Text, TextBox_password.Text);
+                if (employees.Connect())
+                {
+                    data_row = employees.Read_by_user(TextBox_user.Text);
+                    Clear_textboxes();
+                    string employee_name = data_row.ItemArray[2].ToString();
+                    string employee_last_name = data_row.ItemArray[3].ToString();
+                    Show_form_welcome(employee_name, employee_last_name);
+                    Properties.Settings.Default.active_user = data_row.ItemArray[6].ToString();
+                    Properties.Settings.Default.admin = bool.Parse(data_row.ItemArray[7].ToString());
+                    Show_form_main();
+                }
+                else
+                {
+                    Clear_textboxes();
+                    fle = new Form_login_error();
+                    fle.ShowDialog();
+                }
             }
-            else
+            catch(Exception ex)
             {
-                Clear_textboxes();
-                fle = new Form_login_error();
-                fle.ShowDialog();
+                MessageBox.Show("El usuario está deshabilitado.");
+                MessageBox.Show(ex.Message);
             }
         }
         private void Clear_textboxes()

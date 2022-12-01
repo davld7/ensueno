@@ -70,7 +70,7 @@ namespace ensueno.Presentation.Main
         {
             TextBox_id.Text = "";            
             TextBox_user.Text="";
-            TextBox_password.Clear();            
+            TextBox_password.Text="";
         }
 
         private void Button_restore_Click(object sender, EventArgs e)
