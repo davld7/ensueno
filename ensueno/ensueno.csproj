@@ -120,6 +120,7 @@
     <Compile Include="Sql\Builder.cs" />
     <Compile Include="Sql\Connection.cs" />
     <Compile Include="Sql\Stored_procedures\Employees.cs" />
+    <Compile Include="Sql\Stored_procedures\Products.cs" />
     <EmbeddedResource Include="Presentation\Login\Form_database.resx">
       <DependentUpon>Form_database.cs</DependentUpon>
     </EmbeddedResource>
