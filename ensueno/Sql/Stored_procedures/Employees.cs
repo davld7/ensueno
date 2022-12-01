@@ -301,7 +301,7 @@ namespace ensueno.Sql.Stored_procedures
                 Disconnect();
             }
         }
-        public bool Delete(int id, string old_user)
+        public bool Delete(int id, string user)
         {
             try
             {
@@ -311,7 +311,7 @@ namespace ensueno.Sql.Stored_procedures
                     Connection = Get_connection()
                 };
                 command.ExecuteNonQuery();
-                command = new SqlCommand($"drop login {old_user}")
+                command = new SqlCommand($"alter login {user} disable")
                 {
                     Connection = Get_connection()
                 };

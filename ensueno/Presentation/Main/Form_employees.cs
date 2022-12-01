@@ -15,7 +15,6 @@ namespace ensueno.Presentation.Main
     {
         private readonly Employees employees = new Employees();
         private Form_employees_history fh;
-        private string old_user;
         public Form_employees()
         {
             InitializeComponent();
@@ -75,7 +74,7 @@ namespace ensueno.Presentation.Main
             {
                 DataTable validate_update_id_card = employees.Validate_update_id_card(int.Parse(TextBox_id.Text), TextBox_id_card.Text);
                 DataTable validate_id_card = employees.Validate_id_card(TextBox_id_card.Text);
-                if (old_user == Properties.Settings.Default.active_user)
+                if (TextBox_user.Text == Properties.Settings.Default.active_user)
                 {
                     MessageBox.Show("No puedes actualizar tu registro usando tus credenciales en la conexión actual.");
                     Clear_textboxes();
@@ -106,12 +105,12 @@ namespace ensueno.Presentation.Main
         {
             try
             {
-                if (old_user == Properties.Settings.Default.active_user)
+                if (TextBox_user.Text == Properties.Settings.Default.active_user)
                 {
                     MessageBox.Show("No puedes eliminar tu registro usando tus credenciales en la conexión actual.");
                     Clear_textboxes();
                 }
-                else if (employees.Delete(int.Parse(TextBox_id.Text), old_user))
+                else if (employees.Delete(int.Parse(TextBox_id.Text), TextBox_user.Text))
                 {
                     MessageBox.Show("Se ha borrado el registro del empleado.");
                     Clear_textboxes();
@@ -146,8 +145,7 @@ namespace ensueno.Presentation.Main
                     TextBox_phone.Text = DataGridView_employees.Rows[e.RowIndex].Cells[4].Value.ToString();
                     TextBox_address.Text = DataGridView_employees.Rows[e.RowIndex].Cells[5].Value.ToString();
                     TextBox_user.Text = DataGridView_employees.Rows[e.RowIndex].Cells[6].Value.ToString();
-                    CheckBox_admin.Checked = bool.Parse(DataGridView_employees.Rows[e.RowIndex].Cells[7].Value.ToString());
-                    old_user = DataGridView_employees.Rows[e.RowIndex].Cells[6].Value.ToString();
+                    CheckBox_admin.Checked = bool.Parse(DataGridView_employees.Rows[e.RowIndex].Cells[7].Value.ToString());                    
                 }
             }
             catch (Exception ex)
