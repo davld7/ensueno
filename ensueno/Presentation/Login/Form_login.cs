@@ -17,10 +17,10 @@ namespace ensueno.Presentation.Login
     {
         private Form_database fd;
         private Form_welcome fw;
-        private Form_login_error fl;
+        private Form_login_error fle;
         private Form_main fm;
         private Builder builder;
-        private Employees employees;
+        private readonly Employees employees = new Employees();
         private DataRow data_row;
         public Form_login()
         {
@@ -72,12 +72,10 @@ namespace ensueno.Presentation.Login
         {
             builder = new Builder();
             builder.Build(TextBox_user.Text, TextBox_password.Text);
-            employees = new Employees();
             if (employees.Connect())
             {
-                employees.Disconnect();
                 data_row = employees.Read_by_user(TextBox_user.Text);
-                Clear_textboxes();                
+                Clear_textboxes();
                 string employee_name = data_row.ItemArray[2].ToString();
                 string employee_last_name = data_row.ItemArray[3].ToString();
                 Show_form_welcome(employee_name, employee_last_name);
@@ -88,8 +86,8 @@ namespace ensueno.Presentation.Login
             else
             {
                 Clear_textboxes();
-                fl = new Form_login_error();
-                fl.ShowDialog();
+                fle = new Form_login_error();
+                fle.ShowDialog();
             }
         }
         private void Clear_textboxes()
@@ -112,7 +110,7 @@ namespace ensueno.Presentation.Login
 
         private void TextBox_password_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
                 Login();
             }
