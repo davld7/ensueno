@@ -71,7 +71,8 @@ namespace ensueno.Presentation.Main
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Agregue una imagen.");
+                MessageBox.Show(ex.Message);                
             }
         }
         private void Clear_textboxes()
@@ -90,6 +91,8 @@ namespace ensueno.Presentation.Main
         {
             Read();
             TextBox_id.Enabled = false;
+            Button_update.Enabled = false;
+            Button_delete.Enabled = false;
             PictureBox_product.Image = null;
             TextBox_read_by_name.Select();
         }
@@ -123,6 +126,22 @@ namespace ensueno.Presentation.Main
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void TextBox_id_TextChanged(object sender, EventArgs e)
+        {
+            if (TextBox_id.Text != string.Empty)
+            {
+                Button_create.Enabled = false;
+                Button_update.Enabled = true;
+                Button_delete.Enabled = true;
+            }
+            else
+            {
+                Button_create.Enabled = true;
+                Button_update.Enabled = false;
+                Button_delete.Enabled = false;
             }
         }
     }
