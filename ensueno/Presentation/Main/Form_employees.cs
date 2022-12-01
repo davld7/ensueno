@@ -73,24 +73,23 @@ namespace ensueno.Presentation.Main
         {
             try
             {
-                DataTable validate_id_card = employees.Validate_update_id_card(int.Parse(TextBox_id.Text), TextBox_id_card.Text);                
+                DataTable validate_update_id_card = employees.Validate_update_id_card(int.Parse(TextBox_id.Text), TextBox_id_card.Text);
+                DataTable validate_id_card = employees.Validate_id_card(TextBox_id_card.Text);
                 if (old_user == Properties.Settings.Default.active_user)
                 {
                     MessageBox.Show("No puedes actualizar tu registro usando tus credenciales en la conexión actual.");
                     Clear_textboxes();
                 }
-                else if (validate_id_card.Rows.Count > 0)
-                {
-                    employees.Update(int.Parse(TextBox_id.Text), TextBox_id_card.Text, TextBox_name.Text, TextBox_last_name.Text, TextBox_phone.Text, TextBox_address.Text, TextBox_user.Text, TextBox_password.Text, CheckBox_admin.Checked);
+                else if (validate_update_id_card.Rows.Count > 0 && employees.Update(int.Parse(TextBox_id.Text), TextBox_id_card.Text, TextBox_name.Text, TextBox_last_name.Text, TextBox_phone.Text, TextBox_address.Text, TextBox_user.Text, TextBox_password.Text, CheckBox_admin.Checked))
+                {                    
                     MessageBox.Show("Se ha actualizado el registro del empleado.");                    
                     Clear_textboxes();
                     Read();
-                }                
-                else if (employees.Update(int.Parse(TextBox_id.Text), TextBox_id_card.Text, TextBox_name.Text, TextBox_last_name.Text, TextBox_phone.Text, TextBox_address.Text, TextBox_user.Text, TextBox_password.Text, CheckBox_admin.Checked))
+                }
+                else if (validate_id_card.Rows.Count > 0)
                 {
-                    MessageBox.Show("Se ha actualizado el registro del empleado.");
+                    MessageBox.Show("Ya existe la cédula.");
                     Clear_textboxes();
-                    Read();
                 }
                 else
                 {
