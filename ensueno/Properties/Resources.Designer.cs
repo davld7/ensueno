@@ -63,6 +63,16 @@ namespace ensueno.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bills {
+            get {
+                object obj = ResourceManager.GetObject("bills", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap clean {
             get {
                 object obj = ResourceManager.GetObject("clean", resourceCulture);
@@ -146,6 +156,16 @@ namespace ensueno.Properties {
         internal static System.Drawing.Bitmap password {
             get {
                 object obj = ResourceManager.GetObject("password", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap products {
+            get {
+                object obj = ResourceManager.GetObject("products", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

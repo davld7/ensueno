@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Guna.UI2.AnimatorNS.Animation animation1 = new Guna.UI2.AnimatorNS.Animation();
+            Guna.UI2.AnimatorNS.Animation animation3 = new Guna.UI2.AnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_main));
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.Slide_panel = new Guna.UI2.WinForms.Guna2Panel();
+            this.Button_clients = new Guna.UI2.WinForms.Guna2GradientButton();
             this.Separator_slide_panel = new Guna.UI2.WinForms.Guna2Separator();
             this.Button_employees = new Guna.UI2.WinForms.Guna2GradientButton();
             this.Transition_slide_panel = new Guna.UI2.WinForms.Guna2Transition();
@@ -42,7 +43,8 @@
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.Label_user_role = new System.Windows.Forms.Label();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
-            this.Button_clients = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.Button_products = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.Button_bills = new Guna.UI2.WinForms.Guna2GradientButton();
             this.Button_hide = new Guna.UI2.WinForms.Guna2CircleButton();
             this.Button_show = new Guna.UI2.WinForms.Guna2CircleButton();
             this.Slide_panel.SuspendLayout();
@@ -58,6 +60,8 @@
             // 
             // Slide_panel
             // 
+            this.Slide_panel.Controls.Add(this.Button_bills);
+            this.Slide_panel.Controls.Add(this.Button_products);
             this.Slide_panel.Controls.Add(this.Button_clients);
             this.Slide_panel.Controls.Add(this.Separator_slide_panel);
             this.Slide_panel.Controls.Add(this.Button_employees);
@@ -68,6 +72,31 @@
             this.Slide_panel.Name = "Slide_panel";
             this.Slide_panel.Size = new System.Drawing.Size(50, 570);
             this.Slide_panel.TabIndex = 0;
+            // 
+            // Button_clients
+            // 
+            this.Button_clients.Animated = true;
+            this.Button_clients.CustomImages.Image = global::ensueno.Properties.Resources.clients;
+            this.Button_clients.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.Button_clients.CustomImages.ImageSize = new System.Drawing.Size(32, 32);
+            this.Transition_slide_panel.SetDecoration(this.Button_clients, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.Button_clients.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.Button_clients.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.Button_clients.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Button_clients.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Button_clients.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.Button_clients.Font = new System.Drawing.Font("Britannic Bold", 14.25F);
+            this.Button_clients.ForeColor = System.Drawing.Color.White;
+            this.Button_clients.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Button_clients.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(165)))));
+            this.Button_clients.IndicateFocus = true;
+            this.Button_clients.Location = new System.Drawing.Point(0, 204);
+            this.Button_clients.Name = "Button_clients";
+            this.Button_clients.Size = new System.Drawing.Size(175, 45);
+            this.Button_clients.TabIndex = 10;
+            this.Button_clients.Text = "CLIENTES";
+            this.Button_clients.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.Button_clients.Click += new System.EventHandler(this.Button_clients_Click);
             // 
             // Separator_slide_panel
             // 
@@ -109,22 +138,22 @@
             // 
             this.Transition_slide_panel.AnimationType = Guna.UI2.AnimatorNS.AnimationType.HorizBlind;
             this.Transition_slide_panel.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 0F;
-            this.Transition_slide_panel.DefaultAnimation = animation1;
+            animation3.AnimateOnlyDifferences = true;
+            animation3.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.BlindCoeff")));
+            animation3.LeafCoeff = 0F;
+            animation3.MaxTime = 1F;
+            animation3.MinTime = 0F;
+            animation3.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicCoeff")));
+            animation3.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicShift")));
+            animation3.MosaicSize = 0;
+            animation3.Padding = new System.Windows.Forms.Padding(0);
+            animation3.RotateCoeff = 0F;
+            animation3.RotateLimit = 0F;
+            animation3.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.ScaleCoeff")));
+            animation3.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.SlideCoeff")));
+            animation3.TimeCoeff = 0F;
+            animation3.TransparencyCoeff = 0F;
+            this.Transition_slide_panel.DefaultAnimation = animation3;
             // 
             // Container_panel
             // 
@@ -178,30 +207,55 @@
             this.guna2DragControl1.TargetControl = this;
             this.guna2DragControl1.UseTransparentDrag = true;
             // 
-            // Button_clients
+            // Button_products
             // 
-            this.Button_clients.Animated = true;
-            this.Button_clients.CustomImages.Image = global::ensueno.Properties.Resources.clients;
-            this.Button_clients.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.Button_clients.CustomImages.ImageSize = new System.Drawing.Size(32, 32);
-            this.Transition_slide_panel.SetDecoration(this.Button_clients, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.Button_clients.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.Button_clients.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.Button_clients.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.Button_clients.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.Button_clients.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.Button_clients.Font = new System.Drawing.Font("Britannic Bold", 14.25F);
-            this.Button_clients.ForeColor = System.Drawing.Color.White;
-            this.Button_clients.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Button_clients.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(165)))));
-            this.Button_clients.IndicateFocus = true;
-            this.Button_clients.Location = new System.Drawing.Point(0, 204);
-            this.Button_clients.Name = "Button_clients";
-            this.Button_clients.Size = new System.Drawing.Size(175, 45);
-            this.Button_clients.TabIndex = 10;
-            this.Button_clients.Text = "CLIENTES";
-            this.Button_clients.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.Button_clients.Click += new System.EventHandler(this.Button_clients_Click);
+            this.Button_products.Animated = true;
+            this.Button_products.CustomImages.Image = global::ensueno.Properties.Resources.products;
+            this.Button_products.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.Button_products.CustomImages.ImageSize = new System.Drawing.Size(32, 32);
+            this.Transition_slide_panel.SetDecoration(this.Button_products, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.Button_products.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.Button_products.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.Button_products.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Button_products.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Button_products.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.Button_products.Font = new System.Drawing.Font("Britannic Bold", 14.25F);
+            this.Button_products.ForeColor = System.Drawing.Color.White;
+            this.Button_products.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Button_products.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(165)))));
+            this.Button_products.IndicateFocus = true;
+            this.Button_products.Location = new System.Drawing.Point(0, 255);
+            this.Button_products.Name = "Button_products";
+            this.Button_products.Size = new System.Drawing.Size(175, 45);
+            this.Button_products.TabIndex = 11;
+            this.Button_products.Text = "PRODUCTOS";
+            this.Button_products.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.Button_products.Click += new System.EventHandler(this.Button_products_Click);
+            // 
+            // Button_bills
+            // 
+            this.Button_bills.Animated = true;
+            this.Button_bills.CustomImages.Image = global::ensueno.Properties.Resources.bills;
+            this.Button_bills.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.Button_bills.CustomImages.ImageSize = new System.Drawing.Size(32, 32);
+            this.Transition_slide_panel.SetDecoration(this.Button_bills, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.Button_bills.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.Button_bills.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.Button_bills.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Button_bills.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Button_bills.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.Button_bills.Font = new System.Drawing.Font("Britannic Bold", 14.25F);
+            this.Button_bills.ForeColor = System.Drawing.Color.White;
+            this.Button_bills.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Button_bills.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(165)))));
+            this.Button_bills.IndicateFocus = true;
+            this.Button_bills.Location = new System.Drawing.Point(0, 306);
+            this.Button_bills.Name = "Button_bills";
+            this.Button_bills.Size = new System.Drawing.Size(175, 45);
+            this.Button_bills.TabIndex = 12;
+            this.Button_bills.Text = "FACTURAS";
+            this.Button_bills.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.Button_bills.Click += new System.EventHandler(this.Button_bills_Click);
             // 
             // Button_hide
             // 
@@ -289,5 +343,7 @@
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
         private System.Windows.Forms.Label Label_user_role;
         private Guna.UI2.WinForms.Guna2GradientButton Button_clients;
+        private Guna.UI2.WinForms.Guna2GradientButton Button_products;
+        private Guna.UI2.WinForms.Guna2GradientButton Button_bills;
     }
 }

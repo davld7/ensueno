@@ -86,10 +86,17 @@ namespace ensueno.Presentation.Main
         {
             Open_form_panel(new Form_clients());
         }
+        private void Button_products_Click(object sender, EventArgs e)
+        {
+            Open_form_panel(new Form_products());
+        }
+        private void Button_bills_Click(object sender, EventArgs e)
+        {
+            Open_form_panel(new Form_bills());
+        }
         private void Form_main_FormClosed(object sender, FormClosedEventArgs e)
         {
             Properties.Settings.Default.connection.Close();
-        }
-        
+        }        
     }
 }

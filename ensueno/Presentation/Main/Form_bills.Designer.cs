@@ -1,6 +1,6 @@
 ﻿namespace ensueno.Presentation.Main
 {
-    partial class Form_clients
+    partial class Form_bills
     {
         /// <summary>
         /// Required designer variable.
@@ -49,19 +49,19 @@
             this.label1.ForeColor = System.Drawing.SystemColors.GrayText;
             this.label1.Location = new System.Drawing.Point(49, 8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(127, 36);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "Clientes";
+            this.label1.Size = new System.Drawing.Size(138, 36);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Facturas";
             // 
-            // Form_clients
+            // Form_bills
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(850, 500);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form_clients";
-            this.Text = "Form_clients";
+            this.Name = "Form_bills";
+            this.Text = "Form_bills";
             this.ResumeLayout(false);
             this.PerformLayout();
 
