@@ -40,6 +40,31 @@ namespace ensueno.Sql.Stored_procedures
                 Disconnect();
             }
         }
+        public DataTable Read_history()
+        {
+
+            try
+            {
+                Connect();
+                command = new SqlCommand("exec employees_read_history")
+                {
+                    Connection = Get_connection()
+                };
+                data_adapter = new SqlDataAdapter(command);
+                data_table = new DataTable();
+                data_adapter.Fill(data_table);
+                return data_table;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+            finally
+            {
+                Disconnect();
+            }
+        }
         public DataTable Read_by_name(string name)
         {
 
@@ -140,13 +165,13 @@ namespace ensueno.Sql.Stored_procedures
                 Disconnect();
             }
         }
-        public DataTable Read_history()
+        public DataTable Validate_update_id_card(int id, string id_card)
         {
 
             try
             {
                 Connect();
-                command = new SqlCommand("exec employees_read_history")
+                command = new SqlCommand($"exec employee_update_id_card {id},'{id_card}'")
                 {
                     Connection = Get_connection()
                 };
@@ -165,6 +190,31 @@ namespace ensueno.Sql.Stored_procedures
                 Disconnect();
             }
         }
+        public DataTable Validate_update_user(int id, string user)
+        {
+
+            try
+            {
+                Connect();
+                command = new SqlCommand($"exec employee_update_user {id},'{user}'")
+                {
+                    Connection = Get_connection()
+                };
+                data_adapter = new SqlDataAdapter(command);
+                data_table = new DataTable();
+                data_adapter.Fill(data_table);
+                return data_table;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+            finally
+            {
+                Disconnect();
+            }
+        }        
         public DataRow Read_by_user(string user)
         {
             try
@@ -224,27 +274,17 @@ namespace ensueno.Sql.Stored_procedures
             }
         }
 
-        public bool Update(int id, string id_card, string name, string last_name, string phone, string address, string user, string password, bool admin, string old_user)
+        public bool Update(int id, string id_card, string name, string last_name, string phone, string address, string user, string password, bool admin)
         {
             try
             {
-                Connect();
-                command = new SqlCommand($"drop login {old_user}")
+                Connect();                
+                command = new SqlCommand($"alter login {user} with password = '{password}'")
                 {
                     Connection = Get_connection()
                 };
-                command.ExecuteNonQuery();
-                command = new SqlCommand($"create login {user} with password = '{password}'")
-                {
-                    Connection = Get_connection()
-                };
-                command.ExecuteNonQuery();
-                command = new SqlCommand($"exec [sys].[sp_addsrvrolemember] {user}, 'sysadmin'")
-                {
-                    Connection = Get_connection()
-                };
-                command.ExecuteNonQuery();
-                command = new SqlCommand($"exec employee_update {id},'{id_card}','{name}','{last_name}','{phone}','{address}','{user}',{admin}")
+                command.ExecuteNonQuery();                
+                command = new SqlCommand($"exec employee_update {id},'{id_card}','{name}','{last_name}','{phone}','{address}',{admin}")
                 {
                     Connection = Get_connection()
                 };

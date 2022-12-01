@@ -73,8 +73,7 @@ namespace ensueno.Presentation.Main
         {
             try
             {
-                DataTable validate_id_card = employees.Validate_id_card(TextBox_id_card.Text);
-                DataTable validate_user = employees.Validate_user(TextBox_user.Text);
+                DataTable validate_id_card = employees.Validate_update_id_card(int.Parse(TextBox_id.Text), TextBox_id_card.Text);                
                 if (old_user == Properties.Settings.Default.active_user)
                 {
                     MessageBox.Show("No puedes actualizar tu registro usando tus credenciales en la conexión actual.");
@@ -82,15 +81,12 @@ namespace ensueno.Presentation.Main
                 }
                 else if (validate_id_card.Rows.Count > 0)
                 {
-                    MessageBox.Show("Ya existe la cédula.");
+                    employees.Update(int.Parse(TextBox_id.Text), TextBox_id_card.Text, TextBox_name.Text, TextBox_last_name.Text, TextBox_phone.Text, TextBox_address.Text, TextBox_user.Text, TextBox_password.Text, CheckBox_admin.Checked);
+                    MessageBox.Show("Se ha actualizado el registro del empleado.");                    
                     Clear_textboxes();
-                }
-                else if (validate_user.Rows.Count > 0)
-                {
-                    MessageBox.Show("Ya existe el usuario.");
-                    Clear_textboxes();
-                }
-                else if (employees.Update(int.Parse(TextBox_id.Text), TextBox_id_card.Text, TextBox_name.Text, TextBox_last_name.Text, TextBox_phone.Text, TextBox_address.Text, TextBox_user.Text, TextBox_password.Text, CheckBox_admin.Checked, old_user))
+                    Read();
+                }                
+                else if (employees.Update(int.Parse(TextBox_id.Text), TextBox_id_card.Text, TextBox_name.Text, TextBox_last_name.Text, TextBox_phone.Text, TextBox_address.Text, TextBox_user.Text, TextBox_password.Text, CheckBox_admin.Checked))
                 {
                     MessageBox.Show("Se ha actualizado el registro del empleado.");
                     Clear_textboxes();
@@ -202,13 +198,17 @@ namespace ensueno.Presentation.Main
         {
             if (TextBox_id.Text != string.Empty)
             {
-                Button_update.Enabled = true;
+                Button_create.Enabled = false;
+                Button_update.Enabled = true;                
                 Button_delete.Enabled = true;
+                TextBox_user.Enabled = false;
             }
             else
             {
+                Button_create.Enabled = true;
                 Button_update.Enabled = false;
                 Button_delete.Enabled = false;
+                TextBox_user.Enabled = true;
             }
         }
     }
