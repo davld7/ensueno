@@ -41,6 +41,9 @@ namespace ensueno.Presentation.Main
         {
             Read_history();
             TextBox_id.Enabled = false;
+            TextBox_user.Enabled = false;
+            TextBox_password.Enabled = false;
+            Button_restore.Enabled = false;
         }
 
         private void DataGridView_employees_history_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -66,20 +69,14 @@ namespace ensueno.Presentation.Main
         private void Clear_textboxes()
         {
             TextBox_id.Text = "";            
-            TextBox_user.Clear();
+            TextBox_user.Text="";
             TextBox_password.Clear();            
         }
 
         private void Button_restore_Click(object sender, EventArgs e)
         {
-            employees = new Employees();
-            DataTable validate_user = employees.Validate_user(TextBox_user.Text);
-            if (validate_user.Rows.Count > 0)
-            {
-                MessageBox.Show("Ya existe el usuario.");
-                Clear_textboxes();
-            }
-            else if (employees.Restore(int.Parse(TextBox_id.Text), TextBox_user.Text, TextBox_password.Text))
+            employees = new Employees();            
+            if (employees.Restore(int.Parse(TextBox_id.Text), TextBox_user.Text, TextBox_password.Text))
             {
                 MessageBox.Show("Se ha restaurado el registro del empleado.");
                 Clear_textboxes();
@@ -89,6 +86,20 @@ namespace ensueno.Presentation.Main
             {
                 MessageBox.Show("No se ha restaurado el registro del empleado.");
                 Clear_textboxes();
+            }
+        }
+
+        private void TextBox_id_TextChanged(object sender, EventArgs e)
+        {
+            if (TextBox_id.Text != string.Empty)
+            {                
+                TextBox_password.Enabled = true;
+                Button_restore.Enabled = true;
+            }
+            else
+            {                
+                TextBox_password.Enabled = false;
+                Button_restore.Enabled = false;
             }
         }
     }

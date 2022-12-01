@@ -334,17 +334,17 @@ namespace ensueno.Sql.Stored_procedures
             try
             {
                 Connect();
-                command = new SqlCommand($"create login {user} with password = '{password}'")
+                command = new SqlCommand($"alter login {user} enable")
                 {
                     Connection = Get_connection()
                 };
                 command.ExecuteNonQuery();
-                command = new SqlCommand($"exec [sys].[sp_addsrvrolemember] {user}, 'sysadmin'")
+                command = new SqlCommand($"alter login {user} with password = '{password}'")
                 {
                     Connection = Get_connection()
                 };
                 command.ExecuteNonQuery();
-                command = new SqlCommand($"exec employee_activate {id},'{user}'")
+                command = new SqlCommand($"exec employee_activate {id}")
                 {
                     Connection = Get_connection()
                 };

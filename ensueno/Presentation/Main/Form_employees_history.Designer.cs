@@ -158,6 +158,7 @@
             this.TextBox_id.SelectedText = "";
             this.TextBox_id.Size = new System.Drawing.Size(200, 35);
             this.TextBox_id.TabIndex = 17;
+            this.TextBox_id.TextChanged += new System.EventHandler(this.TextBox_id_TextChanged);
             // 
             // TextBox_user
             // 
@@ -178,7 +179,7 @@
             this.TextBox_user.Name = "TextBox_user";
             this.TextBox_user.PasswordChar = '\0';
             this.TextBox_user.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
-            this.TextBox_user.PlaceholderText = "Nuevo usuario";
+            this.TextBox_user.PlaceholderText = "Usuario";
             this.TextBox_user.SelectedText = "";
             this.TextBox_user.Size = new System.Drawing.Size(200, 35);
             this.TextBox_user.TabIndex = 18;
