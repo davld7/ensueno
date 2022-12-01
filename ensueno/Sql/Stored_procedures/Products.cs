@@ -18,6 +18,7 @@ namespace ensueno.Sql.Stored_procedures
         private SqlDataAdapter data_adapter;
         private DataTable data_table;
         private SqlDataReader data_reader;
+        private byte[] image;
         public DataTable Read()
         {
 
@@ -43,7 +44,7 @@ namespace ensueno.Sql.Stored_procedures
                 Disconnect();
             }
         }
-        public SqlDataReader Read_image(int id)
+        public byte[] Read_image(int id)
         {
             try
             {
@@ -55,7 +56,9 @@ namespace ensueno.Sql.Stored_procedures
                 };                
                 data_reader = command.ExecuteReader();
                 data_reader.Read();
-                return data_reader;
+                image = (byte[])(data_reader[0]);
+                data_reader.Close();
+                return image;
             }
             catch(Exception ex)
             {

@@ -18,7 +18,6 @@ namespace ensueno.Presentation.Main
         private string image_location;
         private byte[] image;
         private readonly Products products = new Products();
-        private SqlDataReader data_reader;
         private MemoryStream memory_stream;
         public Form_products()
         {
@@ -112,15 +111,11 @@ namespace ensueno.Presentation.Main
                 }
                 else
                 {
-                    TextBox_id.Text = DataGridView_products.Rows[e.RowIndex].Cells[0].Value.ToString();
-                    data_reader = products.Read_image(int.Parse(TextBox_id.Text));
-                    image = (byte[])(data_reader[0]);
-                    data_reader.Close();
-                    memory_stream = new MemoryStream(image);
-                    PictureBox_product.Image = Image.FromStream(memory_stream);
+                    TextBox_id.Text = DataGridView_products.Rows[e.RowIndex].Cells[0].Value.ToString();                   
                     TextBox_name.Text = DataGridView_products.Rows[e.RowIndex].Cells[1].Value.ToString();
                     TextBox_stock.Text = DataGridView_products.Rows[e.RowIndex].Cells[2].Value.ToString();
                     TextBox_unit_price.Text = DataGridView_products.Rows[e.RowIndex].Cells[3].Value.ToString();
+                    Read_image();
                 }
             }
             catch (Exception ex)
@@ -128,7 +123,12 @@ namespace ensueno.Presentation.Main
                 MessageBox.Show(ex.Message);
             }
         }
-
+        private void Read_image()
+        {
+            image = products.Read_image(int.Parse(TextBox_id.Text));
+            memory_stream = new MemoryStream(image);
+            PictureBox_product.Image = Image.FromStream(memory_stream);
+        }
         private void TextBox_id_TextChanged(object sender, EventArgs e)
         {
             if (TextBox_id.Text != string.Empty)
