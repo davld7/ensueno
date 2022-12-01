@@ -112,12 +112,11 @@ create procedure employee_update
     @employee_last_name nvarchar(50),
     @employee_phone nvarchar(20),
     @employee_address nvarchar(100),
-    @employee_user nvarchar (20),
     @employee_admin bit
 as
 begin
     update EMPLOYEES
-    set employee_id_card=@employee_id_card, employee_name=@employee_name, employee_last_name=@employee_last_name, employee_phone=@employee_phone, employee_address=@employee_address, employee_user=@employee_user, employee_admin=@employee_admin
+    set employee_id_card=@employee_id_card, employee_name=@employee_name, employee_last_name=@employee_last_name, employee_phone=@employee_phone, employee_address=@employee_address, employee_admin=@employee_admin
 	where employee_id=@employee_id
 end
 go
@@ -135,12 +134,11 @@ go
 
 --Cambiar estado del empleado a activado.
 create procedure employee_activate
-    @employee_id int,
-    @employee_user nvarchar (20)
+    @employee_id int
 as
 begin
     update EMPLOYEES
-    set employee_active=1, employee_user=@employee_user
+    set employee_active=1
 	where employee_id=@employee_id
 end
 go
@@ -179,7 +177,7 @@ begin
 end
 go
 
---Leer por cédula
+--Leer por cédula.
 create procedure employee_read_by_id_card
     @employee_id_card nvarchar(20)
 as
@@ -187,5 +185,17 @@ begin
     select *
     from EMPLOYEES
     where employee_id_card=@employee_id_card
+end
+go
+
+--validar actualizar cédula.
+create procedure employee_update_id_card
+    @employee_id int,
+    @employee_id_card nvarchar(20)
+as
+begin
+    select *
+    from EMPLOYEES
+    where employee_id=@employee_id and employee_id_card=@employee_id_card
 end
 go
