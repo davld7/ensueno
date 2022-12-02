@@ -33,12 +33,12 @@ go
 --Crear empleado.
 
 create procedure employee_create
-    @employee_id_card nvarchar (20),
+    @employee_id_card nvarchar(20),
     @employee_name nvarchar(50),
     @employee_last_name nvarchar(50),
     @employee_phone nvarchar(20),
     @employee_address nvarchar(100),
-    @employee_user nvarchar (20),
+    @employee_user nvarchar(20),
     @employee_admin bit
 as
 begin
@@ -92,9 +92,9 @@ begin
 end
 go
 
---Leer por user.
+--Validar por user.
 
-create procedure employee_read_by_user
+create procedure employee_validate_user
     @employee_user nvarchar(20)
 as
 begin
@@ -156,7 +156,7 @@ go
 
 --Autocompletar por nombre.
 create procedure employees_read_by_name
-    @employee_name nvarchar (50)
+    @employee_name nvarchar(50)
 as
 begin
     select e.employee_id as 'ID', e.employee_id_card as 'Cédula', e.employee_name as 'Nombre', e.employee_last_name as 'Apellido', e.employee_phone as 'Teléfono', e.employee_address as 'Dirección', e.employee_user as 'Usuario', e.employee_admin as 'Administrador'
@@ -168,7 +168,7 @@ go
 
 --Autocompletar por apellido.
 create procedure employees_read_by_last_name
-    @employee_last_name nvarchar (50)
+    @employee_last_name nvarchar(50)
 as
 begin
     select e.employee_id as 'ID', e.employee_id_card as 'Cédula', e.employee_name as 'Nombre', e.employee_last_name as 'Apellido', e.employee_phone as 'Teléfono', e.employee_address as 'Dirección', e.employee_user as 'Usuario', e.employee_admin as 'Administrador'
@@ -177,25 +177,25 @@ begin
 end
 go
 
---Leer por cédula.
-create procedure employee_read_by_id_card
-    @employee_id_card nvarchar(20)
+--Validar cédula en empleados.
+create procedure employees_validate_id_card
+    @id_card nvarchar(20)
 as
 begin
     select *
     from EMPLOYEES
-    where employee_id_card=@employee_id_card
+    where employee_id_card=@id_card
 end
 go
 
---validar actualizar cédula.
-create procedure employee_update_id_card
-    @employee_id int,
-    @employee_id_card nvarchar(20)
+--Validar actualizar cédula en empleados.
+create procedure employees_validate_update_id_card
+	@id int,
+    @id_card nvarchar(20)
 as
 begin
     select *
     from EMPLOYEES
-    where employee_id=@employee_id and employee_id_card=@employee_id_card
+    where employee_id=@id and employee_id_card=@id_card
 end
 go
