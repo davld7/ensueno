@@ -52,11 +52,19 @@ namespace ensueno.Presentation.Main
         private void Button_create_Click(object sender, EventArgs e)
         {
             try
-            {
+            {                
+                //Convertir imagen a byte[].
                 FileStream file_stream = new FileStream(image_location, FileMode.Open, FileAccess.Read);
-                BinaryReader reader = new BinaryReader(file_stream);
-                image = reader.ReadBytes((int)file_stream.Length);
-                if (products.Create(TextBox_name.Text, int.Parse(TextBox_stock.Text), decimal.Parse(TextBox_unit_price.Text), image))
+                BinaryReader bynary_reader = new BinaryReader(file_stream);
+                image = bynary_reader.ReadBytes((int)file_stream.Length);
+                //validar si el nombre existe en productos.
+                DataTable products_validate_name = products.Validate_name(TextBox_name.Text);
+                if (products_validate_name.Rows.Count > 0)
+                {
+                    MessageBox.Show("Ya existe el nombre en productos.");
+                    Clear_textboxes();
+                }                
+                else if(products.Create(TextBox_name.Text, int.Parse(TextBox_stock.Text), decimal.Parse(TextBox_unit_price.Text), image))
                 {
                     MessageBox.Show("Se ha creado el registro del producto.");
                     Clear_textboxes();
@@ -143,6 +151,42 @@ namespace ensueno.Presentation.Main
                 Button_update.Enabled = false;
                 Button_delete.Enabled = false;
             }
+        }
+
+        private void Button_update_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //Convertir imagen a byte[].
+                FileStream file_stream = new FileStream(image_location, FileMode.Open, FileAccess.Read);
+                BinaryReader bynary_reader = new BinaryReader(file_stream);
+                image = bynary_reader.ReadBytes((int)file_stream.Length);
+                //validar si el nombre existe en productos y si es el mismo producto, así poder actualizar.
+                DataTable validate_update_name = products.Validate_update_name(int.Parse(TextBox_id.Text), TextBox_name.Text);
+                if (validate_update_name.Rows.Count > 0 && products.Update(int.Parse(TextBox_id.Text), TextBox_name.Text, int.Parse(TextBox_stock.Text), decimal.Parse(TextBox_unit_price.Text),image))
+                {
+                    MessageBox.Show("Se ha actualizado el registro del producto.");
+                    Clear_textboxes();
+                    Read();
+                }
+                else if (products.Update(int.Parse(TextBox_id.Text), TextBox_name.Text, int.Parse(TextBox_stock.Text), decimal.Parse(TextBox_unit_price.Text), image))
+                {
+                    MessageBox.Show("Se ha actualizado el registro del producto.");
+                    Clear_textboxes();
+                    Read();
+                }
+                else
+                {
+                    MessageBox.Show("No se ha actualizado el registro del producto.");
+                    Clear_textboxes();
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Agregue una imagen.");
+                MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }

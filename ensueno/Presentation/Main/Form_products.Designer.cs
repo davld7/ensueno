@@ -225,6 +225,7 @@
             this.Button_update.Size = new System.Drawing.Size(200, 30);
             this.Button_update.TabIndex = 24;
             this.Button_update.Text = "ACTUALIZAR";
+            this.Button_update.Click += new System.EventHandler(this.Button_update_Click);
             // 
             // Button_create
             // 

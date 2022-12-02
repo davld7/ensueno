@@ -78,7 +78,82 @@ namespace ensueno.Sql.Stored_procedures
                 };
                 command.Parameters.Add(new SqlParameter("@unit_price", unit_price));
                 command.Parameters.Add(new SqlParameter("@image", image));
-                command.ExecuteNonQuery();                
+                command.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            finally
+            {
+                Disconnect();
+            }
+        }
+        public DataTable Validate_name(string name)
+        {
+
+            try
+            {
+                Connect();
+                command = new SqlCommand($"exec products_validate_name '{name}'")
+                {
+                    Connection = Get_connection()
+                };
+                data_adapter = new SqlDataAdapter(command);
+                data_table = new DataTable();
+                data_adapter.Fill(data_table);
+                return data_table;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+            finally
+            {
+                Disconnect();
+            }
+        }
+        public DataTable Validate_update_name(int id, string name)
+        {
+
+            try
+            {
+                Connect();
+                command = new SqlCommand($"exec products_validate_update_name {id},'{name}'")
+                {
+                    Connection = Get_connection()
+                };
+                data_adapter = new SqlDataAdapter(command);
+                data_table = new DataTable();
+                data_adapter.Fill(data_table);
+                return data_table;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+            finally
+            {
+                Disconnect();
+            }
+        }
+        public bool Update(int id, string name, int stock, decimal unit_price, byte[] image)
+        {
+            try
+            {
+                Connect();
+                query = $"exec product_update {id},'{name}',{stock},@unit_price,@image";
+                command = new SqlCommand(query)
+                {
+                    Connection = Get_connection()
+                };
+                command.Parameters.Add(new SqlParameter("@unit_price", unit_price));
+                command.Parameters.Add(new SqlParameter("@image", image));
+                command.ExecuteNonQuery();
                 return true;
             }
             catch (Exception ex)
