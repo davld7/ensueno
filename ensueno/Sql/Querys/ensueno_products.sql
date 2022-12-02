@@ -63,3 +63,85 @@ begin
     where product_id=@product_id
 end
 go
+
+--Actualizar producto.
+create procedure product_update
+    @product_id int,
+    @product_name nvarchar(50),
+    @product_stock int,
+    @product_unit_price decimal,
+    @product_image image   
+as
+begin
+    update PRODUCTS
+    set product_name=@product_name, product_stock=@product_stock, product_unit_price=@product_unit_price, product_image=@product_image
+	where product_id=@product_id
+end
+go
+
+--Cambiar estado del producto a desactivado.
+create procedure product_deactivate
+    @product_id int
+as
+begin
+    update PRODUCTS
+    set product_active=0
+	where product_id=@product_id
+end
+go
+
+--Cambiar estado del producto a activado.
+create procedure product_activate
+    @product_id int
+as
+begin
+    update PRODUCTS
+    set product_active=1
+	where product_id=@product_id
+end
+go
+
+--Leer historial de productos.
+
+create procedure products_read_history
+as
+begin
+    select p.product_id as 'ID', p.product_name as 'Nombre', p.product_stock as 'Existencia', p.product_unit_price as 'Precio unitario'
+    from PRODUCTS as p
+    where product_active=0
+end
+go
+
+--Autocompletar por nombre.
+create procedure products_read_by_name
+    @product_name nvarchar(50)
+as
+begin
+    select p.product_id as 'ID', p.product_name as 'Nombre', p.product_stock as 'Existencia', p.product_unit_price as 'Precio unitario'
+    from PRODUCTS as p
+    where product_name like '%'+@product_name+'%' and product_active=1
+end
+go
+
+--Validar nombre en productos.
+create procedure products_validate_name
+    @product_name nvarchar(50)
+as
+begin
+    select *
+    from PRODUCTS
+    where product_name=@product_name
+end
+go
+
+--Validar actualizar nombre en productos.
+create procedure products_validate_update_name
+	@product_id int,
+    @product_name nvarchar(50)
+as
+begin
+    select *
+    from PRODUCTS
+    where product_id=@product_id and product_name=@product_name
+end
+go

@@ -19,6 +19,7 @@ namespace ensueno.Presentation.Main
         private byte[] image;
         private readonly Products products = new Products();
         private MemoryStream memory_stream;
+        private Form_products_history fh;
         public Form_products()
         {
             InitializeComponent();
@@ -187,6 +188,40 @@ namespace ensueno.Presentation.Main
                 MessageBox.Show(ex.Message);
             }
 
+        }
+
+        private void TextBox_read_by_name_TextChanged(object sender, EventArgs e)
+        {
+            DataGridView_products.DataSource = products.Read_by_name(TextBox_read_by_name.Text);
+        }
+
+        private void Button_delete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (products.Delete(int.Parse(TextBox_id.Text)))
+                {
+                    MessageBox.Show("Se ha borrado el registro del producto.");
+                    Clear_textboxes();
+                    Read();
+                }
+                else
+                {
+                    MessageBox.Show("No se ha borrado el registro del producto.");
+                    Clear_textboxes();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void Button_history_Click(object sender, EventArgs e)
+        {
+            fh = new Form_products_history();
+            fh.ShowDialog();
+            Read();
         }
     }
 }

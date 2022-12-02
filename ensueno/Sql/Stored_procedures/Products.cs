@@ -166,5 +166,98 @@ namespace ensueno.Sql.Stored_procedures
                 Disconnect();
             }
         }
+        public DataTable Read_by_name(string name)
+        {
+
+            try
+            {
+                Connect();
+                command = new SqlCommand($"exec products_read_by_name '{name}'")
+                {
+                    Connection = Get_connection()
+                };
+                data_adapter = new SqlDataAdapter(command);
+                data_table = new DataTable();
+                data_adapter.Fill(data_table);
+                return data_table;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+            finally
+            {
+                Disconnect();
+            }
+        }
+        public bool Delete(int id)
+        {
+            try
+            {
+                Connect();
+                command = new SqlCommand($"exec product_deactivate {id}")
+                {
+                    Connection = Get_connection()
+                };
+                command.ExecuteNonQuery();                
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            finally
+            {
+                Disconnect();
+            }
+        }
+        public DataTable Read_history()
+        {
+            try
+            {
+                Connect();
+                command = new SqlCommand("exec products_read_history")
+                {
+                    Connection = Get_connection()
+                };
+                data_adapter = new SqlDataAdapter(command);
+                data_table = new DataTable();
+                data_adapter.Fill(data_table);
+                return data_table;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+            finally
+            {
+                Disconnect();
+            }
+        }
+        public bool Restore(int id)
+        {
+            try
+            {
+                Connect();
+                command = new SqlCommand($"exec product_activate {id}")
+                {
+                    Connection = Get_connection()
+                };
+                command.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            finally
+            {
+                Disconnect();
+            }
+        }
     }
 }

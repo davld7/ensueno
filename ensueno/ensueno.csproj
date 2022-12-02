@@ -121,6 +121,12 @@
     <Compile Include="Presentation\Main\Form_products.Designer.cs">
       <DependentUpon>Form_products.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Main\Form_products_history.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Main\Form_products_history.Designer.cs">
+      <DependentUpon>Form_products_history.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sql\Builder.cs" />
@@ -160,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Main\Form_products.resx">
       <DependentUpon>Form_products.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Main\Form_products_history.resx">
+      <DependentUpon>Form_products_history.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

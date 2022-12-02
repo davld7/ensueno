@@ -56,7 +56,7 @@ go
 --Actualizar cliente.
 create procedure client_update
     @client_id int,
-    @client_id_card nvarchar (20),
+    @client_id_card nvarchar(20),
     @client_name nvarchar(50),
     @client_last_name nvarchar(50),
     @client_phone nvarchar(20),
