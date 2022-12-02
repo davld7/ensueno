@@ -76,7 +76,7 @@ namespace ensueno.Presentation.Login
                 builder.Build(TextBox_user.Text, TextBox_password.Text);
                 if (employees.Connect())
                 {
-                    data_row = employees.Read_by_user(TextBox_user.Text);
+                    data_row = employees.Validate_user_login(TextBox_user.Text);
                     Clear_textboxes();
                     string employee_name = data_row.ItemArray[2].ToString();
                     string employee_last_name = data_row.ItemArray[3].ToString();

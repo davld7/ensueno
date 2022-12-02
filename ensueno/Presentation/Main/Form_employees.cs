@@ -39,11 +39,20 @@ namespace ensueno.Presentation.Main
         {
             try
             {
-                DataTable validate_id_card = employees.Validate_id_card(TextBox_id_card.Text);
+                //validar si la cédula existe en clientes.
+                DataTable clients_validate_id_card = employees.Clients_validate_id_card(TextBox_id_card.Text);
+                //validar si la cédula existe en empleados.
+                DataTable employees_validate_id_card = employees.Validate_id_card(TextBox_id_card.Text);
+                //validar si el usuario existe en empleados.
                 DataTable validate_user = employees.Validate_user(TextBox_user.Text);
-                if (validate_id_card.Rows.Count > 0)
+                if (clients_validate_id_card.Rows.Count > 0)
                 {
-                    MessageBox.Show("Ya existe la cédula.");
+                    MessageBox.Show("Ya existe la cédula en clientes.");
+                    Clear_textboxes();
+                }
+                else if (employees_validate_id_card.Rows.Count > 0)
+                {
+                    MessageBox.Show("Ya existe la cédula en empleados.");
                     Clear_textboxes();
                 }
                 else if (validate_user.Rows.Count > 0)
@@ -72,11 +81,18 @@ namespace ensueno.Presentation.Main
         {
             try
             {
-                DataTable validate_update_id_card = employees.Validate_update_id_card(int.Parse(TextBox_id.Text), TextBox_id_card.Text);
-                DataTable validate_id_card = employees.Validate_id_card(TextBox_id_card.Text);
+                //validar si la cédula existe en clientes.
+                DataTable clients_validate_id_card = employees.Clients_validate_id_card(TextBox_id_card.Text);
+                //validar si existe en empleados y si es el mismo empleado, así poder actualizar.
+                DataTable validate_update_id_card = employees.Validate_update_id_card(int.Parse(TextBox_id.Text), TextBox_id_card.Text);                
                 if (TextBox_user.Text == Properties.Settings.Default.active_user)
                 {
                     MessageBox.Show("No puedes actualizar tu registro usando tus credenciales en la conexión actual.");
+                    Clear_textboxes();
+                }
+                else if (clients_validate_id_card.Rows.Count > 0)
+                {
+                    MessageBox.Show("Ya existe la cédula en clientes.");
                     Clear_textboxes();
                 }
                 else if (validate_update_id_card.Rows.Count > 0 && employees.Update(int.Parse(TextBox_id.Text), TextBox_id_card.Text, TextBox_name.Text, TextBox_last_name.Text, TextBox_phone.Text, TextBox_address.Text, TextBox_user.Text, TextBox_password.Text, CheckBox_admin.Checked))
@@ -85,10 +101,11 @@ namespace ensueno.Presentation.Main
                     Clear_textboxes();
                     Read();
                 }
-                else if (validate_id_card.Rows.Count > 0)
+                else if (employees.Update(int.Parse(TextBox_id.Text), TextBox_id_card.Text, TextBox_name.Text, TextBox_last_name.Text, TextBox_phone.Text, TextBox_address.Text, TextBox_user.Text, TextBox_password.Text, CheckBox_admin.Checked))
                 {
-                    MessageBox.Show("Ya existe la cédula.");
+                    MessageBox.Show("Se ha actualizado el registro del empleado.");
                     Clear_textboxes();
+                    Read();
                 }
                 else
                 {

@@ -114,39 +114,14 @@ namespace ensueno.Sql.Stored_procedures
             {
                 Disconnect();
             }
-        }
+        }        
         public DataTable Validate_id_card(string id_card)
         {
 
             try
             {
                 Connect();
-                command = new SqlCommand($"exec employee_read_by_id_card '{id_card}'")
-                {
-                    Connection = Get_connection()
-                };
-                data_adapter = new SqlDataAdapter(command);
-                data_table = new DataTable();
-                data_adapter.Fill(data_table);
-                return data_table;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                return null;
-            }
-            finally
-            {
-                Disconnect();
-            }
-        }
-        public DataTable Validate_user(string user)
-        {
-
-            try
-            {
-                Connect();
-                command = new SqlCommand($"exec employee_read_by_user '{user}'")
+                command = new SqlCommand($"exec employees_validate_id_card '{id_card}'")
                 {
                     Connection = Get_connection()
                 };
@@ -171,7 +146,7 @@ namespace ensueno.Sql.Stored_procedures
             try
             {
                 Connect();
-                command = new SqlCommand($"exec employee_update_id_card {id},'{id_card}'")
+                command = new SqlCommand($"exec employees_validate_update_id_card {id},'{id_card}'")
                 {
                     Connection = Get_connection()
                 };
@@ -190,13 +165,13 @@ namespace ensueno.Sql.Stored_procedures
                 Disconnect();
             }
         }
-        public DataTable Validate_update_user(int id, string user)
+        public DataTable Clients_validate_id_card(string id_card)
         {
 
             try
             {
                 Connect();
-                command = new SqlCommand($"exec employee_update_user {id},'{user}'")
+                command = new SqlCommand($"exec clients_validate_id_card '{id_card}'")
                 {
                     Connection = Get_connection()
                 };
@@ -214,13 +189,38 @@ namespace ensueno.Sql.Stored_procedures
             {
                 Disconnect();
             }
-        }        
-        public DataRow Read_by_user(string user)
+        }
+        public DataTable Validate_user(string user)
+        {
+
+            try
+            {
+                Connect();
+                command = new SqlCommand($"exec employee_validate_user '{user}'")
+                {
+                    Connection = Get_connection()
+                };
+                data_adapter = new SqlDataAdapter(command);
+                data_table = new DataTable();
+                data_adapter.Fill(data_table);
+                return data_table;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+            finally
+            {
+                Disconnect();
+            }
+        }                        
+        public DataRow Validate_user_login(string user)
         {
             try
             {
                 Connect();
-                command = new SqlCommand($"exec employee_read_by_user '{user}'")
+                command = new SqlCommand($"exec employee_validate_user '{user}'")
                 {
                     Connection = Get_connection()
                 };
@@ -240,7 +240,6 @@ namespace ensueno.Sql.Stored_procedures
                 Disconnect();
             }
         }
-
         public bool Create(string id_card, string name, string last_name, string phone, string address, string user, string password, bool admin)
         {
             try
