@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace ensueno.Presentation.Main
 {
-    public partial class Form_employees_history : Form
+    public partial class Form_clients_history : Form
     {
-        private readonly Employees employees = new Employees();
-        public Form_employees_history()
+        private readonly Clients clients = new Clients();
+        public Form_clients_history()
         {
             InitializeComponent();
             Apply_dark_mode();
@@ -32,32 +32,29 @@ namespace ensueno.Presentation.Main
             }
         }
         private void Read_history()
-        {            
-            DataGridView_employees_history.DataSource = employees.Read_history();
+        {
+            DataGridView_clients_history.DataSource = clients.Read_history();
         }
 
-        private void Form_employees_history_Load(object sender, EventArgs e)
+        private void Form_clients_history_Load(object sender, EventArgs e)
         {
             Read_history();
             TextBox_id.Enabled = false;
-            TextBox_user.Enabled = false;
-            TextBox_password.Enabled = false;
             Button_restore.Enabled = false;
         }
 
-        private void DataGridView_employees_history_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void DataGridView_clients_history_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-                if (DataGridView_employees_history.Rows[e.RowIndex].Cells[0].Value.ToString() == string.Empty)
+                if (DataGridView_clients_history.Rows[e.RowIndex].Cells[0].Value.ToString() == string.Empty)
                 {
                     Clear_textboxes();
                     MessageBox.Show("Elija una fila válida.");
                 }
                 else
                 {
-                    TextBox_id.Text = DataGridView_employees_history.Rows[e.RowIndex].Cells[0].Value.ToString();                    
-                    TextBox_user.Text = DataGridView_employees_history.Rows[e.RowIndex].Cells[6].Value.ToString();                    
+                    TextBox_id.Text = DataGridView_clients_history.Rows[e.RowIndex].Cells[0].Value.ToString();                    
                 }
             }
             catch (Exception ex)
@@ -67,22 +64,20 @@ namespace ensueno.Presentation.Main
         }
         private void Clear_textboxes()
         {
-            TextBox_id.Text = "";            
-            TextBox_user.Text="";
-            TextBox_password.Text="";
+            TextBox_id.Text = "";
         }
 
         private void Button_restore_Click(object sender, EventArgs e)
-        {            
-            if (employees.Restore(int.Parse(TextBox_id.Text), TextBox_user.Text, TextBox_password.Text))
+        {
+            if (clients.Restore(int.Parse(TextBox_id.Text)))
             {
-                MessageBox.Show("Se ha restaurado el registro del empleado.");
+                MessageBox.Show("Se ha restaurado el registro del cliente.");
                 Clear_textboxes();
                 Read_history();
             }
             else
             {
-                MessageBox.Show("No se ha restaurado el registro del empleado.");
+                MessageBox.Show("No se ha restaurado el registro del cliente.");
                 Clear_textboxes();
             }
         }
@@ -90,13 +85,11 @@ namespace ensueno.Presentation.Main
         private void TextBox_id_TextChanged(object sender, EventArgs e)
         {
             if (TextBox_id.Text != string.Empty)
-            {                
-                TextBox_password.Enabled = true;
+            {
                 Button_restore.Enabled = true;
             }
             else
-            {                
-                TextBox_password.Enabled = false;
+            {               
                 Button_restore.Enabled = false;
             }
         }

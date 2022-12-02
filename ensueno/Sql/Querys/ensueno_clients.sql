@@ -145,3 +145,4 @@ begin
     from CLIENTS
     where client_id=@id and client_id_card=@id_card
 end
+go
