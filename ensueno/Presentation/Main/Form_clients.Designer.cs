@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.DataGridView_clients = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -75,43 +75,43 @@
             // DataGridView_clients
             // 
             this.DataGridView_clients.AllowUserToResizeRows = false;
-            dataGridViewCellStyle29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(199)))), ((int)(((byte)(195)))));
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle29.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.DataGridView_clients.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle33.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(199)))), ((int)(((byte)(195)))));
+            dataGridViewCellStyle33.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle33.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.DataGridView_clients.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle33;
             this.DataGridView_clients.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle30.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle30.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGridView_clients.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle34.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle34.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle34.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridView_clients.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle34;
             this.DataGridView_clients.ColumnHeadersHeight = 22;
             this.DataGridView_clients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle31.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(217)))), ((int)(((byte)(215)))));
-            dataGridViewCellStyle31.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle31.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle31.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(129)))), ((int)(((byte)(121)))));
-            dataGridViewCellStyle31.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGridView_clients.DefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle35.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(217)))), ((int)(((byte)(215)))));
+            dataGridViewCellStyle35.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle35.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(129)))), ((int)(((byte)(121)))));
+            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGridView_clients.DefaultCellStyle = dataGridViewCellStyle35;
             this.DataGridView_clients.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(189)))), ((int)(((byte)(184)))));
             this.DataGridView_clients.Location = new System.Drawing.Point(13, 83);
             this.DataGridView_clients.Name = "DataGridView_clients";
             this.DataGridView_clients.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle32.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle32.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle32.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGridView_clients.RowHeadersDefaultCellStyle = dataGridViewCellStyle32;
+            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle36.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle36.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle36.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridView_clients.RowHeadersDefaultCellStyle = dataGridViewCellStyle36;
             this.DataGridView_clients.RowHeadersVisible = false;
             this.DataGridView_clients.Size = new System.Drawing.Size(630, 400);
             this.DataGridView_clients.TabIndex = 17;
@@ -155,6 +155,7 @@
             this.TextBox_read_by_last_name.ForeColor = System.Drawing.SystemColors.GrayText;
             this.TextBox_read_by_last_name.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TextBox_read_by_last_name.Location = new System.Drawing.Point(397, 42);
+            this.TextBox_read_by_last_name.MaxLength = 50;
             this.TextBox_read_by_last_name.Name = "TextBox_read_by_last_name";
             this.TextBox_read_by_last_name.PasswordChar = '\0';
             this.TextBox_read_by_last_name.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
@@ -163,6 +164,7 @@
             this.TextBox_read_by_last_name.Size = new System.Drawing.Size(170, 35);
             this.TextBox_read_by_last_name.TabIndex = 19;
             this.TextBox_read_by_last_name.TextChanged += new System.EventHandler(this.TextBox_read_by_last_name_TextChanged);
+            this.TextBox_read_by_last_name.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_read_by_last_name_KeyPress);
             // 
             // TextBox_read_by_name
             // 
@@ -180,6 +182,7 @@
             this.TextBox_read_by_name.ForeColor = System.Drawing.SystemColors.GrayText;
             this.TextBox_read_by_name.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TextBox_read_by_name.Location = new System.Drawing.Point(221, 42);
+            this.TextBox_read_by_name.MaxLength = 50;
             this.TextBox_read_by_name.Name = "TextBox_read_by_name";
             this.TextBox_read_by_name.PasswordChar = '\0';
             this.TextBox_read_by_name.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
@@ -188,6 +191,7 @@
             this.TextBox_read_by_name.Size = new System.Drawing.Size(170, 35);
             this.TextBox_read_by_name.TabIndex = 18;
             this.TextBox_read_by_name.TextChanged += new System.EventHandler(this.TextBox_read_by_name_TextChanged);
+            this.TextBox_read_by_name.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_read_by_name_KeyPress);
             // 
             // TextBox_id
             // 
@@ -210,9 +214,10 @@
             this.TextBox_id.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
             this.TextBox_id.PlaceholderText = "ID";
             this.TextBox_id.SelectedText = "";
-            this.TextBox_id.Size = new System.Drawing.Size(200, 35);
+            this.TextBox_id.Size = new System.Drawing.Size(175, 35);
             this.TextBox_id.TabIndex = 20;
             this.TextBox_id.TextChanged += new System.EventHandler(this.TextBox_id_TextChanged);
+            this.TextBox_id.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_id_KeyPress);
             // 
             // TextBox_address
             // 
@@ -230,13 +235,15 @@
             this.TextBox_address.ForeColor = System.Drawing.SystemColors.GrayText;
             this.TextBox_address.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TextBox_address.Location = new System.Drawing.Point(649, 206);
+            this.TextBox_address.MaxLength = 100;
             this.TextBox_address.Name = "TextBox_address";
             this.TextBox_address.PasswordChar = '\0';
             this.TextBox_address.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
             this.TextBox_address.PlaceholderText = "Dirección";
             this.TextBox_address.SelectedText = "";
-            this.TextBox_address.Size = new System.Drawing.Size(200, 35);
+            this.TextBox_address.Size = new System.Drawing.Size(175, 35);
             this.TextBox_address.TabIndex = 25;
+            this.TextBox_address.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_address_KeyPress);
             // 
             // TextBox_phone
             // 
@@ -254,13 +261,15 @@
             this.TextBox_phone.ForeColor = System.Drawing.SystemColors.GrayText;
             this.TextBox_phone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TextBox_phone.Location = new System.Drawing.Point(649, 165);
+            this.TextBox_phone.MaxLength = 8;
             this.TextBox_phone.Name = "TextBox_phone";
             this.TextBox_phone.PasswordChar = '\0';
             this.TextBox_phone.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
             this.TextBox_phone.PlaceholderText = "Teléfono";
             this.TextBox_phone.SelectedText = "";
-            this.TextBox_phone.Size = new System.Drawing.Size(200, 35);
+            this.TextBox_phone.Size = new System.Drawing.Size(175, 35);
             this.TextBox_phone.TabIndex = 24;
+            this.TextBox_phone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_phone_KeyPress);
             // 
             // TextBox_last_name
             // 
@@ -278,13 +287,15 @@
             this.TextBox_last_name.ForeColor = System.Drawing.SystemColors.GrayText;
             this.TextBox_last_name.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TextBox_last_name.Location = new System.Drawing.Point(649, 124);
+            this.TextBox_last_name.MaxLength = 50;
             this.TextBox_last_name.Name = "TextBox_last_name";
             this.TextBox_last_name.PasswordChar = '\0';
             this.TextBox_last_name.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
             this.TextBox_last_name.PlaceholderText = "Apellido";
             this.TextBox_last_name.SelectedText = "";
-            this.TextBox_last_name.Size = new System.Drawing.Size(200, 35);
+            this.TextBox_last_name.Size = new System.Drawing.Size(175, 35);
             this.TextBox_last_name.TabIndex = 23;
+            this.TextBox_last_name.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_last_name_KeyPress);
             // 
             // TextBox_name
             // 
@@ -302,13 +313,15 @@
             this.TextBox_name.ForeColor = System.Drawing.SystemColors.GrayText;
             this.TextBox_name.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TextBox_name.Location = new System.Drawing.Point(649, 83);
+            this.TextBox_name.MaxLength = 50;
             this.TextBox_name.Name = "TextBox_name";
             this.TextBox_name.PasswordChar = '\0';
             this.TextBox_name.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
             this.TextBox_name.PlaceholderText = "Nombre";
             this.TextBox_name.SelectedText = "";
-            this.TextBox_name.Size = new System.Drawing.Size(200, 35);
+            this.TextBox_name.Size = new System.Drawing.Size(175, 35);
             this.TextBox_name.TabIndex = 22;
+            this.TextBox_name.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_name_KeyPress);
             // 
             // TextBox_id_card
             // 
@@ -326,13 +339,15 @@
             this.TextBox_id_card.ForeColor = System.Drawing.SystemColors.GrayText;
             this.TextBox_id_card.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TextBox_id_card.Location = new System.Drawing.Point(649, 42);
+            this.TextBox_id_card.MaxLength = 17;
             this.TextBox_id_card.Name = "TextBox_id_card";
             this.TextBox_id_card.PasswordChar = '\0';
             this.TextBox_id_card.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
             this.TextBox_id_card.PlaceholderText = "Cédula";
             this.TextBox_id_card.SelectedText = "";
-            this.TextBox_id_card.Size = new System.Drawing.Size(200, 35);
+            this.TextBox_id_card.Size = new System.Drawing.Size(175, 35);
             this.TextBox_id_card.TabIndex = 21;
+            this.TextBox_id_card.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_id_card_KeyPress);
             // 
             // Button_clear
             // 
@@ -372,7 +387,7 @@
             this.Button_history.IndicateFocus = true;
             this.Button_history.Location = new System.Drawing.Point(649, 355);
             this.Button_history.Name = "Button_history";
-            this.Button_history.Size = new System.Drawing.Size(200, 30);
+            this.Button_history.Size = new System.Drawing.Size(175, 30);
             this.Button_history.TabIndex = 30;
             this.Button_history.Text = "HISTORIAL";
             this.Button_history.Click += new System.EventHandler(this.Button_history_Click);
@@ -392,7 +407,7 @@
             this.Button_delete.IndicateFocus = true;
             this.Button_delete.Location = new System.Drawing.Point(649, 319);
             this.Button_delete.Name = "Button_delete";
-            this.Button_delete.Size = new System.Drawing.Size(200, 30);
+            this.Button_delete.Size = new System.Drawing.Size(175, 30);
             this.Button_delete.TabIndex = 29;
             this.Button_delete.Text = "ELIMINAR";
             this.Button_delete.Click += new System.EventHandler(this.Button_delete_Click);
@@ -412,7 +427,7 @@
             this.Button_update.IndicateFocus = true;
             this.Button_update.Location = new System.Drawing.Point(649, 283);
             this.Button_update.Name = "Button_update";
-            this.Button_update.Size = new System.Drawing.Size(200, 30);
+            this.Button_update.Size = new System.Drawing.Size(175, 30);
             this.Button_update.TabIndex = 28;
             this.Button_update.Text = "ACTUALIZAR";
             this.Button_update.Click += new System.EventHandler(this.Button_update_Click);
@@ -432,7 +447,7 @@
             this.Button_create.IndicateFocus = true;
             this.Button_create.Location = new System.Drawing.Point(649, 247);
             this.Button_create.Name = "Button_create";
-            this.Button_create.Size = new System.Drawing.Size(200, 30);
+            this.Button_create.Size = new System.Drawing.Size(175, 30);
             this.Button_create.TabIndex = 27;
             this.Button_create.Text = "CREAR";
             this.Button_create.Click += new System.EventHandler(this.Button_create_Click);

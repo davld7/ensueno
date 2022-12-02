@@ -10,16 +10,20 @@ using System.Windows.Forms;
 using System.IO;
 using ensueno.Sql.Stored_procedures;
 using System.Data.SqlClient;
+using Guna.UI2.WinForms;
+using ensueno.Presentation.Validations;
 
 namespace ensueno.Presentation.Main
 {
     public partial class Form_products : Form
     {
+
         private string image_location;
         private byte[] image;
         private readonly Products products = new Products();
         private MemoryStream memory_stream;
         private Form_products_history fh;
+        Values val=new Values();
         public Form_products()
         {
             InitializeComponent();
@@ -64,7 +68,13 @@ namespace ensueno.Presentation.Main
                 {
                     MessageBox.Show("Ya existe el nombre en productos.");
                     Clear_textboxes();
-                }                
+                }         
+                else if(TextBox_name.Text==string.Empty||TextBox_stock.Text==string.Empty||TextBox_unit_price.Text==string.Empty)
+                {
+                    val.empty_text(TextBox_name);
+                    val.empty_text(TextBox_stock);
+                    val.empty_text(TextBox_unit_price);
+                }
                 else if(products.Create(TextBox_name.Text, int.Parse(TextBox_stock.Text), decimal.Parse(TextBox_unit_price.Text), image))
                 {
                     MessageBox.Show("Se ha creado el registro del producto.");
@@ -222,6 +232,31 @@ namespace ensueno.Presentation.Main
             fh = new Form_products_history();
             fh.ShowDialog();
             Read();
+        }
+
+        private void TextBox_read_by_name_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            val.Search_by_letters(TextBox_read_by_name, e);
+        }
+
+        private void TextBox_id_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            val.numbers_only(TextBox_id, e);
+        }
+
+        private void TextBox_name_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            val.Char_only(TextBox_name, e);
+        }
+
+        private void TextBox_stock_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            val.numbers_only(TextBox_stock,e);
+        }
+
+        private void TextBox_unit_price_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            val.decimal_only(TextBox_unit_price,e);
         }
     }
 }

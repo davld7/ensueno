@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.TextBox_id = new Guna.UI2.WinForms.Guna2TextBox();
@@ -93,9 +93,10 @@
             this.TextBox_id.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
             this.TextBox_id.PlaceholderText = "ID";
             this.TextBox_id.SelectedText = "";
-            this.TextBox_id.Size = new System.Drawing.Size(200, 35);
+            this.TextBox_id.Size = new System.Drawing.Size(175, 35);
             this.TextBox_id.TabIndex = 19;
             this.TextBox_id.TextChanged += new System.EventHandler(this.TextBox_id_TextChanged);
+            this.TextBox_id.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_id_KeyPress);
             // 
             // TextBox_name
             // 
@@ -118,8 +119,9 @@
             this.TextBox_name.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
             this.TextBox_name.PlaceholderText = "Nombre";
             this.TextBox_name.SelectedText = "";
-            this.TextBox_name.Size = new System.Drawing.Size(200, 35);
+            this.TextBox_name.Size = new System.Drawing.Size(175, 35);
             this.TextBox_name.TabIndex = 20;
+            this.TextBox_name.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_name_KeyPress);
             // 
             // TextBox_stock
             // 
@@ -142,8 +144,9 @@
             this.TextBox_stock.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
             this.TextBox_stock.PlaceholderText = "Existencia";
             this.TextBox_stock.SelectedText = "";
-            this.TextBox_stock.Size = new System.Drawing.Size(200, 35);
+            this.TextBox_stock.Size = new System.Drawing.Size(175, 35);
             this.TextBox_stock.TabIndex = 21;
+            this.TextBox_stock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_stock_KeyPress);
             // 
             // TextBox_unit_price
             // 
@@ -166,8 +169,9 @@
             this.TextBox_unit_price.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
             this.TextBox_unit_price.PlaceholderText = "Precio unitario";
             this.TextBox_unit_price.SelectedText = "";
-            this.TextBox_unit_price.Size = new System.Drawing.Size(200, 35);
+            this.TextBox_unit_price.Size = new System.Drawing.Size(175, 35);
             this.TextBox_unit_price.TabIndex = 22;
+            this.TextBox_unit_price.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_unit_price_KeyPress);
             // 
             // Button_history
             // 
@@ -184,7 +188,7 @@
             this.Button_history.IndicateFocus = true;
             this.Button_history.Location = new System.Drawing.Point(649, 467);
             this.Button_history.Name = "Button_history";
-            this.Button_history.Size = new System.Drawing.Size(200, 30);
+            this.Button_history.Size = new System.Drawing.Size(175, 30);
             this.Button_history.TabIndex = 26;
             this.Button_history.Text = "HISTORIAL";
             this.Button_history.Click += new System.EventHandler(this.Button_history_Click);
@@ -204,7 +208,7 @@
             this.Button_delete.IndicateFocus = true;
             this.Button_delete.Location = new System.Drawing.Point(649, 431);
             this.Button_delete.Name = "Button_delete";
-            this.Button_delete.Size = new System.Drawing.Size(200, 30);
+            this.Button_delete.Size = new System.Drawing.Size(175, 30);
             this.Button_delete.TabIndex = 25;
             this.Button_delete.Text = "ELIMINAR";
             this.Button_delete.Click += new System.EventHandler(this.Button_delete_Click);
@@ -224,7 +228,7 @@
             this.Button_update.IndicateFocus = true;
             this.Button_update.Location = new System.Drawing.Point(649, 395);
             this.Button_update.Name = "Button_update";
-            this.Button_update.Size = new System.Drawing.Size(200, 30);
+            this.Button_update.Size = new System.Drawing.Size(175, 30);
             this.Button_update.TabIndex = 24;
             this.Button_update.Text = "ACTUALIZAR";
             this.Button_update.Click += new System.EventHandler(this.Button_update_Click);
@@ -244,7 +248,7 @@
             this.Button_create.IndicateFocus = true;
             this.Button_create.Location = new System.Drawing.Point(649, 359);
             this.Button_create.Name = "Button_create";
-            this.Button_create.Size = new System.Drawing.Size(200, 30);
+            this.Button_create.Size = new System.Drawing.Size(175, 30);
             this.Button_create.TabIndex = 23;
             this.Button_create.Text = "CREAR";
             this.Button_create.Click += new System.EventHandler(this.Button_create_Click);
@@ -252,43 +256,43 @@
             // DataGridView_products
             // 
             this.DataGridView_products.AllowUserToResizeRows = false;
-            dataGridViewCellStyle33.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(199)))), ((int)(((byte)(195)))));
-            dataGridViewCellStyle33.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle33.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.DataGridView_products.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle33;
+            dataGridViewCellStyle25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(199)))), ((int)(((byte)(195)))));
+            dataGridViewCellStyle25.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.DataGridView_products.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
             this.DataGridView_products.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle34.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
-            dataGridViewCellStyle34.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle34.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGridView_products.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle34;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle26.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridView_products.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
             this.DataGridView_products.ColumnHeadersHeight = 22;
             this.DataGridView_products.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle35.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(217)))), ((int)(((byte)(215)))));
-            dataGridViewCellStyle35.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle35.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(129)))), ((int)(((byte)(121)))));
-            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataGridView_products.DefaultCellStyle = dataGridViewCellStyle35;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(217)))), ((int)(((byte)(215)))));
+            dataGridViewCellStyle27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle27.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(129)))), ((int)(((byte)(121)))));
+            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataGridView_products.DefaultCellStyle = dataGridViewCellStyle27;
             this.DataGridView_products.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(189)))), ((int)(((byte)(184)))));
             this.DataGridView_products.Location = new System.Drawing.Point(12, 217);
             this.DataGridView_products.Name = "DataGridView_products";
             this.DataGridView_products.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle36.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle36.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle36.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataGridView_products.RowHeadersDefaultCellStyle = dataGridViewCellStyle36;
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle28.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle28.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle28.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataGridView_products.RowHeadersDefaultCellStyle = dataGridViewCellStyle28;
             this.DataGridView_products.RowHeadersVisible = false;
             this.DataGridView_products.Size = new System.Drawing.Size(630, 280);
             this.DataGridView_products.TabIndex = 27;
@@ -370,6 +374,7 @@
             this.TextBox_read_by_name.Size = new System.Drawing.Size(170, 35);
             this.TextBox_read_by_name.TabIndex = 30;
             this.TextBox_read_by_name.TextChanged += new System.EventHandler(this.TextBox_read_by_name_TextChanged);
+            this.TextBox_read_by_name.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_read_by_name_KeyPress);
             // 
             // Button_clear
             // 

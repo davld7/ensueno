@@ -7,12 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ensueno.Presentation.Validations;
 using ensueno.Sql.Stored_procedures;
+using Guna.UI2.WinForms;
 
 namespace ensueno.Presentation.Main
 {
     public partial class Form_employees : Form
     {
+        Values val = new Values();
         private readonly Employees employees = new Employees();
         private Form_employees_history fh;
         public Form_employees()
@@ -45,6 +48,7 @@ namespace ensueno.Presentation.Main
                 DataTable employees_validate_id_card = employees.Validate_id_card(TextBox_id_card.Text);
                 //validar si el usuario existe en empleados.
                 DataTable validate_user = employees.Validate_user(TextBox_user.Text);
+                
                 if (clients_validate_id_card.Rows.Count > 0)
                 {
                     MessageBox.Show("Ya existe la cédula en clientes.");
@@ -59,6 +63,14 @@ namespace ensueno.Presentation.Main
                 {
                     MessageBox.Show("Ya existe el usuario.");
                     Clear_textboxes();
+                }
+                else if (TextBox_id_card.Text == string.Empty || TextBox_last_name.Text == string.Empty || TextBox_name.Text == string.Empty || TextBox_user.Text == string.Empty || TextBox_password.Text == string.Empty)
+                {
+                    val.empty_text(TextBox_id_card);
+                    val.empty_text(TextBox_name);
+                    val.empty_text(TextBox_last_name);
+                    val.empty_text(TextBox_user);
+                    val.empty_text(TextBox_password);
                 }
                 else if (employees.Create(TextBox_id_card.Text, TextBox_name.Text, TextBox_last_name.Text, TextBox_phone.Text, TextBox_address.Text, TextBox_user.Text, TextBox_password.Text, CheckBox_admin.Checked))
                 {
@@ -224,6 +236,55 @@ namespace ensueno.Presentation.Main
                 Button_delete.Enabled = false;
                 TextBox_user.Enabled = true;
             }
+        }
+
+        private void TextBox_id_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            val.numbers_only(TextBox_id, e);
+        }
+
+        private void TextBox_id_card_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            val.empty_text(TextBox_id_card);
+        }
+        private void TextBox_name_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            val.Char_only(TextBox_name,e);
+        }
+
+        private void TextBox_last_name_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            val.Char_only(TextBox_last_name,e);
+        }
+
+        private void TextBox_phone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            val.numbers_only(TextBox_phone, e);
+        }
+
+        private void TextBox_address_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            val.empty_text(TextBox_address);
+        }
+
+        private void TextBox_user_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            val.empty_text(TextBox_user);
+        }
+
+        private void TextBox_password_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            val.empty_text(TextBox_password);
+        }
+
+        private void TextBox_read_by_name_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            val.Search_by_letters(TextBox_read_by_name, e);
+        }
+
+        private void TextBox_read_by_last_name_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            val.Search_by_letters(TextBox_read_by_last_name, e);
         }
     }
 }

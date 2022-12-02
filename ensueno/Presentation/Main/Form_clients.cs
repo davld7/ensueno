@@ -1,4 +1,5 @@
 ﻿using ensueno.Sql.Stored_procedures;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,11 +9,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ensueno.Presentation.Validations;
+
 
 namespace ensueno.Presentation.Main
 {
     public partial class Form_clients : Form
     {
+        Values val=new Values();
         private readonly Clients clients = new Clients();
         private Form_clients_history fh;
         public Form_clients()
@@ -92,6 +96,12 @@ namespace ensueno.Presentation.Main
                     MessageBox.Show("Ya existe la cédula en clientes.");
                     Clear_textboxes();
                 }
+                else if(TextBox_id_card.Text==string.Empty||TextBox_name.Text==string.Empty||TextBox_last_name.Text==string.Empty)
+                {
+                    val.empty_text(TextBox_id_card);
+                    val.empty_text(TextBox_name);
+                    val.empty_text(TextBox_last_name);
+                }
                 else if (clients.Create(TextBox_id_card.Text, TextBox_name.Text, TextBox_last_name.Text, TextBox_phone.Text, TextBox_address.Text))
                 {
                     MessageBox.Show("Se ha creado el registro del cliente.");
@@ -158,6 +168,12 @@ namespace ensueno.Presentation.Main
                     MessageBox.Show("Ya existe la cédula en empleados.");
                     Clear_textboxes();
                 }
+                else if (TextBox_id_card.Text == string.Empty || TextBox_name.Text == string.Empty || TextBox_last_name.Text == string.Empty)
+                {
+                    val.empty_text(TextBox_id_card);
+                    val.empty_text(TextBox_name);
+                    val.empty_text(TextBox_last_name);
+                }
                 else if (validate_update_id_card.Rows.Count > 0 && clients.Update(int.Parse(TextBox_id.Text), TextBox_id_card.Text, TextBox_name.Text, TextBox_last_name.Text, TextBox_phone.Text, TextBox_address.Text))
                 {
                     MessageBox.Show("Se ha actualizado el registro del cliente.");
@@ -209,6 +225,46 @@ namespace ensueno.Presentation.Main
             fh = new Form_clients_history();
             fh.ShowDialog();
             Read();
+        }
+
+        private void TextBox_id_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            val.numbers_only(TextBox_id,e);
+        }
+
+        private void TextBox_id_card_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            val.empty_text(TextBox_id_card);
+        }
+
+        private void TextBox_name_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            val.Char_only(TextBox_name,e);
+        }
+
+        private void TextBox_last_name_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            val.Char_only(TextBox_last_name, e);
+        }
+
+        private void TextBox_phone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            val.numbers_only(TextBox_phone, e);
+        }
+
+        private void TextBox_address_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            val.empty_text(TextBox_address);
+        }
+
+        private void TextBox_read_by_name_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            val.Search_by_letters(TextBox_read_by_name, e);
+        }
+
+        private void TextBox_read_by_last_name_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            val.Search_by_letters(TextBox_read_by_last_name, e);
         }
     }
 }
