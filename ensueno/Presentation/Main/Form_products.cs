@@ -22,8 +22,9 @@ namespace ensueno.Presentation.Main
         private byte[] image;
         private readonly Products products = new Products();
         private MemoryStream memory_stream;
-        private Form_products_history fh;
+        private Form_products_history fh;       
         Values val=new Values();
+        private bool validate_image_location;
         public Form_products()
         {
             InitializeComponent();
@@ -53,45 +54,25 @@ namespace ensueno.Presentation.Main
                 PictureBox_product.ImageLocation = image_location;
             }
         }
-
-        private void Button_create_Click(object sender, EventArgs e)
+        private void Convert_image()
         {
-            try
+            if (PictureBox_product.ImageLocation == null)
             {                
-                //Convertir imagen a byte[].
+                validate_image_location = false;                
+            }
+            else
+            {                
                 FileStream file_stream = new FileStream(image_location, FileMode.Open, FileAccess.Read);
                 BinaryReader bynary_reader = new BinaryReader(file_stream);
-                image = bynary_reader.ReadBytes((int)file_stream.Length);
-                //validar si el nombre existe en productos.
-                DataTable products_validate_name = products.Validate_name(TextBox_name.Text);
-                if (products_validate_name.Rows.Count > 0)
-                {
-                    MessageBox.Show("Ya existe el nombre en productos.");
-                    Clear_textboxes();
-                }         
-                else if(TextBox_name.Text==string.Empty||TextBox_stock.Text==string.Empty||TextBox_unit_price.Text==string.Empty)
-                {
-                    val.empty_text(TextBox_name);
-                    val.empty_text(TextBox_stock);
-                    val.empty_text(TextBox_unit_price);
-                }
-                else if(products.Create(TextBox_name.Text, int.Parse(TextBox_stock.Text), decimal.Parse(TextBox_unit_price.Text), image))
-                {
-                    MessageBox.Show("Se ha creado el registro del producto.");
-                    Clear_textboxes();
-                    Read();
-                }
-                else
-                {
-                    MessageBox.Show("No se ha creado el registro del producto.");
-                    Clear_textboxes();
-                }
+                image = bynary_reader.ReadBytes((int)file_stream.Length);                
+                validate_image_location = true;//se usa en el if de crear producto, sino se cumple pedira al usuario que agregue una imagen sin mostra una excepción.
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Agregue una imagen.");
-                MessageBox.Show(ex.Message);                
-            }
+        }
+        private void Read_image()//esté método se ejecuta cuando se selecciona una celda en el datagrid.
+        {
+            image = products.Read_image(int.Parse(TextBox_id.Text));
+            memory_stream = new MemoryStream(image);
+            PictureBox_product.Image = Image.FromStream(memory_stream);
         }
         private void Clear_textboxes()
         {
@@ -99,8 +80,90 @@ namespace ensueno.Presentation.Main
             TextBox_name.Clear();
             TextBox_stock.Clear();
             TextBox_unit_price.Clear();
-            PictureBox_product.Image = null;
+            PictureBox_product.ImageLocation = null;//para que se pueda validar de nuevo en el método Convert_image y no sobreescriba luego de crear o actualizar el producto.
+            PictureBox_product.Image = null;//para que elimine la imagen que se muestra en el form una vez que se crea o actualice el producto.
         }
+        private void Button_create_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //método para convertir una imagen a byte[].el método cleartextboxes lo complementa.
+                Convert_image();
+                //validar si el nombre existe en productos.
+                DataTable products_validate_name = products.Validate_name(TextBox_name.Text);               
+                if (products_validate_name.Rows.Count > 0)
+                {
+                    MessageBox.Show("Ya existe el nombre en productos.");
+                }         
+                else if(TextBox_name.Text==string.Empty||TextBox_stock.Text==string.Empty||TextBox_unit_price.Text==string.Empty)
+                {
+                    val.empty_text(TextBox_name);
+                    val.empty_text(TextBox_stock);
+                    val.empty_text(TextBox_unit_price);
+                }
+                else if(validate_image_location)
+                {
+                    if(products.Create(TextBox_name.Text, int.Parse(TextBox_stock.Text), decimal.Parse(TextBox_unit_price.Text), image))
+                    {
+                        MessageBox.Show("Se ha creado el registro del producto.");
+                        Clear_textboxes();
+                        Read();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se ha creado el registro del producto.");
+                        Clear_textboxes();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Agregue una imagen.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);                
+            }
+        }
+        private void Button_update_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //método para convertir una imagen a byte[]. el método cleartextboxes lo complementa.
+                Convert_image();
+                //validar si el nombre existe en productos y si es el mismo producto, así poder actualizar.
+                DataTable validate_update_name = products.Validate_update_name(int.Parse(TextBox_id.Text), TextBox_name.Text);
+                if (TextBox_name.Text == string.Empty || TextBox_stock.Text == string.Empty || TextBox_unit_price.Text == string.Empty)
+                {
+                    val.empty_text(TextBox_name);
+                    val.empty_text(TextBox_stock);
+                    val.empty_text(TextBox_unit_price);
+                }
+                else if (validate_update_name.Rows.Count > 0 && products.Update(int.Parse(TextBox_id.Text), TextBox_name.Text, int.Parse(TextBox_stock.Text), decimal.Parse(TextBox_unit_price.Text), image))
+                {
+                    MessageBox.Show("Se ha actualizado el registro del producto.");
+                    Clear_textboxes();
+                    Read();
+                }
+                else if (products.Update(int.Parse(TextBox_id.Text), TextBox_name.Text, int.Parse(TextBox_stock.Text), decimal.Parse(TextBox_unit_price.Text), image))
+                {
+                    MessageBox.Show("Se ha actualizado el registro del producto.");
+                    Clear_textboxes();
+                    Read();
+                }
+                else
+                {
+                    MessageBox.Show("No se ha actualizado el registro del producto.");
+                    Clear_textboxes();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+        
         private void Button_clear_Click(object sender, EventArgs e)
         {
             Clear_textboxes();
@@ -141,13 +204,7 @@ namespace ensueno.Presentation.Main
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-        private void Read_image()
-        {
-            image = products.Read_image(int.Parse(TextBox_id.Text));
-            memory_stream = new MemoryStream(image);
-            PictureBox_product.Image = Image.FromStream(memory_stream);
-        }
+        }        
         private void TextBox_id_TextChanged(object sender, EventArgs e)
         {
             if (TextBox_id.Text != string.Empty)
@@ -162,44 +219,7 @@ namespace ensueno.Presentation.Main
                 Button_update.Enabled = false;
                 Button_delete.Enabled = false;
             }
-        }
-
-        private void Button_update_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                //Convertir imagen a byte[].
-                FileStream file_stream = new FileStream(image_location, FileMode.Open, FileAccess.Read);
-                BinaryReader bynary_reader = new BinaryReader(file_stream);
-                image = bynary_reader.ReadBytes((int)file_stream.Length);
-                //validar si el nombre existe en productos y si es el mismo producto, así poder actualizar.
-                DataTable validate_update_name = products.Validate_update_name(int.Parse(TextBox_id.Text), TextBox_name.Text);
-                if (validate_update_name.Rows.Count > 0 && products.Update(int.Parse(TextBox_id.Text), TextBox_name.Text, int.Parse(TextBox_stock.Text), decimal.Parse(TextBox_unit_price.Text),image))
-                {
-                    MessageBox.Show("Se ha actualizado el registro del producto.");
-                    Clear_textboxes();
-                    Read();
-                }
-                else if (products.Update(int.Parse(TextBox_id.Text), TextBox_name.Text, int.Parse(TextBox_stock.Text), decimal.Parse(TextBox_unit_price.Text), image))
-                {
-                    MessageBox.Show("Se ha actualizado el registro del producto.");
-                    Clear_textboxes();
-                    Read();
-                }
-                else
-                {
-                    MessageBox.Show("No se ha actualizado el registro del producto.");
-                    Clear_textboxes();
-                }
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show("Agregue una imagen.");
-                MessageBox.Show(ex.Message);
-            }
-
-        }
-
+        }       
         private void TextBox_read_by_name_TextChanged(object sender, EventArgs e)
         {
             DataGridView_products.DataSource = products.Read_by_name(TextBox_read_by_name.Text);
