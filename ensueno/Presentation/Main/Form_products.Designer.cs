@@ -81,7 +81,7 @@
             this.TextBox_id.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
             this.TextBox_id.PlaceholderText = "ID";
             this.TextBox_id.SelectedText = "";
-            this.TextBox_id.Size = new System.Drawing.Size(175, 35);
+            this.TextBox_id.Size = new System.Drawing.Size(185, 35);
             this.TextBox_id.TabIndex = 19;
             this.TextBox_id.TextChanged += new System.EventHandler(this.TextBox_id_TextChanged);
             this.TextBox_id.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_id_KeyPress);
@@ -107,7 +107,7 @@
             this.TextBox_name.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
             this.TextBox_name.PlaceholderText = "Nombre";
             this.TextBox_name.SelectedText = "";
-            this.TextBox_name.Size = new System.Drawing.Size(175, 35);
+            this.TextBox_name.Size = new System.Drawing.Size(185, 35);
             this.TextBox_name.TabIndex = 20;
             this.TextBox_name.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_name_KeyPress);
             // 
@@ -132,7 +132,7 @@
             this.TextBox_stock.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
             this.TextBox_stock.PlaceholderText = "Existencia";
             this.TextBox_stock.SelectedText = "";
-            this.TextBox_stock.Size = new System.Drawing.Size(175, 35);
+            this.TextBox_stock.Size = new System.Drawing.Size(185, 35);
             this.TextBox_stock.TabIndex = 21;
             this.TextBox_stock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_stock_KeyPress);
             // 
@@ -157,7 +157,7 @@
             this.TextBox_unit_price.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
             this.TextBox_unit_price.PlaceholderText = "Precio unitario";
             this.TextBox_unit_price.SelectedText = "";
-            this.TextBox_unit_price.Size = new System.Drawing.Size(175, 35);
+            this.TextBox_unit_price.Size = new System.Drawing.Size(185, 35);
             this.TextBox_unit_price.TabIndex = 22;
             this.TextBox_unit_price.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_unit_price_KeyPress);
             // 
@@ -176,7 +176,7 @@
             this.Button_history.IndicateFocus = true;
             this.Button_history.Location = new System.Drawing.Point(649, 467);
             this.Button_history.Name = "Button_history";
-            this.Button_history.Size = new System.Drawing.Size(175, 30);
+            this.Button_history.Size = new System.Drawing.Size(185, 30);
             this.Button_history.TabIndex = 26;
             this.Button_history.Text = "HISTORIAL";
             this.Button_history.Click += new System.EventHandler(this.Button_history_Click);
@@ -196,7 +196,7 @@
             this.Button_delete.IndicateFocus = true;
             this.Button_delete.Location = new System.Drawing.Point(649, 431);
             this.Button_delete.Name = "Button_delete";
-            this.Button_delete.Size = new System.Drawing.Size(175, 30);
+            this.Button_delete.Size = new System.Drawing.Size(185, 30);
             this.Button_delete.TabIndex = 25;
             this.Button_delete.Text = "ELIMINAR";
             this.Button_delete.Click += new System.EventHandler(this.Button_delete_Click);
@@ -216,7 +216,7 @@
             this.Button_update.IndicateFocus = true;
             this.Button_update.Location = new System.Drawing.Point(649, 395);
             this.Button_update.Name = "Button_update";
-            this.Button_update.Size = new System.Drawing.Size(175, 30);
+            this.Button_update.Size = new System.Drawing.Size(185, 30);
             this.Button_update.TabIndex = 24;
             this.Button_update.Text = "ACTUALIZAR";
             this.Button_update.Click += new System.EventHandler(this.Button_update_Click);
@@ -236,7 +236,7 @@
             this.Button_create.IndicateFocus = true;
             this.Button_create.Location = new System.Drawing.Point(649, 359);
             this.Button_create.Name = "Button_create";
-            this.Button_create.Size = new System.Drawing.Size(175, 30);
+            this.Button_create.Size = new System.Drawing.Size(185, 30);
             this.Button_create.TabIndex = 23;
             this.Button_create.Text = "CREAR";
             this.Button_create.Click += new System.EventHandler(this.Button_create_Click);
@@ -270,8 +270,9 @@
             dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DataGridView_products.DefaultCellStyle = dataGridViewCellStyle11;
             this.DataGridView_products.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(189)))), ((int)(((byte)(184)))));
-            this.DataGridView_products.Location = new System.Drawing.Point(12, 217);
+            this.DataGridView_products.Location = new System.Drawing.Point(13, 83);
             this.DataGridView_products.Name = "DataGridView_products";
+            this.DataGridView_products.ReadOnly = true;
             this.DataGridView_products.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
@@ -282,7 +283,7 @@
             dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DataGridView_products.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.DataGridView_products.RowHeadersVisible = false;
-            this.DataGridView_products.Size = new System.Drawing.Size(630, 280);
+            this.DataGridView_products.Size = new System.Drawing.Size(630, 400);
             this.DataGridView_products.TabIndex = 27;
             this.DataGridView_products.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Red;
             this.DataGridView_products.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(199)))), ((int)(((byte)(195)))));
@@ -298,7 +299,7 @@
             this.DataGridView_products.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.DataGridView_products.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.DataGridView_products.ThemeStyle.HeaderStyle.Height = 22;
-            this.DataGridView_products.ThemeStyle.ReadOnly = false;
+            this.DataGridView_products.ThemeStyle.ReadOnly = true;
             this.DataGridView_products.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(217)))), ((int)(((byte)(215)))));
             this.DataGridView_products.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.DataGridView_products.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -310,8 +311,9 @@
             // 
             // PictureBox_product
             // 
+            this.PictureBox_product.BorderRadius = 11;
             this.PictureBox_product.ImageRotate = 0F;
-            this.PictureBox_product.Location = new System.Drawing.Point(450, 12);
+            this.PictureBox_product.Location = new System.Drawing.Point(649, 1);
             this.PictureBox_product.Name = "PictureBox_product";
             this.PictureBox_product.Size = new System.Drawing.Size(192, 192);
             this.PictureBox_product.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -322,7 +324,7 @@
             // 
             this.Button_add_image.Animated = true;
             this.Button_add_image.AutoRoundedCorners = true;
-            this.Button_add_image.BorderRadius = 14;
+            this.Button_add_image.BorderRadius = 16;
             this.Button_add_image.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.Button_add_image.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.Button_add_image.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -331,9 +333,9 @@
             this.Button_add_image.Font = new System.Drawing.Font("Britannic Bold", 14.25F);
             this.Button_add_image.ForeColor = System.Drawing.Color.White;
             this.Button_add_image.IndicateFocus = true;
-            this.Button_add_image.Location = new System.Drawing.Point(649, 8);
+            this.Button_add_image.Location = new System.Drawing.Point(397, 42);
             this.Button_add_image.Name = "Button_add_image";
-            this.Button_add_image.Size = new System.Drawing.Size(200, 30);
+            this.Button_add_image.Size = new System.Drawing.Size(180, 35);
             this.Button_add_image.TabIndex = 29;
             this.Button_add_image.Text = "AGREGAR IMAGEN";
             this.Button_add_image.Click += new System.EventHandler(this.Button_add_image_Click);
@@ -353,7 +355,7 @@
             this.TextBox_read_by_name.Font = new System.Drawing.Font("Britannic Bold", 11.25F);
             this.TextBox_read_by_name.ForeColor = System.Drawing.SystemColors.GrayText;
             this.TextBox_read_by_name.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TextBox_read_by_name.Location = new System.Drawing.Point(220, 158);
+            this.TextBox_read_by_name.Location = new System.Drawing.Point(221, 42);
             this.TextBox_read_by_name.Name = "TextBox_read_by_name";
             this.TextBox_read_by_name.PasswordChar = '\0';
             this.TextBox_read_by_name.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
@@ -379,7 +381,7 @@
             this.Button_clear.ForeColor = System.Drawing.Color.White;
             this.Button_clear.Image = global::ensueno.Properties.Resources.clean;
             this.Button_clear.ImageSize = new System.Drawing.Size(32, 32);
-            this.Button_clear.Location = new System.Drawing.Point(669, 80);
+            this.Button_clear.Location = new System.Drawing.Point(593, 12);
             this.Button_clear.Name = "Button_clear";
             this.Button_clear.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.Button_clear.Size = new System.Drawing.Size(50, 50);

@@ -162,6 +162,7 @@
             this.DataGridView_clients_history.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(189)))), ((int)(((byte)(184)))));
             this.DataGridView_clients_history.Location = new System.Drawing.Point(12, 88);
             this.DataGridView_clients_history.Name = "DataGridView_clients_history";
+            this.DataGridView_clients_history.ReadOnly = true;
             this.DataGridView_clients_history.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
@@ -188,7 +189,7 @@
             this.DataGridView_clients_history.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.DataGridView_clients_history.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.DataGridView_clients_history.ThemeStyle.HeaderStyle.Height = 22;
-            this.DataGridView_clients_history.ThemeStyle.ReadOnly = false;
+            this.DataGridView_clients_history.ThemeStyle.ReadOnly = true;
             this.DataGridView_clients_history.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(217)))), ((int)(((byte)(215)))));
             this.DataGridView_clients_history.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.DataGridView_clients_history.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
