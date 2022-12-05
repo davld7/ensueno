@@ -133,6 +133,8 @@ namespace ensueno.Presentation.Main
                 Convert_image();
                 //validar si el nombre existe en productos y si es el mismo producto, así poder actualizar.
                 DataTable validate_update_name = products.Validate_update_name(int.Parse(TextBox_id.Text), TextBox_name.Text);
+                //validar si el nombre existe en productos.
+                DataTable products_validate_name = products.Validate_name(TextBox_name.Text);
                 if (TextBox_name.Text == string.Empty || TextBox_stock.Text == string.Empty || TextBox_unit_price.Text == string.Empty)
                 {
                     val.empty_text(TextBox_name);
@@ -144,6 +146,10 @@ namespace ensueno.Presentation.Main
                     MessageBox.Show("Se ha actualizado el registro del producto.");
                     Clear_textboxes();
                     Read();
+                }
+                else if (products_validate_name.Rows.Count > 0)
+                {
+                    MessageBox.Show("Ya existe el nombre en productos.");
                 }
                 else if (products.Update(int.Parse(TextBox_id.Text), TextBox_name.Text, int.Parse(TextBox_stock.Text), decimal.Parse(TextBox_unit_price.Text), image))
                 {
