@@ -15,7 +15,7 @@ namespace ensueno.Presentation.Main
 {
     public partial class Form_employees : Form
     {
-        Values val = new Values();
+        readonly Values val = new Values();
         private readonly Employees employees = new Employees();
         private Form_employees_history fh;
         public Form_employees()

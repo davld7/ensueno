@@ -31,8 +31,7 @@ namespace ensueno.Presentation.Main
             }
         }
         private void Admin()
-        {
-            
+        {            
             if (Properties.Settings.Default.admin)
             {
                 
@@ -48,20 +47,20 @@ namespace ensueno.Presentation.Main
 
         private void Button_show_Click(object sender, EventArgs e)
         {
-            Button_show.Visible = false;
-            Button_hide.Visible = true;
+            Button_show.Visible = false;            
             Slide_panel.Visible = false;
             Slide_panel.Width = 175;
-            Transition_slide_panel.ShowSync(Slide_panel);
+            Transition_slide_panel_show.ShowSync(Slide_panel);
+            Button_hide.Visible = true;
         }
 
         private void Button_hide_Click(object sender, EventArgs e)
         {
-            Button_hide.Visible = false;
-            Button_show.Visible = true;
+            Button_hide.Visible = false;            
             Slide_panel.Visible = false;
             Slide_panel.Width = 50;
-            Transition_slide_panel.ShowSync(Slide_panel);
+            Transition_slide_panel_hide.ShowSync(Slide_panel);
+            Button_show.Visible = true;
         }
 
         private void Open_form_panel(object form_panel)
@@ -80,23 +79,23 @@ namespace ensueno.Presentation.Main
 
         private void Button_employees_Click(object sender, EventArgs e)
         {
+            Label_form_selected.Text = "Empleados";
             Open_form_panel(new Form_employees());
         }
         private void Button_clients_Click(object sender, EventArgs e)
         {
+            Label_form_selected.Text = "Clientes";
             Open_form_panel(new Form_clients());
         }
         private void Button_products_Click(object sender, EventArgs e)
         {
+            Label_form_selected.Text = "Productos";
             Open_form_panel(new Form_products());
         }
         private void Button_bills_Click(object sender, EventArgs e)
         {
+            Label_form_selected.Text = "Facturas";
             Open_form_panel(new Form_bills());
         }
-        private void Form_main_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Properties.Settings.Default.connection.Close();
-        }        
     }
 }

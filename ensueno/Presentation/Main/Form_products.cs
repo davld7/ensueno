@@ -23,7 +23,7 @@ namespace ensueno.Presentation.Main
         private readonly Products products = new Products();
         private MemoryStream memory_stream;
         private Form_products_history fh;       
-        Values val=new Values();
+        readonly Values val=new Values();
         private bool validate_image_location;
         public Form_products()
         {
@@ -65,7 +65,7 @@ namespace ensueno.Presentation.Main
                 FileStream file_stream = new FileStream(image_location, FileMode.Open, FileAccess.Read);
                 BinaryReader bynary_reader = new BinaryReader(file_stream);
                 image = bynary_reader.ReadBytes((int)file_stream.Length);                
-                validate_image_location = true;//se usa en el if de crear producto, sino se cumple pedira al usuario que agregue una imagen sin mostra una excepción.
+                validate_image_location = true;//se usa en el if de crear producto, sino se cumple pedira al usuario que agregue una imagen sin mostrar una excepción.
             }
         }
         private void Read_image()//esté método se ejecuta cuando se selecciona una celda en el datagrid.

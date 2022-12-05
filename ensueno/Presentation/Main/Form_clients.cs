@@ -16,7 +16,7 @@ namespace ensueno.Presentation.Main
 {
     public partial class Form_clients : Form
     {
-        Values val=new Values();
+        readonly Values val=new Values();
         private readonly Clients clients = new Clients();
         private Form_clients_history fh;
         public Form_clients()
