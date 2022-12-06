@@ -95,7 +95,7 @@ namespace ensueno.Presentation.Main
         private void Button_bills_Click(object sender, EventArgs e)
         {
             Label_form_selected.Text = "Facturas";
-            Open_form_panel(new Form_bills());
+            Open_form_panel(new Form_invoice_detail());
         }
     }
 }
