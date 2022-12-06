@@ -73,6 +73,7 @@
             this.Button_restore.Size = new System.Drawing.Size(200, 30);
             this.Button_restore.TabIndex = 33;
             this.Button_restore.Text = "RESTAURAR";
+            this.Button_restore.Click += new System.EventHandler(this.Button_restore_Click);
             // 
             // guna2Panel1
             // 
@@ -117,6 +118,7 @@
             this.TextBox_id.SelectedText = "";
             this.TextBox_id.Size = new System.Drawing.Size(200, 35);
             this.TextBox_id.TabIndex = 31;
+            this.TextBox_id.TextChanged += new System.EventHandler(this.TextBox_id_TextChanged);
             // 
             // label1
             // 
@@ -195,6 +197,7 @@
             this.DataGridView_invoice_history.ThemeStyle.RowsStyle.Height = 22;
             this.DataGridView_invoice_history.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(129)))), ((int)(((byte)(121)))));
             this.DataGridView_invoice_history.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.DataGridView_invoice_history.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_invoice_history_CellClick);
             // 
             // guna2DragControl1
             // 
@@ -217,6 +220,7 @@
             this.Name = "Form_invoice_history";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "History";
+            this.Load += new System.EventHandler(this.Form_invoice_history_Load);
             this.guna2Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_invoice_history)).EndInit();
             this.ResumeLayout(false);

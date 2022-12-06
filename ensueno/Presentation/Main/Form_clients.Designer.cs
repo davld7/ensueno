@@ -328,7 +328,7 @@
             this.TextBox_id_card.ForeColor = System.Drawing.SystemColors.GrayText;
             this.TextBox_id_card.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TextBox_id_card.Location = new System.Drawing.Point(649, 42);
-            this.TextBox_id_card.MaxLength = 17;
+            this.TextBox_id_card.MaxLength = 14;
             this.TextBox_id_card.Name = "TextBox_id_card";
             this.TextBox_id_card.PasswordChar = '\0';
             this.TextBox_id_card.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ensueno.Presentation.Login;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -41,6 +42,12 @@ namespace ensueno.Presentation.Main
         {
             fi = new Form_invoice();
             fi.ShowDialog();
+        }
+
+        private void Form_invoice_detail_Load(object sender, EventArgs e)
+        {
+            Label_client_name.Text = Form_invoice_create.Client_name;
+            Label_Employee_Name.Text = $"{Form_login.employee_name} {Form_login.employee_last_name}";
         }
     }
 }

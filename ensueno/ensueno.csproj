@@ -40,9 +40,15 @@
       <HintPath>..\packages\Guna.UI2.WinForms.2.0.3.5\lib\net40\Guna.UI2.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.SqlClient, Version=4.6.1.5, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Data.SqlClient.4.8.5\lib\net461\System.Data.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.1\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -158,6 +164,7 @@
     <Compile Include="Sql\Connection.cs" />
     <Compile Include="Sql\Stored_procedures\Clients.cs" />
     <Compile Include="Sql\Stored_procedures\Employees.cs" />
+    <Compile Include="Sql\Stored_procedures\Invoices.cs" />
     <Compile Include="Sql\Stored_procedures\Products.cs" />
     <EmbeddedResource Include="Presentation\Login\Form_database.resx">
       <DependentUpon>Form_database.cs</DependentUpon>
@@ -251,6 +258,7 @@
     <Content Include="Resources\Main\right_arrow.png" />
     <Content Include="Sql\Querys\ensueno_clients.sql" />
     <Content Include="Sql\Querys\ensueno_employees.sql" />
+    <Content Include="Sql\Querys\ensueno_invoices.sql" />
     <Content Include="Sql\Querys\ensueno_products.sql" />
   </ItemGroup>
   <ItemGroup />

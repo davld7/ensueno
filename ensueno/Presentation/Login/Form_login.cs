@@ -68,6 +68,9 @@ namespace ensueno.Presentation.Login
         {
             Login();
         }
+        public static string employee_id, employee_name,employee_last_name;
+
+       
         private void Login()
         {
             try
@@ -78,8 +81,9 @@ namespace ensueno.Presentation.Login
                 {
                     data_row = employees.Validate_user_login(TextBox_user.Text);
                     Clear_textboxes();
-                    string employee_name = data_row.ItemArray[2].ToString();
-                    string employee_last_name = data_row.ItemArray[3].ToString();
+                     employee_id = data_row.ItemArray[0].ToString();
+                     employee_name = data_row.ItemArray[2].ToString();
+                     employee_last_name = data_row.ItemArray[3].ToString();
                     Show_form_welcome(employee_name, employee_last_name);
                     Properties.Settings.Default.active_user = data_row.ItemArray[6].ToString();
                     Properties.Settings.Default.admin = bool.Parse(data_row.ItemArray[7].ToString());
