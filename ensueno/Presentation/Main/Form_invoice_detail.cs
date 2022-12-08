@@ -22,6 +22,7 @@ namespace ensueno.Presentation.Main
         private Form_invoice_create fic;
         private Form_invoice fi;
         private int invoice_id;
+        private Form_invoice_history fh;
         public Form_invoice_detail()
         {
             InitializeComponent();
@@ -275,7 +276,22 @@ namespace ensueno.Presentation.Main
 
             }
         }
-        private int Stock;
+        private void Button_history_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Program.Values.invoice_id = int.Parse(TextBox_invoice_id.Text);
+                fh = new Form_invoice_history();
+                fh.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private int Stock;        
+
         private int Stock_()
         {
             try

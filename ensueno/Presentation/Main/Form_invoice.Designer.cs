@@ -34,52 +34,18 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_invoice));
-            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
-            this.Button_history = new Guna.UI2.WinForms.Guna2GradientButton();
             this.Button_delete = new Guna.UI2.WinForms.Guna2GradientButton();
             this.Button_update = new Guna.UI2.WinForms.Guna2GradientButton();
             this.DataGridView_invoices = new Guna.UI2.WinForms.Guna2DataGridView();
             this.TextBox_client_id = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.Button_report = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.comboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.Button_Create = new Guna.UI2.WinForms.Guna2GradientButton();
             this.TextBox_invoice_id = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
+            this.ComboBox1 = new System.Windows.Forms.ComboBox();
+            this.Button_history = new Guna.UI2.WinForms.Guna2GradientButton();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_invoices)).BeginInit();
-            this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // guna2Elipse1
-            // 
-            this.guna2Elipse1.TargetControl = this;
-            // 
-            // guna2ShadowForm1
-            // 
-            this.guna2ShadowForm1.TargetForm = this;
-            // 
-            // Button_history
-            // 
-            this.Button_history.Animated = true;
-            this.Button_history.AutoRoundedCorners = true;
-            this.Button_history.BorderRadius = 16;
-            this.Button_history.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.Button_history.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.Button_history.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.Button_history.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.Button_history.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.Button_history.Font = new System.Drawing.Font("Britannic Bold", 14.25F);
-            this.Button_history.ForeColor = System.Drawing.Color.White;
-            this.Button_history.IndicateFocus = true;
-            this.Button_history.Location = new System.Drawing.Point(643, 381);
-            this.Button_history.Name = "Button_history";
-            this.Button_history.Size = new System.Drawing.Size(185, 35);
-            this.Button_history.TabIndex = 44;
-            this.Button_history.Text = "HISTORIAL";
-            this.Button_history.Click += new System.EventHandler(this.Button_history_Click);
             // 
             // Button_delete
             // 
@@ -150,7 +116,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DataGridView_invoices.DefaultCellStyle = dataGridViewCellStyle3;
             this.DataGridView_invoices.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(189)))), ((int)(((byte)(184)))));
-            this.DataGridView_invoices.Location = new System.Drawing.Point(7, 88);
+            this.DataGridView_invoices.Location = new System.Drawing.Point(7, 108);
             this.DataGridView_invoices.Name = "DataGridView_invoices";
             this.DataGridView_invoices.ReadOnly = true;
             this.DataGridView_invoices.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -163,7 +129,7 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DataGridView_invoices.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.DataGridView_invoices.RowHeadersVisible = false;
-            this.DataGridView_invoices.Size = new System.Drawing.Size(630, 400);
+            this.DataGridView_invoices.Size = new System.Drawing.Size(630, 380);
             this.DataGridView_invoices.TabIndex = 45;
             this.DataGridView_invoices.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Red;
             this.DataGridView_invoices.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(199)))), ((int)(((byte)(195)))));
@@ -204,7 +170,7 @@
             this.TextBox_client_id.Font = new System.Drawing.Font("Britannic Bold", 11.25F);
             this.TextBox_client_id.ForeColor = System.Drawing.SystemColors.GrayText;
             this.TextBox_client_id.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TextBox_client_id.Location = new System.Drawing.Point(643, 182);
+            this.TextBox_client_id.Location = new System.Drawing.Point(643, 167);
             this.TextBox_client_id.MaxLength = 50;
             this.TextBox_client_id.Name = "TextBox_client_id";
             this.TextBox_client_id.PasswordChar = '\0';
@@ -215,48 +181,11 @@
             this.TextBox_client_id.TabIndex = 50;
             this.TextBox_client_id.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_client_id_KeyPress);
             // 
-            // guna2Panel1
-            // 
-            this.guna2Panel1.Controls.Add(this.guna2ControlBox1);
-            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(850, 30);
-            this.guna2Panel1.TabIndex = 52;
-            // 
-            // guna2ControlBox1
-            // 
-            this.guna2ControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2ControlBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ControlBox1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2ControlBox1.IconColor = System.Drawing.Color.Gray;
-            this.guna2ControlBox1.Location = new System.Drawing.Point(793, 0);
-            this.guna2ControlBox1.Name = "guna2ControlBox1";
-            this.guna2ControlBox1.Size = new System.Drawing.Size(45, 29);
-            this.guna2ControlBox1.TabIndex = 7;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Britannic Bold", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label1.Location = new System.Drawing.Point(204, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(298, 36);
-            this.label1.TabIndex = 51;
-            this.label1.Text = "Facturas Generadas";
-            // 
-            // guna2DragControl1
-            // 
-            this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
-            this.guna2DragControl1.TargetControl = this.guna2Panel1;
-            this.guna2DragControl1.UseTransparentDrag = true;
-            // 
             // Button_report
             // 
             this.Button_report.Animated = true;
             this.Button_report.AutoRoundedCorners = true;
-            this.Button_report.BorderRadius = 24;
+            this.Button_report.BorderRadius = 16;
             this.Button_report.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.Button_report.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.Button_report.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -267,29 +196,10 @@
             this.Button_report.IndicateFocus = true;
             this.Button_report.Location = new System.Drawing.Point(643, 422);
             this.Button_report.Name = "Button_report";
-            this.Button_report.Size = new System.Drawing.Size(185, 50);
+            this.Button_report.Size = new System.Drawing.Size(185, 35);
             this.Button_report.TabIndex = 53;
-            this.Button_report.Text = "MOSTRAR REPORTE";
+            this.Button_report.Text = "REPORTE";
             this.Button_report.Click += new System.EventHandler(this.Button_report_Click);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.comboBox1.BackColor = System.Drawing.Color.Transparent;
-            this.comboBox1.BorderColor = System.Drawing.Color.Crimson;
-            this.comboBox1.BorderRadius = 11;
-            this.comboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.comboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.comboBox1.Font = new System.Drawing.Font("Britannic Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.comboBox1.ItemHeight = 30;
-            this.comboBox1.Location = new System.Drawing.Point(643, 140);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(185, 36);
-            this.comboBox1.TabIndex = 58;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // Button_Create
             // 
@@ -309,7 +219,7 @@
             this.Button_Create.Size = new System.Drawing.Size(185, 35);
             this.Button_Create.TabIndex = 59;
             this.Button_Create.Text = "CREAR";
-            this.Button_Create.Click += new System.EventHandler(this.guna2GradientButton1_Click);
+            this.Button_Create.Click += new System.EventHandler(this.Button_Create_Click);
             // 
             // TextBox_invoice_id
             // 
@@ -338,20 +248,55 @@
             this.TextBox_invoice_id.TextChanged += new System.EventHandler(this.TextBox_invoice_id_TextChanged);
             this.TextBox_invoice_id.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_invoice_id_KeyPress);
             // 
+            // guna2BorderlessForm1
+            // 
+            this.guna2BorderlessForm1.ContainerControl = this;
+            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2BorderlessForm1.DragForm = false;
+            this.guna2BorderlessForm1.HasFormShadow = false;
+            this.guna2BorderlessForm1.ResizeForm = false;
+            this.guna2BorderlessForm1.TransparentWhileDrag = true;
+            // 
+            // ComboBox1
+            // 
+            this.ComboBox1.FormattingEnabled = true;
+            this.ComboBox1.Location = new System.Drawing.Point(643, 140);
+            this.ComboBox1.Name = "ComboBox1";
+            this.ComboBox1.Size = new System.Drawing.Size(185, 21);
+            this.ComboBox1.TabIndex = 61;
+            // 
+            // Button_history
+            // 
+            this.Button_history.Animated = true;
+            this.Button_history.AutoRoundedCorners = true;
+            this.Button_history.BorderRadius = 16;
+            this.Button_history.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.Button_history.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.Button_history.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Button_history.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Button_history.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.Button_history.Font = new System.Drawing.Font("Britannic Bold", 14.25F);
+            this.Button_history.ForeColor = System.Drawing.Color.White;
+            this.Button_history.IndicateFocus = true;
+            this.Button_history.Location = new System.Drawing.Point(643, 381);
+            this.Button_history.Name = "Button_history";
+            this.Button_history.Size = new System.Drawing.Size(185, 35);
+            this.Button_history.TabIndex = 62;
+            this.Button_history.Text = "HISTORIAL";
+            this.Button_history.Click += new System.EventHandler(this.Button_history_Click);
+            // 
             // Form_invoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(850, 500);
+            this.Controls.Add(this.Button_history);
+            this.Controls.Add(this.ComboBox1);
             this.Controls.Add(this.TextBox_invoice_id);
             this.Controls.Add(this.Button_Create);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.Button_report);
-            this.Controls.Add(this.guna2Panel1);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.TextBox_client_id);
             this.Controls.Add(this.DataGridView_invoices);
-            this.Controls.Add(this.Button_history);
             this.Controls.Add(this.Button_delete);
             this.Controls.Add(this.Button_update);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -361,28 +306,20 @@
             this.Text = "Invoice";
             this.Load += new System.EventHandler(this.Form_invoice_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_invoices)).EndInit();
-            this.guna2Panel1.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
-        private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
-        private Guna.UI2.WinForms.Guna2GradientButton Button_history;
         private Guna.UI2.WinForms.Guna2GradientButton Button_delete;
         private Guna.UI2.WinForms.Guna2GradientButton Button_update;
         private Guna.UI2.WinForms.Guna2DataGridView DataGridView_invoices;
         private Guna.UI2.WinForms.Guna2TextBox TextBox_client_id;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
-        private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
         private Guna.UI2.WinForms.Guna2GradientButton Button_report;
-        private Guna.UI2.WinForms.Guna2ComboBox comboBox1;
         private Guna.UI2.WinForms.Guna2GradientButton Button_Create;
         private Guna.UI2.WinForms.Guna2TextBox TextBox_invoice_id;
+        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
+        private System.Windows.Forms.ComboBox ComboBox1;
+        private Guna.UI2.WinForms.Guna2GradientButton Button_history;
     }
 }

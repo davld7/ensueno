@@ -33,7 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_invoice_detail));
             this.Button_delete = new Guna.UI2.WinForms.Guna2GradientButton();
             this.Button_update = new Guna.UI2.WinForms.Guna2GradientButton();
             this.Button_create = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -41,9 +41,7 @@
             this.TextBox_Precio = new Guna.UI2.WinForms.Guna2TextBox();
             this.TextBox_amount = new Guna.UI2.WinForms.Guna2TextBox();
             this.DataGridView_invoice_detail = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.Button_agregar_producto = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.Button_invoice = new Guna.UI2.WinForms.Guna2GradientButton();
             this.TextBox_id_producto = new Guna.UI2.WinForms.Guna2TextBox();
             this.TextBox_total = new Guna.UI2.WinForms.Guna2TextBox();
             this.TextBox_IVA = new Guna.UI2.WinForms.Guna2TextBox();
@@ -52,17 +50,17 @@
             this.TextBox_Sub_Total = new Guna.UI2.WinForms.Guna2TextBox();
             this.LabelTotal = new System.Windows.Forms.Label();
             this.Label_Total_Venta = new System.Windows.Forms.Label();
+            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.ComboBox1 = new System.Windows.Forms.ComboBox();
+            this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+            this.Button_history = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.TextBox_invoice_id = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_invoice_detail)).BeginInit();
+            this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // guna2BorderlessForm1
-            // 
-            this.guna2BorderlessForm1.ContainerControl = this;
-            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
-            this.guna2BorderlessForm1.DragForm = false;
-            this.guna2BorderlessForm1.HasFormShadow = false;
-            this.guna2BorderlessForm1.ResizeForm = false;
-            this.guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
             // Button_delete
             // 
@@ -77,7 +75,7 @@
             this.Button_delete.Font = new System.Drawing.Font("Britannic Bold", 14.25F);
             this.Button_delete.ForeColor = System.Drawing.Color.White;
             this.Button_delete.IndicateFocus = true;
-            this.Button_delete.Location = new System.Drawing.Point(653, 397);
+            this.Button_delete.Location = new System.Drawing.Point(653, 436);
             this.Button_delete.Name = "Button_delete";
             this.Button_delete.Size = new System.Drawing.Size(185, 35);
             this.Button_delete.TabIndex = 39;
@@ -97,7 +95,7 @@
             this.Button_update.Font = new System.Drawing.Font("Britannic Bold", 14.25F);
             this.Button_update.ForeColor = System.Drawing.Color.White;
             this.Button_update.IndicateFocus = true;
-            this.Button_update.Location = new System.Drawing.Point(653, 356);
+            this.Button_update.Location = new System.Drawing.Point(653, 395);
             this.Button_update.Name = "Button_update";
             this.Button_update.Size = new System.Drawing.Size(185, 35);
             this.Button_update.TabIndex = 38;
@@ -117,7 +115,7 @@
             this.Button_create.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Button_create.ForeColor = System.Drawing.Color.White;
             this.Button_create.IndicateFocus = true;
-            this.Button_create.Location = new System.Drawing.Point(653, 315);
+            this.Button_create.Location = new System.Drawing.Point(653, 354);
             this.Button_create.Name = "Button_create";
             this.Button_create.Size = new System.Drawing.Size(185, 35);
             this.Button_create.TabIndex = 37;
@@ -161,7 +159,7 @@
             this.TextBox_Precio.Font = new System.Drawing.Font("Britannic Bold", 11.25F);
             this.TextBox_Precio.ForeColor = System.Drawing.SystemColors.GrayText;
             this.TextBox_Precio.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TextBox_Precio.Location = new System.Drawing.Point(653, 101);
+            this.TextBox_Precio.Location = new System.Drawing.Point(653, 138);
             this.TextBox_Precio.MaxLength = 50;
             this.TextBox_Precio.Name = "TextBox_Precio";
             this.TextBox_Precio.PasswordChar = '\0';
@@ -187,7 +185,7 @@
             this.TextBox_amount.Font = new System.Drawing.Font("Britannic Bold", 11.25F);
             this.TextBox_amount.ForeColor = System.Drawing.SystemColors.GrayText;
             this.TextBox_amount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TextBox_amount.Location = new System.Drawing.Point(653, 132);
+            this.TextBox_amount.Location = new System.Drawing.Point(653, 169);
             this.TextBox_amount.MaxLength = 17;
             this.TextBox_amount.Name = "TextBox_amount";
             this.TextBox_amount.PasswordChar = '\0';
@@ -267,26 +265,6 @@
             this.DataGridView_invoice_detail.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.DataGridView_invoice_detail.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_invoice_detail_CellClick);
             // 
-            // ComboBox1
-            // 
-            this.ComboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.ComboBox1.AutoRoundedCorners = true;
-            this.ComboBox1.BackColor = System.Drawing.Color.Transparent;
-            this.ComboBox1.BorderColor = System.Drawing.Color.Crimson;
-            this.ComboBox1.BorderRadius = 17;
-            this.ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ComboBox1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.ComboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.ComboBox1.Font = new System.Drawing.Font("Britannic Bold", 11.25F);
-            this.ComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.ComboBox1.ItemHeight = 30;
-            this.ComboBox1.Location = new System.Drawing.Point(582, 28);
-            this.ComboBox1.Name = "ComboBox1";
-            this.ComboBox1.Size = new System.Drawing.Size(256, 36);
-            this.ComboBox1.TabIndex = 42;
-            this.ComboBox1.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
-            // 
             // Button_agregar_producto
             // 
             this.Button_agregar_producto.Animated = true;
@@ -300,32 +278,12 @@
             this.Button_agregar_producto.Font = new System.Drawing.Font("Britannic Bold", 14.25F);
             this.Button_agregar_producto.ForeColor = System.Drawing.Color.White;
             this.Button_agregar_producto.IndicateFocus = true;
-            this.Button_agregar_producto.Location = new System.Drawing.Point(653, 260);
+            this.Button_agregar_producto.Location = new System.Drawing.Point(653, 299);
             this.Button_agregar_producto.Name = "Button_agregar_producto";
             this.Button_agregar_producto.Size = new System.Drawing.Size(190, 49);
             this.Button_agregar_producto.TabIndex = 43;
             this.Button_agregar_producto.Text = "AGREGAR PRODUCTO";
             this.Button_agregar_producto.Click += new System.EventHandler(this.Button_agregar_producto_Click);
-            // 
-            // Button_invoice
-            // 
-            this.Button_invoice.Animated = true;
-            this.Button_invoice.AutoRoundedCorners = true;
-            this.Button_invoice.BorderRadius = 24;
-            this.Button_invoice.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.Button_invoice.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.Button_invoice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.Button_invoice.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.Button_invoice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.Button_invoice.Font = new System.Drawing.Font("Britannic Bold", 14.25F);
-            this.Button_invoice.ForeColor = System.Drawing.Color.White;
-            this.Button_invoice.IndicateFocus = true;
-            this.Button_invoice.Location = new System.Drawing.Point(653, 438);
-            this.Button_invoice.Name = "Button_invoice";
-            this.Button_invoice.Size = new System.Drawing.Size(185, 50);
-            this.Button_invoice.TabIndex = 45;
-            this.Button_invoice.Text = "MOSTRAR FACTURAS";
-            this.Button_invoice.Click += new System.EventHandler(this.Button_invoice_Click);
             // 
             // TextBox_id_producto
             // 
@@ -342,7 +300,7 @@
             this.TextBox_id_producto.Font = new System.Drawing.Font("Britannic Bold", 11.25F);
             this.TextBox_id_producto.ForeColor = System.Drawing.SystemColors.GrayText;
             this.TextBox_id_producto.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TextBox_id_producto.Location = new System.Drawing.Point(653, 70);
+            this.TextBox_id_producto.Location = new System.Drawing.Point(653, 107);
             this.TextBox_id_producto.MaxLength = 50;
             this.TextBox_id_producto.Name = "TextBox_id_producto";
             this.TextBox_id_producto.PasswordChar = '\0';
@@ -369,7 +327,7 @@
             this.TextBox_total.Font = new System.Drawing.Font("Britannic Bold", 11.25F);
             this.TextBox_total.ForeColor = System.Drawing.SystemColors.GrayText;
             this.TextBox_total.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TextBox_total.Location = new System.Drawing.Point(653, 228);
+            this.TextBox_total.Location = new System.Drawing.Point(653, 265);
             this.TextBox_total.MaxLength = 17;
             this.TextBox_total.Name = "TextBox_total";
             this.TextBox_total.PasswordChar = '\0';
@@ -395,7 +353,7 @@
             this.TextBox_IVA.Font = new System.Drawing.Font("Britannic Bold", 11.25F);
             this.TextBox_IVA.ForeColor = System.Drawing.SystemColors.GrayText;
             this.TextBox_IVA.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TextBox_IVA.Location = new System.Drawing.Point(653, 196);
+            this.TextBox_IVA.Location = new System.Drawing.Point(653, 233);
             this.TextBox_IVA.MaxLength = 17;
             this.TextBox_IVA.Name = "TextBox_IVA";
             this.TextBox_IVA.PasswordChar = '\0';
@@ -443,7 +401,7 @@
             this.TextBox_Sub_Total.Font = new System.Drawing.Font("Britannic Bold", 11.25F);
             this.TextBox_Sub_Total.ForeColor = System.Drawing.SystemColors.GrayText;
             this.TextBox_Sub_Total.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TextBox_Sub_Total.Location = new System.Drawing.Point(653, 164);
+            this.TextBox_Sub_Total.Location = new System.Drawing.Point(653, 201);
             this.TextBox_Sub_Total.MaxLength = 17;
             this.TextBox_Sub_Total.Name = "TextBox_Sub_Total";
             this.TextBox_Sub_Total.PasswordChar = '\0';
@@ -476,11 +434,102 @@
             this.Label_Total_Venta.TabIndex = 54;
             this.Label_Total_Venta.Text = "Total";
             // 
+            // guna2Elipse1
+            // 
+            this.guna2Elipse1.TargetControl = this;
+            // 
+            // ComboBox1
+            // 
+            this.ComboBox1.FormattingEnabled = true;
+            this.ComboBox1.Location = new System.Drawing.Point(653, 80);
+            this.ComboBox1.Name = "ComboBox1";
+            this.ComboBox1.Size = new System.Drawing.Size(185, 21);
+            this.ComboBox1.TabIndex = 55;
+            // 
+            // guna2ShadowForm1
+            // 
+            this.guna2ShadowForm1.TargetForm = this;
+            // 
+            // guna2Panel1
+            // 
+            this.guna2Panel1.Controls.Add(this.guna2ControlBox1);
+            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Size = new System.Drawing.Size(850, 25);
+            this.guna2Panel1.TabIndex = 56;
+            // 
+            // guna2ControlBox1
+            // 
+            this.guna2ControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2ControlBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ControlBox1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2ControlBox1.IconColor = System.Drawing.Color.Gray;
+            this.guna2ControlBox1.Location = new System.Drawing.Point(793, 0);
+            this.guna2ControlBox1.Name = "guna2ControlBox1";
+            this.guna2ControlBox1.Size = new System.Drawing.Size(45, 22);
+            this.guna2ControlBox1.TabIndex = 7;
+            // 
+            // guna2DragControl1
+            // 
+            this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2DragControl1.TargetControl = this.guna2Panel1;
+            this.guna2DragControl1.UseTransparentDrag = true;
+            // 
+            // Button_history
+            // 
+            this.Button_history.Animated = true;
+            this.Button_history.AutoRoundedCorners = true;
+            this.Button_history.BorderRadius = 16;
+            this.Button_history.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.Button_history.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.Button_history.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Button_history.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Button_history.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.Button_history.Font = new System.Drawing.Font("Britannic Bold", 14.25F);
+            this.Button_history.ForeColor = System.Drawing.Color.White;
+            this.Button_history.IndicateFocus = true;
+            this.Button_history.Location = new System.Drawing.Point(653, 477);
+            this.Button_history.Name = "Button_history";
+            this.Button_history.Size = new System.Drawing.Size(185, 35);
+            this.Button_history.TabIndex = 57;
+            this.Button_history.Text = "HISTORIAL";
+            this.Button_history.Click += new System.EventHandler(this.Button_history_Click);
+            // 
+            // TextBox_invoice_id
+            // 
+            this.TextBox_invoice_id.Animated = true;
+            this.TextBox_invoice_id.BorderColor = System.Drawing.Color.Crimson;
+            this.TextBox_invoice_id.BorderRadius = 11;
+            this.TextBox_invoice_id.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TextBox_invoice_id.DefaultText = "";
+            this.TextBox_invoice_id.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.TextBox_invoice_id.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.TextBox_invoice_id.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TextBox_invoice_id.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TextBox_invoice_id.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TextBox_invoice_id.Font = new System.Drawing.Font("Britannic Bold", 11.25F);
+            this.TextBox_invoice_id.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.TextBox_invoice_id.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TextBox_invoice_id.Location = new System.Drawing.Point(653, 49);
+            this.TextBox_invoice_id.MaxLength = 50;
+            this.TextBox_invoice_id.Name = "TextBox_invoice_id";
+            this.TextBox_invoice_id.PasswordChar = '\0';
+            this.TextBox_invoice_id.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
+            this.TextBox_invoice_id.PlaceholderText = "Id Factura";
+            this.TextBox_invoice_id.SelectedText = "";
+            this.TextBox_invoice_id.Size = new System.Drawing.Size(185, 25);
+            this.TextBox_invoice_id.TabIndex = 58;
+            // 
             // Form_invoice_detail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(850, 500);
+            this.ClientSize = new System.Drawing.Size(850, 550);
+            this.Controls.Add(this.TextBox_invoice_id);
+            this.Controls.Add(this.Button_history);
+            this.Controls.Add(this.guna2Panel1);
+            this.Controls.Add(this.ComboBox1);
             this.Controls.Add(this.Label_Total_Venta);
             this.Controls.Add(this.LabelTotal);
             this.Controls.Add(this.TextBox_Sub_Total);
@@ -489,9 +538,7 @@
             this.Controls.Add(this.TextBox_IVA);
             this.Controls.Add(this.TextBox_total);
             this.Controls.Add(this.TextBox_id_producto);
-            this.Controls.Add(this.Button_invoice);
             this.Controls.Add(this.Button_agregar_producto);
-            this.Controls.Add(this.ComboBox1);
             this.Controls.Add(this.DataGridView_invoice_detail);
             this.Controls.Add(this.Button_delete);
             this.Controls.Add(this.Button_update);
@@ -500,18 +547,19 @@
             this.Controls.Add(this.TextBox_Precio);
             this.Controls.Add(this.TextBox_amount);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_invoice_detail";
-            this.Text = "Form_invoice_detail";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Invoice Detail";
             this.Load += new System.EventHandler(this.Form_invoice_detail_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_invoice_detail)).EndInit();
+            this.guna2Panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
         private Guna.UI2.WinForms.Guna2GradientButton Button_delete;
         private Guna.UI2.WinForms.Guna2GradientButton Button_update;
         private Guna.UI2.WinForms.Guna2GradientButton Button_create;
@@ -519,9 +567,7 @@
         private Guna.UI2.WinForms.Guna2TextBox TextBox_Precio;
         private Guna.UI2.WinForms.Guna2TextBox TextBox_amount;
         private Guna.UI2.WinForms.Guna2DataGridView DataGridView_invoice_detail;
-        private Guna.UI2.WinForms.Guna2ComboBox ComboBox1;
         private Guna.UI2.WinForms.Guna2GradientButton Button_agregar_producto;
-        private Guna.UI2.WinForms.Guna2GradientButton Button_invoice;
         private Guna.UI2.WinForms.Guna2TextBox TextBox_id_producto;
         private Guna.UI2.WinForms.Guna2TextBox TextBox_IVA;
         private Guna.UI2.WinForms.Guna2TextBox TextBox_total;
@@ -530,5 +576,13 @@
         private Guna.UI2.WinForms.Guna2TextBox TextBox_Sub_Total;
         private System.Windows.Forms.Label Label_Total_Venta;
         private System.Windows.Forms.Label LabelTotal;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
+        private System.Windows.Forms.ComboBox ComboBox1;
+        private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
+        private Guna.UI2.WinForms.Guna2GradientButton Button_history;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
+        private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
+        private Guna.UI2.WinForms.Guna2TextBox TextBox_invoice_id;
     }
 }

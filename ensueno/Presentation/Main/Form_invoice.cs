@@ -53,15 +53,30 @@ namespace ensueno.Presentation.Main
         
         private void Button_history_Click(object sender, EventArgs e)
         {
-            fh = new Form_invoice_history();
-            fh.ShowDialog();
+            try
+            {
+                Program.Values.invoice_id = int.Parse(TextBox_invoice_id.Text);
+                fh = new Form_invoice_history();
+                fh.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void Button_report_Click(object sender, EventArgs e)
         {
-            Program.Values.invoice_id = int.Parse(TextBox_invoice_id.Text);
-            fr = new Form_invoice_report();
-            fr.ShowDialog();
+            try
+            {
+                Program.Values.invoice_id = int.Parse(TextBox_invoice_id.Text);
+                fr = new Form_invoice_report();
+                fr.ShowDialog();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void Form_invoice_Load(object sender, EventArgs e)
@@ -80,16 +95,16 @@ namespace ensueno.Presentation.Main
             try
             {
                 dt = invoices.invoice_search_client();
-                comboBox1.DataSource = dt;
-                comboBox1.ValueMember = "ID";
-                comboBox1.DisplayMember = "Nombre Completo";
+                ComboBox1.DataSource = dt;
+                ComboBox1.ValueMember = "ID";
+                ComboBox1.DisplayMember = "Nombre Completo";
 
                 AutoCompleteStringCollection lst = new AutoCompleteStringCollection();
                 for(int i =0;i< dt.Rows.Count;i++)
                 {
                     lst.Add(dt.Rows[i]["Nombre Completo"].ToString());
                 }
-                    comboBox1.AutoCompleteCustomSource = lst;
+                    ComboBox1.AutoCompleteCustomSource = lst;
                 //nO TIENE FUNCIONALIDAD POR LO QUE EL COMBOBOX NO PERMITE ESCRITURA
                 //comboBox1.AutoCompleteMode =AutoCompleteMode.Suggest;
                 //comboBox1.AutoCompleteSource=AutoCompleteSource.CustomSource;
@@ -101,7 +116,7 @@ namespace ensueno.Presentation.Main
         {
             try
             {
-                TextBox_client_id.Text = comboBox1.SelectedValue.ToString();
+                TextBox_client_id.Text = ComboBox1.SelectedValue.ToString();
             }catch(Exception)
             {
 
@@ -110,27 +125,7 @@ namespace ensueno.Presentation.Main
 
         private void guna2GradientButton1_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (TextBox_client_id.Text==string.Empty)
-                {
-                    val.empty_text(TextBox_client_id);
-                    MessageBox.Show("Rellene los campos faltantes");
-                }
-                else
-                {
-                    client_name = comboBox1.Text;
-                    employee_id = C_employeeid;
-                    client_id = int.Parse(TextBox_client_id.Text);
-                    Last_id();
-                    Form_invoice_create form_Invoice_Create = new Form_invoice_create();
-                    form_Invoice_Create.ShowDialog();
-                }
-            }
-            catch (Exception ex )
-            {
-                MessageBox.Show(ex.Message);
-            }
+            
         }
 
         private void Button_update_Click(object sender, EventArgs e)
@@ -227,7 +222,32 @@ namespace ensueno.Presentation.Main
                 {
                     TextBox_invoice_id.Text = DataGridView_invoices.Rows[e.RowIndex].Cells[0].Value.ToString();
                     TextBox_client_id.Text = DataGridView_invoices.Rows[e.RowIndex].Cells[3].Value.ToString();
-                    comboBox1.Text = DataGridView_invoices.Rows[e.RowIndex].Cells[4].Value.ToString();
+                    ComboBox1.Text = DataGridView_invoices.Rows[e.RowIndex].Cells[4].Value.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void Button_Create_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (TextBox_client_id.Text == string.Empty)
+                {
+                    val.empty_text(TextBox_client_id);
+                    MessageBox.Show("Rellene los campos faltantes");
+                }
+                else
+                {
+                    client_name = ComboBox1.Text;
+                    employee_id = C_employeeid;
+                    client_id = int.Parse(TextBox_client_id.Text);
+                    Last_id();
+                    Form_invoice_create form_Invoice_Create = new Form_invoice_create();
+                    form_Invoice_Create.ShowDialog();
                 }
             }
             catch (Exception ex)
