@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -55,11 +56,15 @@ namespace ensueno.Presentation.Main
 
         private void Form_invoice_detail_Load(object sender, EventArgs e)
         {
-            Label_client_name.Text = Form_invoice_create.Client_name;
+            Label_client_name.Text = Program.Values.client_name;
             Label_Employee_Name.Text = $"{Form_login.employee_name} {Form_login.employee_last_name}";
             invoice_id = Program.Values.invoice_id;
+            TextBox_invoice_id.Text = Convert.ToString(Program.Values.invoice_id);
             Read_invoice_detail(invoice_id);
             Product_autocomplete();
+            TextBox_product_id.Text = "";
+            Button_Restore.Visible = false;
+            Button_return.Visible = false;
         }
         private void Read_invoice_detail(int invoice_id)
         {
@@ -82,16 +87,26 @@ namespace ensueno.Presentation.Main
                     lst.Add(dt.Rows[i]["Nombre"].ToString());
                 }
                 ComboBox1.AutoCompleteCustomSource = lst;
-                //nO TIENE FUNCIONALIDAD POR LO QUE EL COMBOBOX NO PERMITE ESCRITURA
-                //comboBox1.AutoCompleteMode =AutoCompleteMode.Suggest;
-                //comboBox1.AutoCompleteSource=AutoCompleteSource.CustomSource;
+                ComboBox1.AutoCompleteMode =AutoCompleteMode.Suggest;
+                ComboBox1.AutoCompleteSource=AutoCompleteSource.CustomSource;
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
+        private void ComboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            try
+            {
+                TextBox_product_id.Text = ComboBox1.SelectedValue.ToString();
+            }
+            catch (Exception)
+            {
+
+            }
+        }
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            TextBox_id_producto.Text = Convert.ToString(ComboBox1.SelectedValue.ToString());
+            TextBox_product_id.Text = Convert.ToString(ComboBox1.SelectedValue.ToString());
         }
         private double price, amount, subtotal, iva,total ;
 
@@ -122,18 +137,23 @@ namespace ensueno.Presentation.Main
         {
             try
             {
-                if (TextBox_id_producto.Text == string.Empty || TextBox_amount.Text == string.Empty)
+                if (TextBox_product_id.Text == string.Empty || TextBox_amount.Text == string.Empty)
                 {
-                    val.empty_text(TextBox_id_producto);
+                    val.empty_text(TextBox_product_id);
                     val.empty_text(TextBox_amount);
                     MessageBox.Show("Estos Campos no pueden estar vacios");
+                }
+                else if (Validate_product_invoice_detail(Program.Values.invoice_id, int.Parse(TextBox_product_id.Text)) == true)
+                {
+                    Clear_textboxes();
+                    MessageBox.Show("Este producto ya esta registrado en esta facturs\nVerifique en detalle o historial");
                 }
                 else if (Stock_() < int.Parse(TextBox_amount.Text)) 
                 {
                     Clear_textboxes();
                     MessageBox.Show("Stock Insuficiente para esta compra");
                 }
-                else if (invoices_detail.Create(Program.Values.invoice_id, int.Parse(TextBox_id_producto.Text), int.Parse(TextBox_amount.Text)))
+                else if (invoices_detail.Create(Program.Values.invoice_id, int.Parse(TextBox_product_id.Text), int.Parse(TextBox_amount.Text)))
                 {
                     invoice_id = Program.Values.invoice_id;
                     Clear_textboxes();
@@ -150,9 +170,9 @@ namespace ensueno.Presentation.Main
         {
             try
             {
-                if (TextBox_id_producto.Text == string.Empty || TextBox_amount.Text == string.Empty)
+                if (TextBox_product_id.Text == string.Empty || TextBox_amount.Text == string.Empty)
                 {
-                    val.empty_text(TextBox_id_producto);
+                    val.empty_text(TextBox_product_id);
                     val.empty_text(TextBox_amount);
                     MessageBox.Show("Estos Campos no pueden estar vacios");
                 }
@@ -161,7 +181,7 @@ namespace ensueno.Presentation.Main
                     Clear_textboxes();
                     MessageBox.Show("Stock Insuficiente para esta compra");
                 }
-                else if (invoices_detail.Update(Program.Values.invoice_id, int.Parse(TextBox_id_producto.Text), int.Parse(TextBox_amount.Text)))
+                else if (invoices_detail.Update(Program.Values.invoice_id, int.Parse(TextBox_product_id.Text), int.Parse(TextBox_amount.Text)))
                 {
                     invoice_id = Program.Values.invoice_id;
                     Clear_textboxes();
@@ -179,12 +199,12 @@ namespace ensueno.Presentation.Main
         {
             try
             {
-                if (TextBox_id_producto.Text == string.Empty)
+                if (TextBox_product_id.Text == string.Empty)
                 {
-                    val.empty_text(TextBox_id_producto);
+                    val.empty_text(TextBox_product_id);
                     MessageBox.Show("Este campo no pueden estar vacios");
                 }
-                else if (invoices_detail.Delete(Program.Values.invoice_id, int.Parse(TextBox_id_producto.Text)))
+                else if (invoices_detail.Delete(Program.Values.invoice_id, int.Parse(TextBox_product_id.Text)))
                 {
                     invoice_id = Program.Values.invoice_id;
                     Clear_textboxes();
@@ -201,7 +221,7 @@ namespace ensueno.Presentation.Main
 
         private void TextBox_id_producto_KeyPress(object sender, KeyPressEventArgs e)
         {
-            val.numbers_only(TextBox_id_producto,e);
+            val.numbers_only(TextBox_product_id,e);
         }
 
         private void TextBox_Precio_KeyPress(object sender, KeyPressEventArgs e)
@@ -211,7 +231,7 @@ namespace ensueno.Presentation.Main
 
         private void TextBox_amount_KeyPress(object sender, KeyPressEventArgs e)
         {
-            val.numbers_only(TextBox_amount, e);
+            val.number(TextBox_amount, e);
         }
 
         private void TextBox_Sub_Total_KeyPress(object sender, KeyPressEventArgs e)
@@ -230,12 +250,14 @@ namespace ensueno.Presentation.Main
         }
         private void Clear_textboxes()
         {
-            TextBox_id_producto.Clear();
+            TextBox_invoice_id.Clear();
+            TextBox_product_id.Clear();
             TextBox_Precio.Clear();
             TextBox_amount.Clear();
             TextBox_Sub_Total.Clear();
             TextBox_IVA.Clear();
             TextBox_total.Clear();
+            TextBox_invoice_id.Text =Convert.ToString(Program.Values.invoice_id);
         }
         private void DataGridView_invoice_detail_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -248,7 +270,7 @@ namespace ensueno.Presentation.Main
                 }
                 else
                 {
-                    TextBox_id_producto.Text = DataGridView_invoice_detail.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    TextBox_product_id.Text = DataGridView_invoice_detail.Rows[e.RowIndex].Cells[1].Value.ToString();
                     TextBox_Precio.Text = DataGridView_invoice_detail.Rows[e.RowIndex].Cells[3].Value.ToString();
                     TextBox_amount.Text = DataGridView_invoice_detail.Rows[e.RowIndex].Cells[4].Value.ToString();
                     TextBox_Sub_Total.Text= DataGridView_invoice_detail.Rows[e.RowIndex].Cells[5].Value.ToString();
@@ -276,13 +298,50 @@ namespace ensueno.Presentation.Main
 
             }
         }
+        private bool read_history_by_invoice_id(int invoice_id)
+        {
+            try
+            {
+                if (invoice_id == 0)
+                {
+                    return false;
+                }
+                else
+                {
+                    dt = invoices_detail.Read_history_by_id(invoice_id);
+                    DataGridView_invoice_detail.DataSource = dt;
+                    DataGridView_invoice_detail.Refresh();
+                    return true;
+                }
+            }catch(Exception)
+            {
+                return false;
+            }
+        }
         private void Button_history_Click(object sender, EventArgs e)
         {
             try
             {
-                Program.Values.invoice_id = int.Parse(TextBox_invoice_id.Text);
-                fh = new Form_invoice_history();
-                fh.ShowDialog();
+
+               if(TextBox_invoice_id.Text==string.Empty)
+                {
+                    val.empty_text(TextBox_invoice_id);
+                    MessageBox.Show("Este campo no puede estar vacio");
+                }
+               else if (read_history_by_invoice_id(Program.Values.invoice_id)==true)
+                {
+                    Button_agregar_producto.Visible = false;
+                    Button_create.Visible = false;
+                    Button_update.Visible = false;
+                    Button_delete.Visible = false;
+                    Button_history.Visible = false;
+                    Button_Restore.Visible = true;
+                    Button_return.Visible = true;
+                    ComboBox1.Visible = false;
+                    Clear_textboxes();
+                    LabelTotal.Visible = false;
+                    Label_Total_Venta.Visible = false;
+                }
             }
             catch (Exception ex)
             {
@@ -290,15 +349,82 @@ namespace ensueno.Presentation.Main
             }
         }
 
-        private int Stock;        
+        private int Stock;
 
+        private void Button_clear_Click(object sender, EventArgs e)
+        {
+            Clear_textboxes();
+        }
+
+        private void Button_return_Click(object sender, EventArgs e)
+        {
+            Read_invoice_detail(Program.Values.invoice_id);
+            Button_agregar_producto.Visible = true;
+            Button_create.Visible = true;
+            Button_update.Visible = true;
+            Button_delete.Visible = true;
+            Button_history.Visible = true;
+            Button_Restore.Visible = false;
+            Button_return.Visible = false;
+            ComboBox1.Visible = true;
+            Clear_textboxes();
+            Invoice_Detail_total();
+            LabelTotal.Visible = true;
+            Label_Total_Venta.Visible = true;
+        }
+
+        private void Button_Restore_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (TextBox_invoice_id.Text == string.Empty || TextBox_product_id.Text == string.Empty)
+                {
+                    val.empty_text(TextBox_invoice_id);
+                    val.empty_text(TextBox_product_id);
+                    MessageBox.Show("Estos campos no pueden estar vacios");
+                }
+                else if (invoices_detail.Restore(Program.Values.invoice_id, int.Parse(TextBox_product_id.Text)))
+                {
+                    read_history_by_invoice_id(Program.Values.invoice_id);
+                    MessageBox.Show("Restaurado correctamente");
+                }
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private bool Validate_product_invoice_detail(int invoice_id, int product_id)
+        {
+            try
+            { 
+                if (invoice_id == 0 || product_id == 0)
+                {
+                    return false;
+                }
+                else
+                {
+                    dt=invoices_detail.Validate_Product_invoice_detail_id(invoice_id, product_id);
+                    if(dt.Rows.Count>0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }catch(Exception )
+            {
+                return false;
+            }
+        }
         private int Stock_()
         {
             try
             {
-                if(TextBox_id_producto.Text!=string.Empty)
+                if(TextBox_product_id.Text!=string.Empty)
                 {
-                    dt = invoices_detail.Autocomplete_Product(int.Parse(TextBox_id_producto.Text));
+                    dt = invoices_detail.Autocomplete_Product(int.Parse(TextBox_product_id.Text));
                     int Stock = int.Parse(dt.Rows[0][2].ToString());
                     this.Stock = Stock;
                     return Stock;
@@ -317,9 +443,9 @@ namespace ensueno.Presentation.Main
         {
             try
             {
-                if (TextBox_id_producto.Text != string.Empty)
+                if (TextBox_product_id.Text != string.Empty)
                 {
-                    dt = invoices_detail.Autocomplete_Product(int.Parse(TextBox_id_producto.Text));
+                    dt = invoices_detail.Autocomplete_Product(int.Parse(TextBox_product_id.Text));
                     TextBox_Precio.Text = dt.Rows[0][3].ToString();
                 }
                 else

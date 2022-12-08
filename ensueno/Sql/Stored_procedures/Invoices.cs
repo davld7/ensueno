@@ -71,9 +71,8 @@ namespace ensueno.Sql.Stored_procedures
                 Disconnect();
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception )
             {
-                MessageBox.Show(ex.Message);
                 return false;
             }
             finally

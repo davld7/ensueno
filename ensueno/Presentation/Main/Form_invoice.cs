@@ -23,12 +23,10 @@ namespace ensueno.Presentation.Main
         private Form_invoice_history fh;
         private Form_invoice_report fr;
         private readonly Invoices invoices = new Invoices();
+        private readonly Invoices_Detail invoices_detail = new Invoices_Detail();
         private DataTable dt = new DataTable();
         private DataRow dr;
-        readonly Values val = new Values();
-        public static int client_id, employee_id, C_employeeid; 
-        public static string client_name;
-        
+        readonly Values val = new Values();   
 
         public Form_invoice()
         {
@@ -36,7 +34,6 @@ namespace ensueno.Presentation.Main
             Apply_dark_mode();
             this.Select();
             Client_autocomplete();
-           C_employeeid =int.Parse( Form_login.employee_id);
          }
         
         private void Apply_dark_mode()
@@ -55,9 +52,10 @@ namespace ensueno.Presentation.Main
         {
             try
             {
-                Program.Values.invoice_id = int.Parse(TextBox_invoice_id.Text);
-                fh = new Form_invoice_history();
-                fh.ShowDialog();
+                    Program.Values.invoice_id =0;
+                    fh = new Form_invoice_history();
+                    fh.ShowDialog();
+                
             }
             catch (Exception ex)
             {
@@ -82,12 +80,25 @@ namespace ensueno.Presentation.Main
         private void Form_invoice_Load(object sender, EventArgs e)
         {
             Read();
+            TextBox_client_id.Text = "";
         }
-        public void Last_id()
+        public void Last_id(int client_id,string client_name)
         {
             dr=invoices.Last_id();
-            Program.Values.invoice_id = int.Parse(dr.ItemArray[0].ToString())+1;
-            
+            if (dr.IsNull(0) == true)
+            {
+                Program.Values.invoice_id = 1;
+                Program.Values.client_name=client_name;
+                Program.Values.Client_id = client_id;
+                Program.Values.Employee_id = int.Parse(Form_login.employee_id);
+            }
+            else
+            {
+                Program.Values.invoice_id = int.Parse(dr.ItemArray[0].ToString()) + 1;
+                Program.Values.client_name = client_name;
+                Program.Values.Client_id = client_id;
+                Program.Values.Employee_id = int.Parse(Form_login.employee_id);
+            }
         }
 
         private void Client_autocomplete()
@@ -104,28 +115,33 @@ namespace ensueno.Presentation.Main
                 {
                     lst.Add(dt.Rows[i]["Nombre Completo"].ToString());
                 }
-                    ComboBox1.AutoCompleteCustomSource = lst;
-                //nO TIENE FUNCIONALIDAD POR LO QUE EL COMBOBOX NO PERMITE ESCRITURA
-                //comboBox1.AutoCompleteMode =AutoCompleteMode.Suggest;
-                //comboBox1.AutoCompleteSource=AutoCompleteSource.CustomSource;
+                ComboBox1.AutoCompleteCustomSource = lst;
+                ComboBox1.AutoCompleteMode =AutoCompleteMode.Suggest;
+                ComboBox1.AutoCompleteSource=AutoCompleteSource.CustomSource;
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void invoice_detail_list_delete(int invoice_id)
+        {
+            dt = invoices_detail.Read_By_Id(invoice_id);
+            
+            for(int i = 0;i<dt.Rows.Count;i++)
+            {
+                int product_id;
+                product_id =int.Parse(dt.Rows[i][1].ToString());
+                invoices_detail.Delete(invoice_id,product_id);
+            }
+        }
+        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
             {
                 TextBox_client_id.Text = ComboBox1.SelectedValue.ToString();
-            }catch(Exception)
+            }
+            catch (Exception)
             {
 
             }
-        }
-
-        private void guna2GradientButton1_Click(object sender, EventArgs e)
-        {
-            
         }
 
         private void Button_update_Click(object sender, EventArgs e)
@@ -141,9 +157,8 @@ namespace ensueno.Presentation.Main
                 else
                 {
                     Program.Values.invoice_id= int.Parse(TextBox_invoice_id.Text);
-                    employee_id = C_employeeid;
-                    client_id = int.Parse(TextBox_client_id.Text);
-                  if(invoices.Update(Program.Values.invoice_id, client_id))
+                    
+                  if(invoices.Update(Program.Values.invoice_id,int.Parse(TextBox_client_id.Text)))
                   {
                         MessageBox.Show("Se ha actualizado Correctamente");
                         Clear_textboxes();
@@ -176,6 +191,7 @@ namespace ensueno.Presentation.Main
                     Program.Values.invoice_id = int.Parse(TextBox_invoice_id.Text);
                     if (invoices.Delete(Program.Values.invoice_id))
                     {
+                        invoice_detail_list_delete(Program.Values.invoice_id);
                         MessageBox.Show("Factura eliminada Correctamente");
                         Clear_textboxes();
                         Read();
@@ -242,17 +258,14 @@ namespace ensueno.Presentation.Main
                 }
                 else
                 {
-                    client_name = ComboBox1.Text;
-                    employee_id = C_employeeid;
-                    client_id = int.Parse(TextBox_client_id.Text);
-                    Last_id();
+                    Last_id(int.Parse(TextBox_client_id.Text),ComboBox1.Text);
                     Form_invoice_create form_Invoice_Create = new Form_invoice_create();
                     form_Invoice_Create.ShowDialog();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+               
             }
         }
 

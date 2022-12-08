@@ -31,7 +31,6 @@ namespace ensueno.Sql.Stored_procedures
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
                 return null;
             }
             finally 
@@ -107,8 +106,7 @@ namespace ensueno.Sql.Stored_procedures
                 Disconnect();
             }
         }
-    
-
+   
         public bool Create(int invoice_id,int product_id,int units)
             {
             try
@@ -194,6 +192,28 @@ namespace ensueno.Sql.Stored_procedures
             {
                 Connect();
                 command = new SqlCommand($"exec invoice_detail_total '{invoice_id}'", Get_connection());
+                data_adapter = new SqlDataAdapter(command);
+                data_table = new DataTable();
+                data_adapter.Fill(data_table);
+                Disconnect();
+                return data_table;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+            finally
+            {
+                Disconnect();
+            }
+        }
+        public DataTable Validate_Product_invoice_detail_id(int invoice_id,int product_id)
+        {
+            try
+            {
+                Connect();
+                command = new SqlCommand($"exec val_exist_product_invoice_detail_by_id '{invoice_id}','{product_id}' ", Get_connection());
                 data_adapter = new SqlDataAdapter(command);
                 data_table = new DataTable();
                 data_adapter.Fill(data_table);

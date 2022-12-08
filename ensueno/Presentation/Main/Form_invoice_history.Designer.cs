@@ -68,7 +68,7 @@
             this.Button_restore.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Button_restore.ForeColor = System.Drawing.Color.White;
             this.Button_restore.IndicateFocus = true;
-            this.Button_restore.Location = new System.Drawing.Point(648, 135);
+            this.Button_restore.Location = new System.Drawing.Point(648, 172);
             this.Button_restore.Name = "Button_restore";
             this.Button_restore.Size = new System.Drawing.Size(200, 30);
             this.Button_restore.TabIndex = 33;

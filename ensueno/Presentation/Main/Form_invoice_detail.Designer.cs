@@ -42,7 +42,7 @@
             this.TextBox_amount = new Guna.UI2.WinForms.Guna2TextBox();
             this.DataGridView_invoice_detail = new Guna.UI2.WinForms.Guna2DataGridView();
             this.Button_agregar_producto = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.TextBox_id_producto = new Guna.UI2.WinForms.Guna2TextBox();
+            this.TextBox_product_id = new Guna.UI2.WinForms.Guna2TextBox();
             this.TextBox_total = new Guna.UI2.WinForms.Guna2TextBox();
             this.TextBox_IVA = new Guna.UI2.WinForms.Guna2TextBox();
             this.Label_Employee_Name = new System.Windows.Forms.Label();
@@ -58,6 +58,8 @@
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.Button_history = new Guna.UI2.WinForms.Guna2GradientButton();
             this.TextBox_invoice_id = new Guna.UI2.WinForms.Guna2TextBox();
+            this.Button_Restore = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.Button_return = new Guna.UI2.WinForms.Guna2GradientButton();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_invoice_detail)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
@@ -66,7 +68,7 @@
             // 
             this.Button_delete.Animated = true;
             this.Button_delete.AutoRoundedCorners = true;
-            this.Button_delete.BorderRadius = 16;
+            this.Button_delete.BorderRadius = 14;
             this.Button_delete.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.Button_delete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.Button_delete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -75,9 +77,9 @@
             this.Button_delete.Font = new System.Drawing.Font("Britannic Bold", 14.25F);
             this.Button_delete.ForeColor = System.Drawing.Color.White;
             this.Button_delete.IndicateFocus = true;
-            this.Button_delete.Location = new System.Drawing.Point(653, 436);
+            this.Button_delete.Location = new System.Drawing.Point(653, 419);
             this.Button_delete.Name = "Button_delete";
-            this.Button_delete.Size = new System.Drawing.Size(185, 35);
+            this.Button_delete.Size = new System.Drawing.Size(185, 30);
             this.Button_delete.TabIndex = 39;
             this.Button_delete.Text = "ELIMINAR";
             this.Button_delete.Click += new System.EventHandler(this.Button_delete_Click);
@@ -86,7 +88,7 @@
             // 
             this.Button_update.Animated = true;
             this.Button_update.AutoRoundedCorners = true;
-            this.Button_update.BorderRadius = 16;
+            this.Button_update.BorderRadius = 14;
             this.Button_update.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.Button_update.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.Button_update.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -95,9 +97,9 @@
             this.Button_update.Font = new System.Drawing.Font("Britannic Bold", 14.25F);
             this.Button_update.ForeColor = System.Drawing.Color.White;
             this.Button_update.IndicateFocus = true;
-            this.Button_update.Location = new System.Drawing.Point(653, 395);
+            this.Button_update.Location = new System.Drawing.Point(653, 383);
             this.Button_update.Name = "Button_update";
-            this.Button_update.Size = new System.Drawing.Size(185, 35);
+            this.Button_update.Size = new System.Drawing.Size(185, 30);
             this.Button_update.TabIndex = 38;
             this.Button_update.Text = "ACTUALIZAR";
             this.Button_update.Click += new System.EventHandler(this.Button_update_Click);
@@ -106,7 +108,7 @@
             // 
             this.Button_create.Animated = true;
             this.Button_create.AutoRoundedCorners = true;
-            this.Button_create.BorderRadius = 16;
+            this.Button_create.BorderRadius = 14;
             this.Button_create.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.Button_create.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.Button_create.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -115,9 +117,9 @@
             this.Button_create.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Button_create.ForeColor = System.Drawing.Color.White;
             this.Button_create.IndicateFocus = true;
-            this.Button_create.Location = new System.Drawing.Point(653, 354);
+            this.Button_create.Location = new System.Drawing.Point(653, 347);
             this.Button_create.Name = "Button_create";
-            this.Button_create.Size = new System.Drawing.Size(185, 35);
+            this.Button_create.Size = new System.Drawing.Size(185, 30);
             this.Button_create.TabIndex = 37;
             this.Button_create.Text = "CREAR";
             this.Button_create.Click += new System.EventHandler(this.Button_create_Click);
@@ -137,12 +139,13 @@
             this.Button_clear.ForeColor = System.Drawing.Color.White;
             this.Button_clear.Image = global::ensueno.Properties.Resources.clean;
             this.Button_clear.ImageSize = new System.Drawing.Size(32, 32);
-            this.Button_clear.Location = new System.Drawing.Point(592, 452);
+            this.Button_clear.Location = new System.Drawing.Point(592, 28);
             this.Button_clear.Name = "Button_clear";
             this.Button_clear.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.Button_clear.Size = new System.Drawing.Size(50, 50);
             this.Button_clear.TabIndex = 36;
             this.Button_clear.UseTransparentBackground = true;
+            this.Button_clear.Click += new System.EventHandler(this.Button_clear_Click);
             // 
             // TextBox_Precio
             // 
@@ -159,7 +162,7 @@
             this.TextBox_Precio.Font = new System.Drawing.Font("Britannic Bold", 11.25F);
             this.TextBox_Precio.ForeColor = System.Drawing.SystemColors.GrayText;
             this.TextBox_Precio.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TextBox_Precio.Location = new System.Drawing.Point(653, 138);
+            this.TextBox_Precio.Location = new System.Drawing.Point(653, 124);
             this.TextBox_Precio.MaxLength = 50;
             this.TextBox_Precio.Name = "TextBox_Precio";
             this.TextBox_Precio.PasswordChar = '\0';
@@ -185,7 +188,7 @@
             this.TextBox_amount.Font = new System.Drawing.Font("Britannic Bold", 11.25F);
             this.TextBox_amount.ForeColor = System.Drawing.SystemColors.GrayText;
             this.TextBox_amount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TextBox_amount.Location = new System.Drawing.Point(653, 169);
+            this.TextBox_amount.Location = new System.Drawing.Point(653, 155);
             this.TextBox_amount.MaxLength = 17;
             this.TextBox_amount.Name = "TextBox_amount";
             this.TextBox_amount.PasswordChar = '\0';
@@ -226,7 +229,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DataGridView_invoice_detail.DefaultCellStyle = dataGridViewCellStyle3;
             this.DataGridView_invoice_detail.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(189)))), ((int)(((byte)(184)))));
-            this.DataGridView_invoice_detail.Location = new System.Drawing.Point(12, 84);
+            this.DataGridView_invoice_detail.Location = new System.Drawing.Point(12, 93);
             this.DataGridView_invoice_detail.Name = "DataGridView_invoice_detail";
             this.DataGridView_invoice_detail.ReadOnly = true;
             this.DataGridView_invoice_detail.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -239,7 +242,7 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DataGridView_invoice_detail.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.DataGridView_invoice_detail.RowHeadersVisible = false;
-            this.DataGridView_invoice_detail.Size = new System.Drawing.Size(630, 362);
+            this.DataGridView_invoice_detail.Size = new System.Drawing.Size(630, 353);
             this.DataGridView_invoice_detail.TabIndex = 41;
             this.DataGridView_invoice_detail.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Red;
             this.DataGridView_invoice_detail.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(199)))), ((int)(((byte)(195)))));
@@ -278,39 +281,39 @@
             this.Button_agregar_producto.Font = new System.Drawing.Font("Britannic Bold", 14.25F);
             this.Button_agregar_producto.ForeColor = System.Drawing.Color.White;
             this.Button_agregar_producto.IndicateFocus = true;
-            this.Button_agregar_producto.Location = new System.Drawing.Point(653, 299);
+            this.Button_agregar_producto.Location = new System.Drawing.Point(653, 292);
             this.Button_agregar_producto.Name = "Button_agregar_producto";
             this.Button_agregar_producto.Size = new System.Drawing.Size(190, 49);
             this.Button_agregar_producto.TabIndex = 43;
             this.Button_agregar_producto.Text = "AGREGAR PRODUCTO";
             this.Button_agregar_producto.Click += new System.EventHandler(this.Button_agregar_producto_Click);
             // 
-            // TextBox_id_producto
+            // TextBox_product_id
             // 
-            this.TextBox_id_producto.Animated = true;
-            this.TextBox_id_producto.BorderColor = System.Drawing.Color.Crimson;
-            this.TextBox_id_producto.BorderRadius = 11;
-            this.TextBox_id_producto.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TextBox_id_producto.DefaultText = "";
-            this.TextBox_id_producto.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.TextBox_id_producto.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.TextBox_id_producto.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.TextBox_id_producto.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.TextBox_id_producto.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TextBox_id_producto.Font = new System.Drawing.Font("Britannic Bold", 11.25F);
-            this.TextBox_id_producto.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.TextBox_id_producto.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TextBox_id_producto.Location = new System.Drawing.Point(653, 107);
-            this.TextBox_id_producto.MaxLength = 50;
-            this.TextBox_id_producto.Name = "TextBox_id_producto";
-            this.TextBox_id_producto.PasswordChar = '\0';
-            this.TextBox_id_producto.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
-            this.TextBox_id_producto.PlaceholderText = "Id Producto";
-            this.TextBox_id_producto.SelectedText = "";
-            this.TextBox_id_producto.Size = new System.Drawing.Size(185, 25);
-            this.TextBox_id_producto.TabIndex = 46;
-            this.TextBox_id_producto.TextChanged += new System.EventHandler(this.TextBox1_id_producto_TextChanged);
-            this.TextBox_id_producto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_id_producto_KeyPress);
+            this.TextBox_product_id.Animated = true;
+            this.TextBox_product_id.BorderColor = System.Drawing.Color.Crimson;
+            this.TextBox_product_id.BorderRadius = 11;
+            this.TextBox_product_id.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TextBox_product_id.DefaultText = "";
+            this.TextBox_product_id.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.TextBox_product_id.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.TextBox_product_id.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TextBox_product_id.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TextBox_product_id.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TextBox_product_id.Font = new System.Drawing.Font("Britannic Bold", 11.25F);
+            this.TextBox_product_id.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.TextBox_product_id.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TextBox_product_id.Location = new System.Drawing.Point(653, 93);
+            this.TextBox_product_id.MaxLength = 50;
+            this.TextBox_product_id.Name = "TextBox_product_id";
+            this.TextBox_product_id.PasswordChar = '\0';
+            this.TextBox_product_id.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
+            this.TextBox_product_id.PlaceholderText = "Id Producto";
+            this.TextBox_product_id.SelectedText = "";
+            this.TextBox_product_id.Size = new System.Drawing.Size(185, 25);
+            this.TextBox_product_id.TabIndex = 46;
+            this.TextBox_product_id.TextChanged += new System.EventHandler(this.TextBox1_id_producto_TextChanged);
+            this.TextBox_product_id.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_id_producto_KeyPress);
             // 
             // TextBox_total
             // 
@@ -327,7 +330,7 @@
             this.TextBox_total.Font = new System.Drawing.Font("Britannic Bold", 11.25F);
             this.TextBox_total.ForeColor = System.Drawing.SystemColors.GrayText;
             this.TextBox_total.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TextBox_total.Location = new System.Drawing.Point(653, 265);
+            this.TextBox_total.Location = new System.Drawing.Point(653, 251);
             this.TextBox_total.MaxLength = 17;
             this.TextBox_total.Name = "TextBox_total";
             this.TextBox_total.PasswordChar = '\0';
@@ -353,7 +356,7 @@
             this.TextBox_IVA.Font = new System.Drawing.Font("Britannic Bold", 11.25F);
             this.TextBox_IVA.ForeColor = System.Drawing.SystemColors.GrayText;
             this.TextBox_IVA.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TextBox_IVA.Location = new System.Drawing.Point(653, 233);
+            this.TextBox_IVA.Location = new System.Drawing.Point(653, 219);
             this.TextBox_IVA.MaxLength = 17;
             this.TextBox_IVA.Name = "TextBox_IVA";
             this.TextBox_IVA.PasswordChar = '\0';
@@ -401,7 +404,7 @@
             this.TextBox_Sub_Total.Font = new System.Drawing.Font("Britannic Bold", 11.25F);
             this.TextBox_Sub_Total.ForeColor = System.Drawing.SystemColors.GrayText;
             this.TextBox_Sub_Total.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TextBox_Sub_Total.Location = new System.Drawing.Point(653, 201);
+            this.TextBox_Sub_Total.Location = new System.Drawing.Point(653, 187);
             this.TextBox_Sub_Total.MaxLength = 17;
             this.TextBox_Sub_Total.Name = "TextBox_Sub_Total";
             this.TextBox_Sub_Total.PasswordChar = '\0';
@@ -441,10 +444,11 @@
             // ComboBox1
             // 
             this.ComboBox1.FormattingEnabled = true;
-            this.ComboBox1.Location = new System.Drawing.Point(653, 80);
+            this.ComboBox1.Location = new System.Drawing.Point(653, 66);
             this.ComboBox1.Name = "ComboBox1";
             this.ComboBox1.Size = new System.Drawing.Size(185, 21);
             this.ComboBox1.TabIndex = 55;
+            this.ComboBox1.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged_1);
             // 
             // guna2ShadowForm1
             // 
@@ -480,7 +484,7 @@
             // 
             this.Button_history.Animated = true;
             this.Button_history.AutoRoundedCorners = true;
-            this.Button_history.BorderRadius = 16;
+            this.Button_history.BorderRadius = 14;
             this.Button_history.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.Button_history.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.Button_history.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -489,9 +493,9 @@
             this.Button_history.Font = new System.Drawing.Font("Britannic Bold", 14.25F);
             this.Button_history.ForeColor = System.Drawing.Color.White;
             this.Button_history.IndicateFocus = true;
-            this.Button_history.Location = new System.Drawing.Point(653, 477);
+            this.Button_history.Location = new System.Drawing.Point(653, 455);
             this.Button_history.Name = "Button_history";
-            this.Button_history.Size = new System.Drawing.Size(185, 35);
+            this.Button_history.Size = new System.Drawing.Size(185, 30);
             this.Button_history.TabIndex = 57;
             this.Button_history.Text = "HISTORIAL";
             this.Button_history.Click += new System.EventHandler(this.Button_history_Click);
@@ -511,7 +515,7 @@
             this.TextBox_invoice_id.Font = new System.Drawing.Font("Britannic Bold", 11.25F);
             this.TextBox_invoice_id.ForeColor = System.Drawing.SystemColors.GrayText;
             this.TextBox_invoice_id.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TextBox_invoice_id.Location = new System.Drawing.Point(653, 49);
+            this.TextBox_invoice_id.Location = new System.Drawing.Point(653, 35);
             this.TextBox_invoice_id.MaxLength = 50;
             this.TextBox_invoice_id.Name = "TextBox_invoice_id";
             this.TextBox_invoice_id.PasswordChar = '\0';
@@ -521,11 +525,53 @@
             this.TextBox_invoice_id.Size = new System.Drawing.Size(185, 25);
             this.TextBox_invoice_id.TabIndex = 58;
             // 
+            // Button_Restore
+            // 
+            this.Button_Restore.Animated = true;
+            this.Button_Restore.AutoRoundedCorners = true;
+            this.Button_Restore.BorderRadius = 14;
+            this.Button_Restore.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.Button_Restore.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.Button_Restore.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Button_Restore.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Button_Restore.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.Button_Restore.Font = new System.Drawing.Font("Britannic Bold", 14.25F);
+            this.Button_Restore.ForeColor = System.Drawing.Color.White;
+            this.Button_Restore.IndicateFocus = true;
+            this.Button_Restore.Location = new System.Drawing.Point(457, 455);
+            this.Button_Restore.Name = "Button_Restore";
+            this.Button_Restore.Size = new System.Drawing.Size(185, 30);
+            this.Button_Restore.TabIndex = 59;
+            this.Button_Restore.Text = "RESTAURAR";
+            this.Button_Restore.Click += new System.EventHandler(this.Button_Restore_Click);
+            // 
+            // Button_return
+            // 
+            this.Button_return.Animated = true;
+            this.Button_return.AutoRoundedCorners = true;
+            this.Button_return.BorderRadius = 14;
+            this.Button_return.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.Button_return.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.Button_return.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Button_return.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Button_return.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.Button_return.Font = new System.Drawing.Font("Britannic Bold", 14.25F);
+            this.Button_return.ForeColor = System.Drawing.Color.White;
+            this.Button_return.IndicateFocus = true;
+            this.Button_return.Location = new System.Drawing.Point(23, 56);
+            this.Button_return.Name = "Button_return";
+            this.Button_return.Size = new System.Drawing.Size(142, 30);
+            this.Button_return.TabIndex = 60;
+            this.Button_return.Text = "REGRESAR";
+            this.Button_return.Click += new System.EventHandler(this.Button_return_Click);
+            // 
             // Form_invoice_detail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(850, 550);
+            this.Controls.Add(this.Button_return);
+            this.Controls.Add(this.Button_Restore);
             this.Controls.Add(this.TextBox_invoice_id);
             this.Controls.Add(this.Button_history);
             this.Controls.Add(this.guna2Panel1);
@@ -537,7 +583,7 @@
             this.Controls.Add(this.Label_Employee_Name);
             this.Controls.Add(this.TextBox_IVA);
             this.Controls.Add(this.TextBox_total);
-            this.Controls.Add(this.TextBox_id_producto);
+            this.Controls.Add(this.TextBox_product_id);
             this.Controls.Add(this.Button_agregar_producto);
             this.Controls.Add(this.DataGridView_invoice_detail);
             this.Controls.Add(this.Button_delete);
@@ -568,7 +614,7 @@
         private Guna.UI2.WinForms.Guna2TextBox TextBox_amount;
         private Guna.UI2.WinForms.Guna2DataGridView DataGridView_invoice_detail;
         private Guna.UI2.WinForms.Guna2GradientButton Button_agregar_producto;
-        private Guna.UI2.WinForms.Guna2TextBox TextBox_id_producto;
+        private Guna.UI2.WinForms.Guna2TextBox TextBox_product_id;
         private Guna.UI2.WinForms.Guna2TextBox TextBox_IVA;
         private Guna.UI2.WinForms.Guna2TextBox TextBox_total;
         private System.Windows.Forms.Label Label_client_name;
@@ -584,5 +630,7 @@
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
         private Guna.UI2.WinForms.Guna2TextBox TextBox_invoice_id;
+        private Guna.UI2.WinForms.Guna2GradientButton Button_return;
+        private Guna.UI2.WinForms.Guna2GradientButton Button_Restore;
     }
 }

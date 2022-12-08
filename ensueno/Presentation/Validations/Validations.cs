@@ -96,6 +96,15 @@ namespace ensueno.Presentation.Validations
             else
                 error.Clear();
         }
+        public void number(Guna2TextBox txt, KeyPressEventArgs e)
+        {
+            bool v = Validations.numbers_only(e);
+            if (!v)
+                error.SetError(txt, "Solo se Admiten numeros");
+
+            else
+                error.Clear();
+        }
         public void numbers_only(Guna2TextBox txt, KeyPressEventArgs e)
         {
             bool v = Validations.numbers_only(e);

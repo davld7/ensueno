@@ -11,11 +11,12 @@ go
 create table PRODUCTS
 (
     product_id int not null identity(1,1) primary key,
-    product_name nvarchar(50),
+    product_name nvarchar(50) unique,
     product_stock int,
     product_unit_price decimal,
     product_image image,
-    product_active bit
+    product_active bit default 1,
+	date_time datetime default current_timestamp
 )
 go
 
@@ -35,10 +36,11 @@ create procedure product_create
     @product_image image
 as
 begin
-    insert into PRODUCTS
+    insert into PRODUCTS(product_name,product_stock,product_unit_price,product_image)
     values
-        (@product_name, @product_stock, @product_unit_price, @product_image, 1)
+        (@product_name, @product_stock, @product_unit_price, @product_image)
 end
+
 go
 
 --Leer productos activos.
@@ -101,6 +103,17 @@ begin
 end
 go
 
+create procedure products_read
+as
+begin
+    select p.product_id as 'ID', p.product_name as 'Nombre', p.product_stock as 'Existencia', p.product_unit_price as 'Precio unitario'
+    ,p.date_time as 'Fecha de registro'
+	from PRODUCTS as p
+    where product_active=1
+end
+
+
+
 --Leer historial de productos.
 
 create procedure products_read_history
@@ -117,7 +130,8 @@ create procedure products_read_by_name
     @product_name nvarchar(50)
 as
 begin
-    select p.product_id as 'ID', p.product_name as 'Nombre', p.product_stock as 'Existencia', p.product_unit_price as 'Precio unitario'
+    select p.product_id as 'ID', p.product_name as 'Nombre', p.product_stock as 'Existencia', p.product_unit_price as 'Precio unitario',
+	p.date_time as 'Fecha de registro'
     from PRODUCTS as p
     where product_name like '%'+@product_name+'%' and product_active=1
 end

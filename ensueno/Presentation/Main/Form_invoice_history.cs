@@ -14,6 +14,8 @@ namespace ensueno.Presentation.Main
     public partial class Form_invoice_history : Form
     {
         private readonly Invoices invoices = new Invoices();
+        private readonly Invoices_Detail invoices_detail = new Invoices_Detail();
+        private DataTable dt = new DataTable();
         public Form_invoice_history()
         {
             InitializeComponent();
@@ -44,6 +46,7 @@ namespace ensueno.Presentation.Main
                 else
                 {
                     TextBox_id.Text =DataGridView_invoice_history.Rows[e.RowIndex].Cells[0].Value.ToString();
+                    
                 }
             }
             catch (Exception ex)
@@ -69,7 +72,16 @@ namespace ensueno.Presentation.Main
         {
             read_history();
         }
-
+        private void invoice_detail_list_restore(int invoice_id)
+        {
+            dt = invoices_detail.Read_history_by_id(invoice_id);
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                int product_id;
+                product_id = int.Parse(dt.Rows[i][1].ToString());
+                invoices_detail.Restore(invoice_id, product_id);
+            }
+        }
         private void Button_restore_Click(object sender, EventArgs e)
         {
             try
@@ -82,6 +94,7 @@ namespace ensueno.Presentation.Main
                 {
                    if( invoices.Restore(int.Parse(TextBox_id.Text)))
                     {
+                        invoice_detail_list_restore(int.Parse(TextBox_id.Text));
                         MessageBox.Show("Se restauro correctamente");
                         TextBox_id.Clear();
                         read_history();

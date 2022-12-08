@@ -10,14 +10,15 @@ go
 create table EMPLOYEES
 (
     employee_id int not null identity(1,1) primary key,
-    employee_id_card nvarchar(20),
+    employee_id_card nvarchar(20)unique,
     employee_name nvarchar(50),
     employee_last_name nvarchar(50),
     employee_phone nvarchar(20),
     employee_address nvarchar(100),
-    employee_user nvarchar(20),
+    employee_user nvarchar(20)unique,
     employee_admin bit,
-    employee_active bit
+    employee_active bit default 1,
+	date_time datetime default current_timestamp
 )
 go
 
@@ -42,9 +43,9 @@ create procedure employee_create
     @employee_admin bit
 as
 begin
-    insert into EMPLOYEES
+    insert into EMPLOYEES(employee_id_card,employee_name,employee_last_name,employee_phone, employee_address,employee_user,employee_admin)
     values
-        (@employee_id_card, @employee_name, @employee_last_name, @employee_phone, @employee_address, @employee_user, @employee_admin, 1)
+        (@employee_id_card, @employee_name, @employee_last_name, @employee_phone, @employee_address, @employee_user, @employee_admin)
 end
 go
 
@@ -87,7 +88,8 @@ create procedure employees_read
 as
 begin
     select e.employee_id as 'ID', e.employee_id_card as 'Cédula', e.employee_name as 'Nombre', e.employee_last_name as 'Apellido', e.employee_phone as 'Teléfono', e.employee_address as 'Dirección', e.employee_user as 'Usuario', e.employee_admin as 'Administrador'
-    from EMPLOYEES as e
+    ,e.date_time as 'Fecha de registro'
+	from EMPLOYEES as e
     where employee_active=1
 end
 go
@@ -160,7 +162,8 @@ create procedure employees_read_by_name
 as
 begin
     select e.employee_id as 'ID', e.employee_id_card as 'Cédula', e.employee_name as 'Nombre', e.employee_last_name as 'Apellido', e.employee_phone as 'Teléfono', e.employee_address as 'Dirección', e.employee_user as 'Usuario', e.employee_admin as 'Administrador'
-    from EMPLOYEES as e
+    ,e.date_time as 'Fecha de registro'
+	from EMPLOYEES as e
     where employee_name like '%'+@employee_name+'%' and employee_active=1
 end
 go
@@ -172,7 +175,8 @@ create procedure employees_read_by_last_name
 as
 begin
     select e.employee_id as 'ID', e.employee_id_card as 'Cédula', e.employee_name as 'Nombre', e.employee_last_name as 'Apellido', e.employee_phone as 'Teléfono', e.employee_address as 'Dirección', e.employee_user as 'Usuario', e.employee_admin as 'Administrador'
-    from EMPLOYEES as e
+    ,e.date_time as 'Fecha de registro'
+	from EMPLOYEES as e
     where employee_last_name like '%'+@employee_last_name+'%' and employee_active=1
 end
 go

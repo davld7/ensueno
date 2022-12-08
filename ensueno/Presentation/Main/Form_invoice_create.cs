@@ -38,19 +38,21 @@ namespace ensueno.Presentation.Main
         {
             this.Close();
         }
-        public static int Client_id, Employee_id;
-        public static string Client_name;
+        
         private void Button_yes_Click(object sender, EventArgs e)
         {
-            Client_name = Form_invoice.client_name;   
-            Employee_id = Form_invoice.employee_id;
-            Client_id = Form_invoice.client_id;
-            Invoices invoices = new Invoices();
-            invoices.Create(Employee_id, Client_id);
-            MessageBox.Show("Factura Creada Correctamente");
-            fid= new Form_invoice_detail();
-            fid.ShowDialog();
-            this.Close();
+            try
+            {
+                Invoices invoices = new Invoices();
+                invoices.Create(Program.Values.Employee_id, Program.Values.Client_id);
+                MessageBox.Show("Factura Creada Correctamente");
+                fid = new Form_invoice_detail();
+                fid.ShowDialog();
+                this.Close();
+            }
+            catch(Exception)
+            {
+            }
         }
     }
 }

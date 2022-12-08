@@ -10,12 +10,13 @@ go
 create table CLIENTS
 (
     client_id int not null identity(1,1) primary key,
-    client_id_card nvarchar(20),
+    client_id_card nvarchar(20) unique,
     client_name nvarchar(50),
     client_last_name nvarchar(50),
     client_phone nvarchar(20),
     client_address nvarchar(100),
-    client_active bit
+    client_active bit default 1,
+	date_time datetime default current_timestamp
 )
 go
 
@@ -28,17 +29,18 @@ go
 
 --Crear cliente.
 
-create procedure client_create
+create procedure client_create(
     @client_id_card nvarchar(20),
     @client_name nvarchar(50),
     @client_last_name nvarchar(50),
     @client_phone nvarchar(20),
     @client_address nvarchar(100)
+	)
 as
 begin
-    insert into CLIENTS
+    insert into CLIENTS(client_id_card,client_name,client_last_name,client_phone,client_address)
     values
-        (@client_id_card, @client_name, @client_last_name, @client_phone, @client_address, 1)
+        (@client_id_card, @client_name, @client_last_name, @client_phone, @client_address)
 end
 go
 
@@ -47,7 +49,8 @@ go
 create procedure clients_read
 as
 begin
-    select c.client_id as 'ID', c.client_id_card as 'Cédula', c.client_name as 'Nombre', c.client_last_name as 'Apellido', c.client_phone as 'Teléfono', c.client_address as 'Dirección'
+    select c.client_id as 'ID', c.client_id_card as 'Cédula', c.client_name as 'Nombre', c.client_last_name as 'Apellido', c.client_phone as 'Teléfono', c.client_address as 'Dirección',
+	c.date_time as 'Fecha de registro'
     from CLIENTS as c
     where client_active=1
 end
@@ -108,7 +111,8 @@ create procedure clients_read_by_name
 as
 begin
     select c.client_id as 'ID', c.client_id_card as 'Cédula', c.client_name as 'Nombre', c.client_last_name as 'Apellido', c.client_phone as 'Teléfono', c.client_address as 'Dirección'
-    from CLIENTS as c
+    ,c.date_time as 'Fecha de registro'
+	from CLIENTS as c
     where client_name like '%'+@client_name+'%' and client_active=1
 end
 go
@@ -119,7 +123,8 @@ create procedure clients_read_by_last_name
 as
 begin
     select c.client_id as 'ID', c.client_id_card as 'Cédula', c.client_name as 'Nombre', c.client_last_name as 'Apellido', c.client_phone as 'Teléfono', c.client_address as 'Dirección'
-    from CLIENTS as c
+    ,c.date_time as 'Fecha de registro'
+	from CLIENTS as c
     where client_last_name like '%'+@client_last_name+'%' and client_active=1
 end
 go
