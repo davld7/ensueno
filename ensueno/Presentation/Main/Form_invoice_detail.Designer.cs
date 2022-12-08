@@ -137,7 +137,7 @@
             this.Button_clear.ForeColor = System.Drawing.Color.White;
             this.Button_clear.Image = global::ensueno.Properties.Resources.clean;
             this.Button_clear.ImageSize = new System.Drawing.Size(32, 32);
-            this.Button_clear.Location = new System.Drawing.Point(510, 28);
+            this.Button_clear.Location = new System.Drawing.Point(592, 452);
             this.Button_clear.Name = "Button_clear";
             this.Button_clear.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.Button_clear.Size = new System.Drawing.Size(50, 50);

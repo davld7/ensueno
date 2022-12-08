@@ -44,6 +44,7 @@
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.ComboBox1 = new System.Windows.Forms.ComboBox();
             this.Button_history = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.Button_clear = new Guna.UI2.WinForms.Guna2CircleButton();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_invoices)).BeginInit();
             this.SuspendLayout();
             // 
@@ -285,11 +286,34 @@
             this.Button_history.Text = "HISTORIAL";
             this.Button_history.Click += new System.EventHandler(this.Button_history_Click);
             // 
+            // Button_clear
+            // 
+            this.Button_clear.Animated = true;
+            this.Button_clear.BackColor = System.Drawing.Color.Transparent;
+            this.Button_clear.BorderColor = System.Drawing.Color.Crimson;
+            this.Button_clear.BorderThickness = 2;
+            this.Button_clear.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.Button_clear.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.Button_clear.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Button_clear.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.Button_clear.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.Button_clear.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Button_clear.ForeColor = System.Drawing.Color.White;
+            this.Button_clear.Image = global::ensueno.Properties.Resources.clean;
+            this.Button_clear.ImageSize = new System.Drawing.Size(32, 32);
+            this.Button_clear.Location = new System.Drawing.Point(557, 33);
+            this.Button_clear.Name = "Button_clear";
+            this.Button_clear.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.Button_clear.Size = new System.Drawing.Size(50, 50);
+            this.Button_clear.TabIndex = 63;
+            this.Button_clear.UseTransparentBackground = true;
+            // 
             // Form_invoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(850, 500);
+            this.Controls.Add(this.Button_clear);
             this.Controls.Add(this.Button_history);
             this.Controls.Add(this.ComboBox1);
             this.Controls.Add(this.TextBox_invoice_id);
@@ -321,5 +345,6 @@
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
         private System.Windows.Forms.ComboBox ComboBox1;
         private Guna.UI2.WinForms.Guna2GradientButton Button_history;
+        private Guna.UI2.WinForms.Guna2CircleButton Button_clear;
     }
 }
