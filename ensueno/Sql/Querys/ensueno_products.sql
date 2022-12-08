@@ -1,4 +1,4 @@
-﻿--Perfumer�a Ensue�o.
+﻿--Perfumería Ensueño.
 
 create database ENSUENO
 go
@@ -15,7 +15,7 @@ create table PRODUCTS
     product_stock int,
     product_unit_price decimal,
     product_image image,
-	product_active bit
+    product_active bit
 )
 go
 
@@ -70,7 +70,7 @@ create procedure product_update
     @product_name nvarchar(50),
     @product_stock int,
     @product_unit_price decimal,
-    @product_image image   
+    @product_image image
 as
 begin
     update PRODUCTS
@@ -136,7 +136,7 @@ go
 
 --Validar actualizar nombre en productos.
 create procedure products_validate_update_name
-	@product_id int,
+    @product_id int,
     @product_name nvarchar(50)
 as
 begin

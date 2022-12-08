@@ -1,4 +1,4 @@
---Perfumer�a Ensue�o.
+--Perfumería Ensueño.
 
 create database ENSUENO
 go
@@ -190,7 +190,7 @@ go
 
 --Validar actualizar cédula en empleados.
 create procedure employees_validate_update_id_card
-	@id int,
+    @id int,
     @id_card nvarchar(20)
 as
 begin

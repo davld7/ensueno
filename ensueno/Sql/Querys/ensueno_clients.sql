@@ -1,4 +1,4 @@
-﻿--Perfumer�a Ensue�o.
+﻿--Perfumería Ensueño.
 
 create database ENSUENO
 go
@@ -33,7 +33,7 @@ create procedure client_create
     @client_name nvarchar(50),
     @client_last_name nvarchar(50),
     @client_phone nvarchar(20),
-	@client_address nvarchar(100)
+    @client_address nvarchar(100)
 as
 begin
     insert into CLIENTS
@@ -60,7 +60,7 @@ create procedure client_update
     @client_name nvarchar(50),
     @client_last_name nvarchar(50),
     @client_phone nvarchar(20),
-    @client_address nvarchar(100)    
+    @client_address nvarchar(100)
 as
 begin
     update CLIENTS
@@ -137,7 +137,7 @@ go
 
 --Validar actualizar cédula en clientes.
 create procedure clients_validate_update_id_card
-	@id int,
+    @id int,
     @id_card nvarchar(20)
 as
 begin
