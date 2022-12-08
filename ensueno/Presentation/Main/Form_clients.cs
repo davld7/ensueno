@@ -19,6 +19,7 @@ namespace ensueno.Presentation.Main
         readonly Values val=new Values();
         private readonly Clients clients = new Clients();
         private Form_clients_history fh;
+        private Form_clients_report fr;
         public Form_clients()
         {
             InitializeComponent();
@@ -265,6 +266,12 @@ namespace ensueno.Presentation.Main
         private void TextBox_read_by_last_name_KeyPress(object sender, KeyPressEventArgs e)
         {
             val.Search_by_letters(TextBox_read_by_last_name, e);
+        }
+
+        private void Button_report_Click(object sender, EventArgs e)
+        {
+            fr = new Form_clients_report();
+            fr.ShowDialog();
         }
     }
 }

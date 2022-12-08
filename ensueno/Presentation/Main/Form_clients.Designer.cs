@@ -48,6 +48,7 @@
             this.Button_delete = new Guna.UI2.WinForms.Guna2GradientButton();
             this.Button_update = new Guna.UI2.WinForms.Guna2GradientButton();
             this.Button_create = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.Button_report = new Guna.UI2.WinForms.Guna2GradientButton();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_clients)).BeginInit();
             this.SuspendLayout();
             // 
@@ -441,11 +442,32 @@
             this.Button_create.Text = "CREAR";
             this.Button_create.Click += new System.EventHandler(this.Button_create_Click);
             // 
+            // Button_report
+            // 
+            this.Button_report.Animated = true;
+            this.Button_report.AutoRoundedCorners = true;
+            this.Button_report.BorderRadius = 14;
+            this.Button_report.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.Button_report.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.Button_report.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Button_report.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Button_report.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.Button_report.Font = new System.Drawing.Font("Britannic Bold", 14.25F);
+            this.Button_report.ForeColor = System.Drawing.Color.White;
+            this.Button_report.IndicateFocus = true;
+            this.Button_report.Location = new System.Drawing.Point(649, 391);
+            this.Button_report.Name = "Button_report";
+            this.Button_report.Size = new System.Drawing.Size(185, 30);
+            this.Button_report.TabIndex = 31;
+            this.Button_report.Text = "REPORTE";
+            this.Button_report.Click += new System.EventHandler(this.Button_report_Click);
+            // 
             // Form_clients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(850, 500);
+            this.Controls.Add(this.Button_report);
             this.Controls.Add(this.Button_history);
             this.Controls.Add(this.Button_delete);
             this.Controls.Add(this.Button_update);
@@ -486,5 +508,6 @@
         private Guna.UI2.WinForms.Guna2GradientButton Button_delete;
         private Guna.UI2.WinForms.Guna2GradientButton Button_update;
         private Guna.UI2.WinForms.Guna2GradientButton Button_create;
+        private Guna.UI2.WinForms.Guna2GradientButton Button_report;
     }
 }
