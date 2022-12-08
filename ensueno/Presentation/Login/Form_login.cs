@@ -114,6 +114,12 @@ namespace ensueno.Presentation.Login
             fw.ShowDialog();
         }
 
+        private void Label_about_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Label_about.LinkVisited = true;
+            System.Diagnostics.Process.Start("https://linktr.ee/perfumeria.ensueno");
+        }
+
         private void Show_form_main()
         {
             fm = new Form_main();

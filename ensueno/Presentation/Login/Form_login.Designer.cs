@@ -43,6 +43,7 @@
             this.TextBox_password = new Guna.UI2.WinForms.Guna2TextBox();
             this.TextBox_user = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.Label_about = new System.Windows.Forms.LinkLabel();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -136,10 +137,10 @@
             this.Button_login.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.Button_login.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.Button_login.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.Button_login.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button_login.Font = new System.Drawing.Font("Britannic Bold", 14.25F);
             this.Button_login.ForeColor = System.Drawing.Color.White;
             this.Button_login.IndicateFocus = true;
-            this.Button_login.Location = new System.Drawing.Point(308, 192);
+            this.Button_login.Location = new System.Drawing.Point(308, 190);
             this.Button_login.Name = "Button_login";
             this.Button_login.Size = new System.Drawing.Size(230, 45);
             this.Button_login.TabIndex = 2;
@@ -235,11 +236,26 @@
             this.guna2PictureBox1.TabIndex = 0;
             this.guna2PictureBox1.TabStop = false;
             // 
+            // Label_about
+            // 
+            this.Label_about.AutoSize = true;
+            this.Label_about.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_about.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Label_about.Location = new System.Drawing.Point(374, 240);
+            this.Label_about.Name = "Label_about";
+            this.Label_about.Size = new System.Drawing.Size(102, 21);
+            this.Label_about.TabIndex = 9;
+            this.Label_about.TabStop = true;
+            this.Label_about.Text = "ACERCA DE";
+            this.Label_about.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(165)))));
+            this.Label_about.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Label_about_LinkClicked);
+            // 
             // Form_login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(550, 270);
+            this.Controls.Add(this.Label_about);
             this.Controls.Add(this.Button_database);
             this.Controls.Add(this.Button_login);
             this.Controls.Add(this.TextBox_password);
@@ -256,6 +272,7 @@
             this.guna2Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -274,5 +291,6 @@
         private Guna.UI2.WinForms.Guna2CircleButton Button_dark_mode;
         private Guna.UI2.WinForms.Guna2ToggleSwitch Switch_dark_mode;
         private Guna.UI2.WinForms.Guna2CircleButton Button_database;
+        private System.Windows.Forms.LinkLabel Label_about;
     }
 }
