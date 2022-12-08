@@ -93,5 +93,15 @@ namespace ensueno.Properties {
                 this["active_user"] = value;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DAVID\\SQLEXPRESS;Initial Catalog=ENSUENO;Integrated Security=True")]
+        public string ENSUENOConnectionString {
+            get {
+                return ((string)(this["ENSUENOConnectionString"]));
+            }
+        }
     }
 }

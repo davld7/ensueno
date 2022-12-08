@@ -181,6 +181,11 @@
     <Compile Include="Presentation\Validations\Validations.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report\DataSet_ensueno.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_ensueno.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Sql\Builder.cs" />
     <Compile Include="Sql\Connection.cs" />
     <Compile Include="Sql\Stored_procedures\Cache.cs" />
@@ -247,6 +252,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Report\Report_clients.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -257,6 +263,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Report\DataSet_ensueno.xsc">
+      <DependentUpon>DataSet_ensueno.xsd</DependentUpon>
+    </None>
+    <None Include="Report\DataSet_ensueno.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_ensueno.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Report\DataSet_ensueno.xss">
+      <DependentUpon>DataSet_ensueno.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
