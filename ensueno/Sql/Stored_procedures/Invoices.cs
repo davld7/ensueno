@@ -11,7 +11,7 @@ namespace ensueno.Sql.Stored_procedures
 {
     internal class Invoices : Connection
     {
-
+        private DataRow data_row;
         private SqlCommand command;
         private SqlDataAdapter data_adapter;
         private DataTable data_table;
@@ -36,6 +36,31 @@ namespace ensueno.Sql.Stored_procedures
             }
             finally { Disconnect(); }
         }
+        public DataRow Last_id()
+        {
+            try
+            {
+                Connect();
+                command = new SqlCommand($"SELECT max(invoice_id) as 'Valor ID' FROM INVOICE", Get_connection());
+                data_adapter = new SqlDataAdapter(command);
+                data_table = new DataTable();
+                data_adapter.Fill(data_table);
+                data_row = data_table.Rows[0];
+                Disconnect();
+                return data_row;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+            finally
+            {
+                Disconnect();
+            }
+
+        }
+
         public bool Create(int Employee_id, int Client_id)
         {
             try

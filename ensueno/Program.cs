@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ensueno.Presentation.Login;
+using ensueno.Sql.Stored_procedures;
 
 namespace ensueno
 {
@@ -12,6 +13,8 @@ namespace ensueno
         /// <summary>
         /// Punto de entrada principal para la aplicación.
         /// </summary>
+        /// 
+        public static Cache Values= new Cache();
         [STAThread]
         static void Main()
         {

@@ -162,8 +162,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sql\Builder.cs" />
     <Compile Include="Sql\Connection.cs" />
+    <Compile Include="Sql\Stored_procedures\Cache.cs" />
     <Compile Include="Sql\Stored_procedures\Clients.cs" />
     <Compile Include="Sql\Stored_procedures\Employees.cs" />
+    <Compile Include="Sql\Stored_procedures\Invoices_Detail.cs" />
     <Compile Include="Sql\Stored_procedures\Invoices.cs" />
     <Compile Include="Sql\Stored_procedures\Products.cs" />
     <EmbeddedResource Include="Presentation\Login\Form_database.resx">
@@ -256,6 +258,7 @@
     <Content Include="Resources\Main\left_arrow.png" />
     <Content Include="Resources\Main\products.png" />
     <Content Include="Resources\Main\right_arrow.png" />
+    <Content Include="Sql\Querys\ensueno invoice detail.sql" />
     <Content Include="Sql\Querys\ensueno_clients.sql" />
     <Content Include="Sql\Querys\ensueno_employees.sql" />
     <Content Include="Sql\Querys\ensueno_invoices.sql" />
