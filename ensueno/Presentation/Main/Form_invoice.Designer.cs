@@ -61,7 +61,7 @@
             this.Button_delete.Font = new System.Drawing.Font("Britannic Bold", 14.25F);
             this.Button_delete.ForeColor = System.Drawing.Color.White;
             this.Button_delete.IndicateFocus = true;
-            this.Button_delete.Location = new System.Drawing.Point(643, 340);
+            this.Button_delete.Location = new System.Drawing.Point(643, 300);
             this.Button_delete.Name = "Button_delete";
             this.Button_delete.Size = new System.Drawing.Size(185, 35);
             this.Button_delete.TabIndex = 43;
@@ -81,7 +81,7 @@
             this.Button_update.Font = new System.Drawing.Font("Britannic Bold", 14.25F);
             this.Button_update.ForeColor = System.Drawing.Color.White;
             this.Button_update.IndicateFocus = true;
-            this.Button_update.Location = new System.Drawing.Point(643, 299);
+            this.Button_update.Location = new System.Drawing.Point(643, 259);
             this.Button_update.Name = "Button_update";
             this.Button_update.Size = new System.Drawing.Size(185, 35);
             this.Button_update.TabIndex = 42;
@@ -171,14 +171,14 @@
             this.TextBox_client_id.Font = new System.Drawing.Font("Britannic Bold", 11.25F);
             this.TextBox_client_id.ForeColor = System.Drawing.SystemColors.GrayText;
             this.TextBox_client_id.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TextBox_client_id.Location = new System.Drawing.Point(643, 167);
+            this.TextBox_client_id.Location = new System.Drawing.Point(643, 149);
             this.TextBox_client_id.MaxLength = 50;
             this.TextBox_client_id.Name = "TextBox_client_id";
             this.TextBox_client_id.PasswordChar = '\0';
             this.TextBox_client_id.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
             this.TextBox_client_id.PlaceholderText = "Id Cliente";
             this.TextBox_client_id.SelectedText = "";
-            this.TextBox_client_id.Size = new System.Drawing.Size(185, 26);
+            this.TextBox_client_id.Size = new System.Drawing.Size(185, 35);
             this.TextBox_client_id.TabIndex = 50;
             this.TextBox_client_id.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_client_id_KeyPress);
             // 
@@ -195,7 +195,7 @@
             this.Button_report.Font = new System.Drawing.Font("Britannic Bold", 14.25F);
             this.Button_report.ForeColor = System.Drawing.Color.White;
             this.Button_report.IndicateFocus = true;
-            this.Button_report.Location = new System.Drawing.Point(643, 422);
+            this.Button_report.Location = new System.Drawing.Point(643, 341);
             this.Button_report.Name = "Button_report";
             this.Button_report.Size = new System.Drawing.Size(185, 35);
             this.Button_report.TabIndex = 53;
@@ -215,7 +215,7 @@
             this.Button_Create.Font = new System.Drawing.Font("Britannic Bold", 14.25F);
             this.Button_Create.ForeColor = System.Drawing.Color.White;
             this.Button_Create.IndicateFocus = true;
-            this.Button_Create.Location = new System.Drawing.Point(643, 257);
+            this.Button_Create.Location = new System.Drawing.Point(643, 217);
             this.Button_Create.Name = "Button_Create";
             this.Button_Create.Size = new System.Drawing.Size(185, 35);
             this.Button_Create.TabIndex = 59;
@@ -244,7 +244,7 @@
             this.TextBox_invoice_id.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
             this.TextBox_invoice_id.PlaceholderText = "Id Factura";
             this.TextBox_invoice_id.SelectedText = "";
-            this.TextBox_invoice_id.Size = new System.Drawing.Size(185, 26);
+            this.TextBox_invoice_id.Size = new System.Drawing.Size(185, 35);
             this.TextBox_invoice_id.TabIndex = 60;
             this.TextBox_invoice_id.TextChanged += new System.EventHandler(this.TextBox_invoice_id_TextChanged);
             this.TextBox_invoice_id.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_invoice_id_KeyPress);
@@ -261,7 +261,7 @@
             // ComboBox1
             // 
             this.ComboBox1.FormattingEnabled = true;
-            this.ComboBox1.Location = new System.Drawing.Point(643, 140);
+            this.ComboBox1.Location = new System.Drawing.Point(643, 190);
             this.ComboBox1.Name = "ComboBox1";
             this.ComboBox1.Size = new System.Drawing.Size(185, 21);
             this.ComboBox1.TabIndex = 61;
@@ -280,7 +280,7 @@
             this.Button_history.Font = new System.Drawing.Font("Britannic Bold", 14.25F);
             this.Button_history.ForeColor = System.Drawing.Color.White;
             this.Button_history.IndicateFocus = true;
-            this.Button_history.Location = new System.Drawing.Point(643, 381);
+            this.Button_history.Location = new System.Drawing.Point(643, 382);
             this.Button_history.Name = "Button_history";
             this.Button_history.Size = new System.Drawing.Size(185, 35);
             this.Button_history.TabIndex = 62;
@@ -308,6 +308,7 @@
             this.Button_clear.Size = new System.Drawing.Size(50, 50);
             this.Button_clear.TabIndex = 63;
             this.Button_clear.UseTransparentBackground = true;
+            this.Button_clear.Click += new System.EventHandler(this.Button_clear_Click);
             // 
             // Form_invoice
             // 

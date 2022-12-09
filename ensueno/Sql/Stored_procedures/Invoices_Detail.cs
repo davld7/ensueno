@@ -31,6 +31,7 @@ namespace ensueno.Sql.Stored_procedures
             }
             catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
                 return null;
             }
             finally 

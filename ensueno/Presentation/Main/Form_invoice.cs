@@ -67,7 +67,7 @@ namespace ensueno.Presentation.Main
         {
             try
             {
-                //Program.Values.invoice_id = int.Parse(TextBox_invoice_id.Text);
+                Program.Values.invoice_id = int.Parse(TextBox_invoice_id.Text);
                 fr = new Form_invoice_report();
                 fr.ShowDialog();
             }
@@ -80,7 +80,12 @@ namespace ensueno.Presentation.Main
         private void Form_invoice_Load(object sender, EventArgs e)
         {
             Read();
+            TextBox_invoice_id.Enabled = false;
+            TextBox_client_id.Enabled = false;
             TextBox_client_id.Text = "";
+            Button_update.Enabled = false;
+            Button_delete.Enabled = false;
+            Button_report.Enabled = false;
         }
         public void Last_id(int client_id,string client_name)
         {
@@ -221,9 +226,8 @@ namespace ensueno.Presentation.Main
         }
         private void Clear_textboxes()
         {
-            TextBox_invoice_id.Clear();
-            TextBox_client_id.Clear();
-            
+            TextBox_invoice_id.Text="";
+            TextBox_client_id.Text="";           
         }
         private void DataGridView_invoices_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -261,11 +265,12 @@ namespace ensueno.Presentation.Main
                     Last_id(int.Parse(TextBox_client_id.Text),ComboBox1.Text);
                     Form_invoice_create form_Invoice_Create = new Form_invoice_create();
                     form_Invoice_Create.ShowDialog();
+                    Read();
                 }
             }
             catch (Exception ex)
             {
-               
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -293,6 +298,10 @@ namespace ensueno.Presentation.Main
             DataGridView_invoices.DataSource = dt;
             DataGridView_invoices.Refresh();
         }
-        
+
+        private void Button_clear_Click(object sender, EventArgs e)
+        {
+            Clear_textboxes();
+        }
     }
 }

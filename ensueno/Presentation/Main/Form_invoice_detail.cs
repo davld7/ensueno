@@ -23,7 +23,6 @@ namespace ensueno.Presentation.Main
         private Form_invoice_create fic;
         private Form_invoice fi;
         private int invoice_id;
-        private Form_invoice_history fh;
         public Form_invoice_detail()
         {
             InitializeComponent();
@@ -298,7 +297,7 @@ namespace ensueno.Presentation.Main
 
             }
         }
-        private bool read_history_by_invoice_id(int invoice_id)
+        private bool Read_history_by_invoice_id(int invoice_id)
         {
             try
             {
@@ -328,7 +327,7 @@ namespace ensueno.Presentation.Main
                     val.empty_text(TextBox_invoice_id);
                     MessageBox.Show("Este campo no puede estar vacio");
                 }
-               else if (read_history_by_invoice_id(Program.Values.invoice_id)==true)
+               else if (Read_history_by_invoice_id(Program.Values.invoice_id)==true)
                 {
                     Button_agregar_producto.Visible = false;
                     Button_create.Visible = false;
@@ -385,7 +384,7 @@ namespace ensueno.Presentation.Main
                 }
                 else if (invoices_detail.Restore(Program.Values.invoice_id, int.Parse(TextBox_product_id.Text)))
                 {
-                    read_history_by_invoice_id(Program.Values.invoice_id);
+                    Read_history_by_invoice_id(Program.Values.invoice_id);
                     MessageBox.Show("Restaurado correctamente");
                 }
             }catch(Exception ex)
