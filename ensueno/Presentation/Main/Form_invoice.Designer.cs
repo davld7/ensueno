@@ -45,6 +45,7 @@
             this.ComboBox1 = new System.Windows.Forms.ComboBox();
             this.Button_history = new Guna.UI2.WinForms.Guna2GradientButton();
             this.Button_clear = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.Button_detail = new Guna.UI2.WinForms.Guna2GradientButton();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_invoices)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,7 +62,7 @@
             this.Button_delete.Font = new System.Drawing.Font("Britannic Bold", 14.25F);
             this.Button_delete.ForeColor = System.Drawing.Color.White;
             this.Button_delete.IndicateFocus = true;
-            this.Button_delete.Location = new System.Drawing.Point(643, 300);
+            this.Button_delete.Location = new System.Drawing.Point(643, 396);
             this.Button_delete.Name = "Button_delete";
             this.Button_delete.Size = new System.Drawing.Size(185, 35);
             this.Button_delete.TabIndex = 43;
@@ -81,7 +82,7 @@
             this.Button_update.Font = new System.Drawing.Font("Britannic Bold", 14.25F);
             this.Button_update.ForeColor = System.Drawing.Color.White;
             this.Button_update.IndicateFocus = true;
-            this.Button_update.Location = new System.Drawing.Point(643, 259);
+            this.Button_update.Location = new System.Drawing.Point(643, 355);
             this.Button_update.Name = "Button_update";
             this.Button_update.Size = new System.Drawing.Size(185, 35);
             this.Button_update.TabIndex = 42;
@@ -195,7 +196,7 @@
             this.Button_report.Font = new System.Drawing.Font("Britannic Bold", 14.25F);
             this.Button_report.ForeColor = System.Drawing.Color.White;
             this.Button_report.IndicateFocus = true;
-            this.Button_report.Location = new System.Drawing.Point(643, 341);
+            this.Button_report.Location = new System.Drawing.Point(643, 314);
             this.Button_report.Name = "Button_report";
             this.Button_report.Size = new System.Drawing.Size(185, 35);
             this.Button_report.TabIndex = 53;
@@ -280,7 +281,7 @@
             this.Button_history.Font = new System.Drawing.Font("Britannic Bold", 14.25F);
             this.Button_history.ForeColor = System.Drawing.Color.White;
             this.Button_history.IndicateFocus = true;
-            this.Button_history.Location = new System.Drawing.Point(643, 382);
+            this.Button_history.Location = new System.Drawing.Point(643, 437);
             this.Button_history.Name = "Button_history";
             this.Button_history.Size = new System.Drawing.Size(185, 35);
             this.Button_history.TabIndex = 62;
@@ -310,11 +311,31 @@
             this.Button_clear.UseTransparentBackground = true;
             this.Button_clear.Click += new System.EventHandler(this.Button_clear_Click);
             // 
+            // Button_detail
+            // 
+            this.Button_detail.Animated = true;
+            this.Button_detail.AutoRoundedCorners = true;
+            this.Button_detail.BorderRadius = 24;
+            this.Button_detail.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.Button_detail.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.Button_detail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Button_detail.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Button_detail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.Button_detail.Font = new System.Drawing.Font("Britannic Bold", 14.25F);
+            this.Button_detail.ForeColor = System.Drawing.Color.White;
+            this.Button_detail.IndicateFocus = true;
+            this.Button_detail.Location = new System.Drawing.Point(643, 258);
+            this.Button_detail.Name = "Button_detail";
+            this.Button_detail.Size = new System.Drawing.Size(185, 50);
+            this.Button_detail.TabIndex = 64;
+            this.Button_detail.Text = "VER DETALLE DE FACTURA";
+            // 
             // Form_invoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(850, 500);
+            this.Controls.Add(this.Button_detail);
             this.Controls.Add(this.Button_clear);
             this.Controls.Add(this.Button_history);
             this.Controls.Add(this.ComboBox1);
@@ -348,5 +369,6 @@
         private System.Windows.Forms.ComboBox ComboBox1;
         private Guna.UI2.WinForms.Guna2GradientButton Button_history;
         private Guna.UI2.WinForms.Guna2CircleButton Button_clear;
+        private Guna.UI2.WinForms.Guna2GradientButton Button_detail;
     }
 }

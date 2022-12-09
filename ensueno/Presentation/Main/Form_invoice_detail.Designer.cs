@@ -121,7 +121,7 @@
             this.Button_create.Name = "Button_create";
             this.Button_create.Size = new System.Drawing.Size(185, 30);
             this.Button_create.TabIndex = 37;
-            this.Button_create.Text = "CREAR";
+            this.Button_create.Text = "REPORTE";
             this.Button_create.Click += new System.EventHandler(this.Button_create_Click);
             // 
             // Button_clear

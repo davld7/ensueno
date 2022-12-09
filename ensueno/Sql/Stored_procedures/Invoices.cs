@@ -17,7 +17,7 @@ namespace ensueno.Sql.Stored_procedures
         private DataTable data_table;
 
 
-        public DataTable invoice_search_client()
+        public DataTable Invoice_search_client()
         {
             try
             {

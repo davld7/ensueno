@@ -80,12 +80,13 @@ namespace ensueno.Presentation.Main
         private void Form_invoice_Load(object sender, EventArgs e)
         {
             Read();
-            TextBox_invoice_id.Enabled = false;
-            TextBox_client_id.Enabled = false;
+            //TextBox_invoice_id.Enabled = false;
+            //TextBox_client_id.Enabled = false;
             TextBox_client_id.Text = "";
             Button_update.Enabled = false;
             Button_delete.Enabled = false;
             Button_report.Enabled = false;
+            Button_detail.Enabled = false;
         }
         public void Last_id(int client_id,string client_name)
         {
@@ -110,7 +111,7 @@ namespace ensueno.Presentation.Main
         {
             try
             {
-                dt = invoices.invoice_search_client();
+                dt = invoices.Invoice_search_client();
                 ComboBox1.DataSource = dt;
                 ComboBox1.ValueMember = "ID";
                 ComboBox1.DisplayMember = "Nombre Completo";
@@ -126,7 +127,7 @@ namespace ensueno.Presentation.Main
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
-        private void invoice_detail_list_delete(int invoice_id)
+        private void Invoice_detail_list_delete(int invoice_id)
         {
             dt = invoices_detail.Read_By_Id(invoice_id);
             
@@ -196,7 +197,7 @@ namespace ensueno.Presentation.Main
                     Program.Values.invoice_id = int.Parse(TextBox_invoice_id.Text);
                     if (invoices.Delete(Program.Values.invoice_id))
                     {
-                        invoice_detail_list_delete(Program.Values.invoice_id);
+                        Invoice_detail_list_delete(Program.Values.invoice_id);
                         MessageBox.Show("Factura eliminada Correctamente");
                         Clear_textboxes();
                         Read();
@@ -283,6 +284,7 @@ namespace ensueno.Presentation.Main
                 Button_update.Enabled = true;
                 Button_delete.Enabled = true;
                 Button_report.Enabled = true;
+                Button_detail.Enabled = true;
             }
             else
             {
@@ -290,6 +292,7 @@ namespace ensueno.Presentation.Main
                 Button_update.Enabled = false;
                 Button_delete.Enabled = false;
                 Button_report.Enabled = false;
+                Button_detail.Enabled = false;
             }
         }
         private void Read()
