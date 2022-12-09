@@ -33,8 +33,7 @@ namespace ensueno.Presentation.Main
         private void Form_employees_report_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'dataSet_ensueno.employees_read' Puede moverla o quitarla según sea necesario.
-            this.employees_readTableAdapter.Fill(this.dataSet_ensueno.employees_read);
-
+            this.employees_readTableAdapter.Fill(this.dataSet_ensueno.employees_read);            
             this.reportViewer1.RefreshReport();
         }
     }

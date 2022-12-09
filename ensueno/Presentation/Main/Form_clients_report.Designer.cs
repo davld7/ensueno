@@ -31,29 +31,21 @@
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_clients_report));
-            this.clientsreadBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSet_ensueno = new ensueno.Report.DataSet_ensueno();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.dataSet_ensueno = new ensueno.Report.DataSet_ensueno();
+            this.clientsreadBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.clients_readTableAdapter = new ensueno.Report.DataSet_ensuenoTableAdapters.clients_readTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.clientsreadBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet_ensueno)).BeginInit();
+            this.clients_readBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.guna2Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet_ensueno)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientsreadBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clients_readBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // clientsreadBindingSource
-            // 
-            this.clientsreadBindingSource.DataMember = "clients_read";
-            this.clientsreadBindingSource.DataSource = this.dataSet_ensueno;
-            // 
-            // dataSet_ensueno
-            // 
-            this.dataSet_ensueno.DataSetName = "DataSet_ensueno";
-            this.dataSet_ensueno.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // guna2Elipse1
             // 
@@ -92,7 +84,7 @@
             // reportViewer1
             // 
             reportDataSource1.Name = "DataSet_clients";
-            reportDataSource1.Value = this.clientsreadBindingSource;
+            reportDataSource1.Value = this.clients_readBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "ensueno.Report.Report_clients.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(12, 35);
@@ -101,9 +93,24 @@
             this.reportViewer1.Size = new System.Drawing.Size(826, 453);
             this.reportViewer1.TabIndex = 35;
             // 
+            // dataSet_ensueno
+            // 
+            this.dataSet_ensueno.DataSetName = "DataSet_ensueno";
+            this.dataSet_ensueno.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // clientsreadBindingSource
+            // 
+            this.clientsreadBindingSource.DataMember = "clients_read";
+            this.clientsreadBindingSource.DataSource = this.dataSet_ensueno;
+            // 
             // clients_readTableAdapter
             // 
             this.clients_readTableAdapter.ClearBeforeFill = true;
+            // 
+            // clients_readBindingSource
+            // 
+            this.clients_readBindingSource.DataMember = "clients_read";
+            this.clients_readBindingSource.DataSource = this.dataSet_ensueno;
             // 
             // Form_clients_report
             // 
@@ -118,9 +125,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Report";
             this.Load += new System.EventHandler(this.Form_clients_report_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.clientsreadBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet_ensueno)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet_ensueno)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientsreadBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clients_readBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -136,5 +144,6 @@
         private Report.DataSet_ensueno dataSet_ensueno;
         private System.Windows.Forms.BindingSource clientsreadBindingSource;
         private Report.DataSet_ensuenoTableAdapters.clients_readTableAdapter clients_readTableAdapter;
+        private System.Windows.Forms.BindingSource clients_readBindingSource;
     }
 }

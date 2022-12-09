@@ -33,7 +33,6 @@ namespace ensueno.Presentation.Main
         {
             // TODO: esta línea de código carga datos en la tabla 'dataSet_ensueno.clients_read' Puede moverla o quitarla según sea necesario.
             this.clients_readTableAdapter.Fill(this.dataSet_ensueno.clients_read);
-
             this.reportViewer1.RefreshReport();
         }
     }

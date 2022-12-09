@@ -30,21 +30,32 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_employees_report));
+            this.employees_readBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet_ensueno = new ensueno.Report.DataSet_ensueno();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dataSet_ensueno = new ensueno.Report.DataSet_ensueno();
             this.employeesreadBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.employees_readTableAdapter = new ensueno.Report.DataSet_ensuenoTableAdapters.employees_readTableAdapter();
-            this.employees_readBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.guna2Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet_ensueno)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeesreadBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employees_readBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet_ensueno)).BeginInit();
+            this.guna2Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.employeesreadBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // employees_readBindingSource
+            // 
+            this.employees_readBindingSource.DataMember = "employees_read";
+            this.employees_readBindingSource.DataSource = this.dataSet_ensueno;
+            // 
+            // dataSet_ensueno
+            // 
+            this.dataSet_ensueno.DataSetName = "DataSet_ensueno";
+            this.dataSet_ensueno.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // guna2Elipse1
             // 
@@ -92,11 +103,6 @@
             this.reportViewer1.Size = new System.Drawing.Size(826, 453);
             this.reportViewer1.TabIndex = 36;
             // 
-            // dataSet_ensueno
-            // 
-            this.dataSet_ensueno.DataSetName = "DataSet_ensueno";
-            this.dataSet_ensueno.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // employeesreadBindingSource
             // 
             this.employeesreadBindingSource.DataMember = "employees_read";
@@ -106,11 +112,6 @@
             // 
             this.employees_readTableAdapter.ClearBeforeFill = true;
             // 
-            // employees_readBindingSource
-            // 
-            this.employees_readBindingSource.DataMember = "employees_read";
-            this.employees_readBindingSource.DataSource = this.dataSet_ensueno;
-            // 
             // Form_employees_report
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -119,13 +120,15 @@
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.guna2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_employees_report";
-            this.Text = "Form_employees_report";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Report";
             this.Load += new System.EventHandler(this.Form_employees_report_Load);
-            this.guna2Panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet_ensueno)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeesreadBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employees_readBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet_ensueno)).EndInit();
+            this.guna2Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.employeesreadBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
