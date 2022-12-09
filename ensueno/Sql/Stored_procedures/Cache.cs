@@ -10,9 +10,10 @@ namespace ensueno.Sql.Stored_procedures
 
     {
         public string  invoice_name;
+        public int Client_id;
         public string client_name;
         public int invoice_id;
         public int Employee_id;
-        public int Client_id;
+        public string employee_name;
     }
 }

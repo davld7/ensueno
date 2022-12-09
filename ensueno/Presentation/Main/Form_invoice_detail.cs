@@ -56,7 +56,7 @@ namespace ensueno.Presentation.Main
         private void Form_invoice_detail_Load(object sender, EventArgs e)
         {
             Label_client_name.Text = Program.Values.client_name;
-            Label_Employee_Name.Text = $"{Form_login.employee_name} {Form_login.employee_last_name}";
+            Label_Employee_Name.Text = Program.Values.employee_name;
             invoice_id = Program.Values.invoice_id;
             TextBox_invoice_id.Text = Convert.ToString(Program.Values.invoice_id);
             Read_invoice_detail(invoice_id);
@@ -64,6 +64,7 @@ namespace ensueno.Presentation.Main
             TextBox_product_id.Text = "";
             Button_Restore.Visible = false;
             Button_return.Visible = false;
+            Invoice_Detail_total();
         }
         private void Read_invoice_detail(int invoice_id)
         {
@@ -175,7 +176,7 @@ namespace ensueno.Presentation.Main
                     val.empty_text(TextBox_amount);
                     MessageBox.Show("Estos Campos no pueden estar vacios");
                 }
-                else if (Stock < int.Parse(TextBox_amount.Text))
+                else if (Validate_units(Program.Values.invoice_id,int.Parse(TextBox_product_id.Text),int.Parse(TextBox_amount.Text))<0)
                 {
                     Clear_textboxes();
                     MessageBox.Show("Stock Insuficiente para esta compra");
@@ -380,7 +381,12 @@ namespace ensueno.Presentation.Main
                 {
                     val.empty_text(TextBox_invoice_id);
                     val.empty_text(TextBox_product_id);
+                    val.empty_text(TextBox_amount);
                     MessageBox.Show("Estos campos no pueden estar vacios");
+                }
+                else if(Stock_()<0 ||Stock_()<int.Parse(TextBox_amount.Text))
+                {
+                    MessageBox.Show("Stock insuficiente para restaurar\npara relizar esta restauracion");
                 }
                 else if (invoices_detail.Restore(Program.Values.invoice_id, int.Parse(TextBox_product_id.Text)))
                 {
@@ -470,6 +476,33 @@ namespace ensueno.Presentation.Main
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+        private int Validate_units(int invoice_id,int product_id, int amount)
+        {
+            try
+            {
+                dt = invoices_detail.Validate_units(invoice_id, product_id);
+                int total = int.Parse(dt.Rows[0][0].ToString());
+                int new_stock;
+                if (dt.Rows.Count > 0)
+                {
+                    if (amount > total)
+                    {
+                        new_stock = Stock_() - (amount - total);
+                        return new_stock;
+                    }
+                    else
+                    {
+                        new_stock = Stock_() + (total - amount);
+                        return new_stock;
+                    }
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            catch (Exception) { return 0; }
         }
     }
 }

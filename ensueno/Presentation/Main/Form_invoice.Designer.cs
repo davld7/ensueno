@@ -329,6 +329,7 @@
             this.Button_detail.Size = new System.Drawing.Size(185, 50);
             this.Button_detail.TabIndex = 64;
             this.Button_detail.Text = "VER DETALLE DE FACTURA";
+            this.Button_detail.Click += new System.EventHandler(this.Button_detail_Click);
             // 
             // Form_invoice
             // 

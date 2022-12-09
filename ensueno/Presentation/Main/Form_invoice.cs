@@ -11,6 +11,7 @@ using System.Drawing;
 using System.Drawing.Printing;
 using System.Drawing.Text;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -55,7 +56,7 @@ namespace ensueno.Presentation.Main
                     Program.Values.invoice_id =0;
                     fh = new Form_invoice_history();
                     fh.ShowDialog();
-                
+                    Read();
             }
             catch (Exception ex)
             {
@@ -104,6 +105,7 @@ namespace ensueno.Presentation.Main
                 Program.Values.client_name = client_name;
                 Program.Values.Client_id = client_id;
                 Program.Values.Employee_id = int.Parse(Form_login.employee_id);
+                Program.Values.employee_name = $"{Form_login.employee_name} {Form_login.employee_last_name}";
             }
         }
 
@@ -244,6 +246,7 @@ namespace ensueno.Presentation.Main
                     TextBox_invoice_id.Text = DataGridView_invoices.Rows[e.RowIndex].Cells[0].Value.ToString();
                     TextBox_client_id.Text = DataGridView_invoices.Rows[e.RowIndex].Cells[3].Value.ToString();
                     ComboBox1.Text = DataGridView_invoices.Rows[e.RowIndex].Cells[4].Value.ToString();
+                    Program.Values.employee_name= DataGridView_invoices.Rows[e.RowIndex].Cells[2].Value.ToString();
                 }
             }
             catch (Exception ex)
@@ -305,6 +308,31 @@ namespace ensueno.Presentation.Main
         private void Button_clear_Click(object sender, EventArgs e)
         {
             Clear_textboxes();
+        }
+
+        private void Button_detail_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (TextBox_client_id.Text == string.Empty || TextBox_invoice_id.Text==string.Empty)
+                {
+                    val.empty_text(TextBox_client_id);
+                    val.empty_text(TextBox_invoice_id);
+                    MessageBox.Show("Rellene los campos faltantes");
+                }
+                else
+                {
+                    Program.Values.invoice_id = int.Parse(TextBox_invoice_id.Text);
+                    Program.Values.client_name = ComboBox1.Text;
+                    Form_invoice_detail fid = new Form_invoice_detail();
+                    fid.ShowDialog();
+                    Read();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

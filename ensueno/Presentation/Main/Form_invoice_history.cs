@@ -74,14 +74,50 @@ namespace ensueno.Presentation.Main
         }
         private void invoice_detail_list_restore(int invoice_id)
         {
-            dt = invoices_detail.Read_history_by_id(invoice_id);
-            for (int i = 0; i < dt.Rows.Count; i++)
+            try
             {
-                int product_id;
-                product_id = int.Parse(dt.Rows[i][1].ToString());
-                invoices_detail.Restore(invoice_id, product_id);
+                dt = invoices_detail.Read_history_by_id(invoice_id);
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    int product_id;
+                    product_id = int.Parse(dt.Rows[i][1].ToString());
+                    int units = int.Parse(dt.Rows[i][4].ToString());
+                    string Product_name = dt.Rows[i][2].ToString();
+                    if (Stock_(product_id) < 0 || Stock_(product_id) < units)
+                    {
+                        MessageBox.Show($"Stock insuficiente para restaurar\nel producto {Product_name} de esta factura");
+                    }
+                    else
+                    {
+                        invoices_detail.Restore(invoice_id, product_id);
+                    }
+                }
+            }catch(Exception)
+            {
+
             }
         }
+        private int Stock_(int product_id)
+        {
+            try
+            {
+                if (product_id>0)
+                {
+                    dt = invoices_detail.Autocomplete_Product(product_id);
+                    int Stock = int.Parse(dt.Rows[0][2].ToString());
+                    return Stock;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
+        }
+
         private void Button_restore_Click(object sender, EventArgs e)
         {
             try
@@ -95,7 +131,7 @@ namespace ensueno.Presentation.Main
                    if( invoices.Restore(int.Parse(TextBox_id.Text)))
                     {
                         invoice_detail_list_restore(int.Parse(TextBox_id.Text));
-                        MessageBox.Show("Se restauro correctamente");
+                        MessageBox.Show("Factura restaurada correctamente");
                         TextBox_id.Clear();
                         read_history();
                     }

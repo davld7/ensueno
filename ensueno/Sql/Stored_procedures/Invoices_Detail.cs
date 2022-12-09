@@ -39,7 +39,29 @@ namespace ensueno.Sql.Stored_procedures
                 Disconnect();
             }
         }
+        public DataTable Validate_units(int invoice_id, int product_id)
+        {
+            try
+            {
+                Connect();
+                command = new SqlCommand($"exec Validate_Units '{invoice_id}','{product_id}' ", Get_connection());
+                data_adapter = new SqlDataAdapter(command);
+                data_table = new DataTable();
+                data_adapter.Fill(data_table);
+                Disconnect();
+                return data_table;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+            finally
+            {
+                Disconnect();
+            }
 
+        }
         public DataTable Product_list()
         {
             try

@@ -50,14 +50,14 @@ declare @Units_I_D as int
 select @Units_I_D=[units]from INVOICE_DETAIL where invoice_detail_active=1 and invoice_id=@invoice_id and product_id=@product_id
 declare @New_Stock as int
 declare @New_Stock_Product as int
-IF(@units>@Units_I_D and @units>0 and @units<@Stock_P)
+IF(@units>@Units_I_D and @units>0)
 begin
 set @New_Stock=@units-@Units_I_D
 set @New_Stock_Product=@Stock_P-@New_Stock
 update INVOICE_DETAIL set units=@units where invoice_detail_active=1 and invoice_id=@invoice_id and product_id=@product_id
 update PRODUCTS set product_stock=@New_Stock_Product where product_active=1 and product_id=@product_id;
 end
-if(@units<@Units_I_D and @units>0 and @units<@Stock_P)
+if(@units<@Units_I_D and @units>0)
 begin
 set @New_Stock=@Units_I_D-@units
 set @New_Stock_Product=@Stock_P+@New_Stock
@@ -159,4 +159,12 @@ create procedure val_exist_product_invoice_detail_by_id(
 @Product_id int
 )as begin 
 select * from INVOICE_DETAIL where invoice_id=@Invoice_id and product_id=@Product_id
+end
+--Validacion de unidades
+go
+create procedure  Validate_Units(
+@Invoice_id int,
+@Product_id int
+)as begin 
+select units from INVOICE_DETAIL where invoice_id=@Invoice_id and product_id=@Product_id
 end
