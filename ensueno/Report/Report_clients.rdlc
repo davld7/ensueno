@@ -419,7 +419,7 @@
         </TablixRowHierarchy>
         <DataSetName>DataSet_clients</DataSetName>
         <Top>1.24037cm</Top>
-        <Left>0.76412cm</Left>
+        <Left>0.29104cm</Left>
         <Height>1.2cm</Height>
         <Width>15cm</Width>
         <Style>
@@ -446,7 +446,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>=Globals!ExecutionTime</Value>
+                  <Value>="Fecha de creación: "&amp;Globals!ExecutionTime</Value>
                   <Style />
                 </TextRun>
               </TextRuns>
@@ -454,10 +454,43 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox14</rd:DefaultName>
-          <Top>1.05516cm</Top>
-          <Left>7.40516cm</Left>
+          <Top>0.3846cm</Top>
+          <Left>8.26412cm</Left>
           <Height>0.6cm</Height>
           <Width>7.81812cm</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox2">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Reporte de Clientes</Value>
+                  <Style>
+                    <FontFamily>Britannic Bold</FontFamily>
+                    <FontSize>18pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox2</rd:DefaultName>
+          <Top>1.16099cm</Top>
+          <Left>5.64474cm</Left>
+          <Height>0.89104cm</Height>
+          <Width>5.72792cm</Width>
+          <ZIndex>1</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
