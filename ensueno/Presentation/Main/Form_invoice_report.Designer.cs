@@ -38,7 +38,8 @@
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.dataSet_ensueno = new ensueno.Report.DataSet_ensueno();
-            this.reportinvoicedetailbyidBindingSource = new System.Windows.Forms.BindingSource(this.components);            
+            this.reportinvoicedetailbyidBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.report_invoice_detail_by_idTableAdapter = new ensueno.Report.DataSet_ensuenoTableAdapters.Report_invoice_detail_by_idTableAdapter();
             this.Report_invoice_detail_by_idBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_ensueno)).BeginInit();
@@ -82,14 +83,14 @@
             // 
             // reportViewer1
             // 
-            reportDataSource1.Name = "DataSet_invoice";
+            reportDataSource1.Name = "DataSet_invoice_detail";
             reportDataSource1.Value = this.Report_invoice_detail_by_idBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "ensueno.Report.Report_invoice.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(12, 36);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(826, 246);
+            this.reportViewer1.Size = new System.Drawing.Size(826, 452);
             this.reportViewer1.TabIndex = 33;
             // 
             // dataSet_ensueno
@@ -100,7 +101,12 @@
             // reportinvoicedetailbyidBindingSource
             // 
             this.reportinvoicedetailbyidBindingSource.DataMember = "Report_invoice_detail_by_id";
-            this.reportinvoicedetailbyidBindingSource.DataSource = this.dataSet_ensueno;            
+            this.reportinvoicedetailbyidBindingSource.DataSource = this.dataSet_ensueno;
+            // 
+            // report_invoice_detail_by_idTableAdapter
+            // 
+            this.report_invoice_detail_by_idTableAdapter.ClearBeforeFill = true;
+            // 
             // Report_invoice_detail_by_idBindingSource
             // 
             this.Report_invoice_detail_by_idBindingSource.DataMember = "Report_invoice_detail_by_id";
@@ -138,5 +144,6 @@
         private System.Windows.Forms.BindingSource Report_invoice_detail_by_idBindingSource;
         private Report.DataSet_ensueno dataSet_ensueno;
         private System.Windows.Forms.BindingSource reportinvoicedetailbyidBindingSource;
+        private Report.DataSet_ensuenoTableAdapters.Report_invoice_detail_by_idTableAdapter report_invoice_detail_by_idTableAdapter;
     }
 }

@@ -33,8 +33,8 @@ namespace ensueno.Presentation.Main
         private void Form_invoice_report_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'dataSet_ensueno.Report_invoice_detail_by_id' Puede moverla o quitarla según sea necesario.
-            //this.report_invoice_detail_by_idTableAdapter.Fill(this.dataSet_ensueno.Report_invoice_detail_by_id, Program.Values.invoice_id);
-            //this.reportViewer1.RefreshReport();
+            this.report_invoice_detail_by_idTableAdapter.Fill(this.dataSet_ensueno.Report_invoice_detail_by_id, Program.Values.invoice_id);
+            this.reportViewer1.RefreshReport();
         }
     }
 }
