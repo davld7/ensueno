@@ -130,6 +130,25 @@ namespace ensueno.Sql.Stored_procedures
                 return null;
             }
         }
+
+        public DataTable Search_invoice_id(int invoice_id)
+        {
+            try
+            {
+                Connect();
+                command = new SqlCommand($"execute Search_invoice_id '{invoice_id}'", Get_connection());
+                data_adapter = new SqlDataAdapter(command);
+                data_table = new DataTable();
+                data_adapter.Fill(data_table);
+                Disconnect();
+                return data_table;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+        }
         public DataTable Read_invoice_history()
         {
             try

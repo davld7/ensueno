@@ -339,6 +339,7 @@ namespace ensueno.Presentation.Main
                     Button_return.Visible = true;
                     ComboBox1.Visible = false;
                     Clear_textboxes();
+                    TextBox_search_product_Invoice_d.Visible = false;
                     LabelTotal.Visible = false;
                     Label_Total_Venta.Visible = false;
                 }
@@ -368,6 +369,7 @@ namespace ensueno.Presentation.Main
             Button_return.Visible = false;
             ComboBox1.Visible = true;
             Clear_textboxes();
+            TextBox_search_product_Invoice_d.Visible = true;
             Invoice_Detail_total();
             LabelTotal.Visible = true;
             Label_Total_Venta.Visible = true;
@@ -443,7 +445,17 @@ namespace ensueno.Presentation.Main
                 return 0;
             }
         }
-         
+
+        private void TextBox_search_product_Invoice_d_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            val.Search_by_letters(TextBox_search_product_Invoice_d, e);
+        }
+
+        private void TextBox_search_product_Invoice_d_TextChanged(object sender, EventArgs e)
+        {
+            DataGridView_invoice_detail.DataSource = invoices_detail.Search_invoice_detail_product(Program.Values.invoice_id, TextBox_search_product_Invoice_d.Text);
+        }
+
         private void Autocomplete_Product()
         {
             try

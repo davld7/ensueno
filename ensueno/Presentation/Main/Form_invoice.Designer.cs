@@ -46,6 +46,7 @@
             this.Button_history = new Guna.UI2.WinForms.Guna2GradientButton();
             this.Button_clear = new Guna.UI2.WinForms.Guna2CircleButton();
             this.Button_detail = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.TextBox_search_by_id = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_invoices)).BeginInit();
             this.SuspendLayout();
             // 
@@ -331,11 +332,39 @@
             this.Button_detail.Text = "VER DETALLE DE FACTURA";
             this.Button_detail.Click += new System.EventHandler(this.Button_detail_Click);
             // 
+            // TextBox_search_by_id
+            // 
+            this.TextBox_search_by_id.Animated = true;
+            this.TextBox_search_by_id.BorderColor = System.Drawing.Color.Crimson;
+            this.TextBox_search_by_id.BorderRadius = 11;
+            this.TextBox_search_by_id.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TextBox_search_by_id.DefaultText = "";
+            this.TextBox_search_by_id.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.TextBox_search_by_id.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.TextBox_search_by_id.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TextBox_search_by_id.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TextBox_search_by_id.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TextBox_search_by_id.Font = new System.Drawing.Font("Britannic Bold", 11.25F);
+            this.TextBox_search_by_id.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.TextBox_search_by_id.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TextBox_search_by_id.Location = new System.Drawing.Point(88, 67);
+            this.TextBox_search_by_id.MaxLength = 50;
+            this.TextBox_search_by_id.Name = "TextBox_search_by_id";
+            this.TextBox_search_by_id.PasswordChar = '\0';
+            this.TextBox_search_by_id.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
+            this.TextBox_search_by_id.PlaceholderText = "Buscar Factura por Id";
+            this.TextBox_search_by_id.SelectedText = "";
+            this.TextBox_search_by_id.Size = new System.Drawing.Size(185, 35);
+            this.TextBox_search_by_id.TabIndex = 65;
+            this.TextBox_search_by_id.TextChanged += new System.EventHandler(this.TextBox_search_by_id_TextChanged);
+            this.TextBox_search_by_id.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_search_by_id_KeyPress);
+            // 
             // Form_invoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(850, 500);
+            this.Controls.Add(this.TextBox_search_by_id);
             this.Controls.Add(this.Button_detail);
             this.Controls.Add(this.Button_clear);
             this.Controls.Add(this.Button_history);
@@ -371,5 +400,6 @@
         private Guna.UI2.WinForms.Guna2GradientButton Button_history;
         private Guna.UI2.WinForms.Guna2CircleButton Button_clear;
         private Guna.UI2.WinForms.Guna2GradientButton Button_detail;
+        private Guna.UI2.WinForms.Guna2TextBox TextBox_search_by_id;
     }
 }

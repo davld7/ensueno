@@ -101,7 +101,6 @@ namespace ensueno.Presentation.Validations
             bool v = Validations.numbers_only(e);
             if (!v)
                 error.SetError(txt, "Solo se Admiten numeros");
-
             else
                 error.Clear();
         }

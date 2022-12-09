@@ -60,6 +60,7 @@
             this.TextBox_invoice_id = new Guna.UI2.WinForms.Guna2TextBox();
             this.Button_Restore = new Guna.UI2.WinForms.Guna2GradientButton();
             this.Button_return = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.TextBox_search_product_Invoice_d = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_invoice_detail)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
@@ -565,11 +566,39 @@
             this.Button_return.Text = "REGRESAR";
             this.Button_return.Click += new System.EventHandler(this.Button_return_Click);
             // 
+            // TextBox_search_product_Invoice_d
+            // 
+            this.TextBox_search_product_Invoice_d.Animated = true;
+            this.TextBox_search_product_Invoice_d.BorderColor = System.Drawing.Color.Crimson;
+            this.TextBox_search_product_Invoice_d.BorderRadius = 11;
+            this.TextBox_search_product_Invoice_d.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TextBox_search_product_Invoice_d.DefaultText = "";
+            this.TextBox_search_product_Invoice_d.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.TextBox_search_product_Invoice_d.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.TextBox_search_product_Invoice_d.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TextBox_search_product_Invoice_d.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.TextBox_search_product_Invoice_d.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TextBox_search_product_Invoice_d.Font = new System.Drawing.Font("Britannic Bold", 11.25F);
+            this.TextBox_search_product_Invoice_d.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.TextBox_search_product_Invoice_d.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.TextBox_search_product_Invoice_d.Location = new System.Drawing.Point(333, 56);
+            this.TextBox_search_product_Invoice_d.MaxLength = 50;
+            this.TextBox_search_product_Invoice_d.Name = "TextBox_search_product_Invoice_d";
+            this.TextBox_search_product_Invoice_d.PasswordChar = '\0';
+            this.TextBox_search_product_Invoice_d.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
+            this.TextBox_search_product_Invoice_d.PlaceholderText = "Buscar producto";
+            this.TextBox_search_product_Invoice_d.SelectedText = "";
+            this.TextBox_search_product_Invoice_d.Size = new System.Drawing.Size(185, 25);
+            this.TextBox_search_product_Invoice_d.TabIndex = 61;
+            this.TextBox_search_product_Invoice_d.TextChanged += new System.EventHandler(this.TextBox_search_product_Invoice_d_TextChanged);
+            this.TextBox_search_product_Invoice_d.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_search_product_Invoice_d_KeyPress);
+            // 
             // Form_invoice_detail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(850, 550);
+            this.Controls.Add(this.TextBox_search_product_Invoice_d);
             this.Controls.Add(this.Button_return);
             this.Controls.Add(this.Button_Restore);
             this.Controls.Add(this.TextBox_invoice_id);
@@ -632,5 +661,6 @@
         private Guna.UI2.WinForms.Guna2TextBox TextBox_invoice_id;
         private Guna.UI2.WinForms.Guna2GradientButton Button_return;
         private Guna.UI2.WinForms.Guna2GradientButton Button_Restore;
+        private Guna.UI2.WinForms.Guna2TextBox TextBox_search_product_Invoice_d;
     }
 }

@@ -334,5 +334,26 @@ namespace ensueno.Presentation.Main
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void TextBox_search_by_id_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (TextBox_search_by_id.Text==string.Empty)
+                {
+                    Read();
+                }
+                else
+                {
+                    DataGridView_invoices.DataSource = invoices.Search_invoice_id(int.Parse(TextBox_search_by_id.Text));
+                }
+            }catch(Exception)
+            { }
+        }
+
+        private void TextBox_search_by_id_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            val.number(TextBox_search_by_id, e);
+        }
     }
 }
