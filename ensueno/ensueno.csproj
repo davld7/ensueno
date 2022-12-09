@@ -190,9 +190,18 @@
     <Compile Include="Presentation\Main\Form_products_history.Designer.cs">
       <DependentUpon>Form_products_history.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Main\Form_products_report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Main\Form_products_report.Designer.cs">
+      <DependentUpon>Form_products_report.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Validations\Validations.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report\DataSet_ensueno.cs">
+      <DependentUpon>DataSet_ensueno.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Report\DataSet_ensueno.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -260,6 +269,9 @@
     <EmbeddedResource Include="Presentation\Main\Form_products_history.resx">
       <DependentUpon>Form_products_history.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Main\Form_products_report.resx">
+      <DependentUpon>Form_products_report.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -272,6 +284,7 @@
     </Compile>
     <EmbeddedResource Include="Report\Report_clients.rdlc" />
     <EmbeddedResource Include="Report\Report_employees.rdlc" />
+    <EmbeddedResource Include="Report\Report_products.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

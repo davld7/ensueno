@@ -22,7 +22,8 @@ namespace ensueno.Presentation.Main
         private byte[] image;
         private readonly Products products = new Products();
         private MemoryStream memory_stream;
-        private Form_products_history fh;       
+        private Form_products_history fh;
+        private Form_products_report fr;
         readonly Values val=new Values();
         private bool validate_image_location;
         public Form_products()
@@ -283,6 +284,12 @@ namespace ensueno.Presentation.Main
         private void TextBox_unit_price_KeyPress(object sender, KeyPressEventArgs e)
         {
             val.decimal_only(TextBox_unit_price,e);
+        }
+
+        private void Button_report_Click(object sender, EventArgs e)
+        {
+            fr = new Form_products_report();
+            fr.ShowDialog();
         }
     }
 }
