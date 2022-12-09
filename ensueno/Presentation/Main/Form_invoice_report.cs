@@ -29,5 +29,13 @@ namespace ensueno.Presentation.Main
                 this.BackColor = Color.FromArgb(238, 238, 238);
             }
         }
+
+        private void Form_invoice_report_Load(object sender, EventArgs e)
+        {
+            // TODO: esta línea de código carga datos en la tabla 'dataSet_ensueno.Report_invoice_detail_by_id' Puede moverla o quitarla según sea necesario.
+            this.report_invoice_detail_by_idTableAdapter.Fill(this.dataSet_ensueno.Report_invoice_detail_by_id,1);
+
+            this.reportViewer1.RefreshReport();
+        }
     }
 }

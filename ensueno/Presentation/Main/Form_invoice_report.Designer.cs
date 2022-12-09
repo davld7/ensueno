@@ -29,14 +29,22 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_invoice_report));
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
-            this.label1 = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.dataSet_ensueno = new ensueno.Report.DataSet_ensueno();
+            this.reportinvoicedetailbyidBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.report_invoice_detail_by_idTableAdapter = new ensueno.Report.DataSet_ensuenoTableAdapters.Report_invoice_detail_by_idTableAdapter();
+            this.Report_invoice_detail_by_idBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.guna2Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet_ensueno)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reportinvoicedetailbyidBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Report_invoice_detail_by_idBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Elipse1
@@ -52,17 +60,6 @@
             this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
             this.guna2DragControl1.TargetControl = this.guna2Panel1;
             this.guna2DragControl1.UseTransparentDrag = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Britannic Bold", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label1.Location = new System.Drawing.Point(236, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(322, 36);
-            this.label1.TabIndex = 31;
-            this.label1.Text = "Reporte de la Factura";
             // 
             // guna2Panel1
             // 
@@ -84,21 +81,55 @@
             this.guna2ControlBox1.Size = new System.Drawing.Size(45, 29);
             this.guna2ControlBox1.TabIndex = 7;
             // 
+            // reportViewer1
+            // 
+            reportDataSource1.Name = "DataSet_invoice";
+            reportDataSource1.Value = this.Report_invoice_detail_by_idBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "ensueno.Report.Report_invoice.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(12, 36);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(826, 246);
+            this.reportViewer1.TabIndex = 33;
+            // 
+            // dataSet_ensueno
+            // 
+            this.dataSet_ensueno.DataSetName = "DataSet_ensueno";
+            this.dataSet_ensueno.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // reportinvoicedetailbyidBindingSource
+            // 
+            this.reportinvoicedetailbyidBindingSource.DataMember = "Report_invoice_detail_by_id";
+            this.reportinvoicedetailbyidBindingSource.DataSource = this.dataSet_ensueno;
+            // 
+            // report_invoice_detail_by_idTableAdapter
+            // 
+            this.report_invoice_detail_by_idTableAdapter.ClearBeforeFill = true;
+            // 
+            // Report_invoice_detail_by_idBindingSource
+            // 
+            this.Report_invoice_detail_by_idBindingSource.DataMember = "Report_invoice_detail_by_id";
+            this.Report_invoice_detail_by_idBindingSource.DataSource = this.dataSet_ensueno;
+            // 
             // Form_invoice_report
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(850, 500);
+            this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.guna2Panel1);
-            this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_invoice_report";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Report";
+            this.Load += new System.EventHandler(this.Form_invoice_report_Load);
             this.guna2Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet_ensueno)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reportinvoicedetailbyidBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Report_invoice_detail_by_idBindingSource)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -107,8 +138,12 @@
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2ShadowForm guna2ShadowForm1;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
-        private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.BindingSource Report_invoice_detail_by_idBindingSource;
+        private Report.DataSet_ensueno dataSet_ensueno;
+        private System.Windows.Forms.BindingSource reportinvoicedetailbyidBindingSource;
+        private Report.DataSet_ensuenoTableAdapters.Report_invoice_detail_by_idTableAdapter report_invoice_detail_by_idTableAdapter;
     }
 }

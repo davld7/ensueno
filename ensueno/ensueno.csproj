@@ -262,6 +262,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Report\Report_clients.rdlc" />
+    <EmbeddedResource Include="Report\Report_invoice.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

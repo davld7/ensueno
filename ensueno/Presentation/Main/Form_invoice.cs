@@ -67,7 +67,7 @@ namespace ensueno.Presentation.Main
         {
             try
             {
-                Program.Values.invoice_id = int.Parse(TextBox_invoice_id.Text);
+                //Program.Values.invoice_id = int.Parse(TextBox_invoice_id.Text);
                 fr = new Form_invoice_report();
                 fr.ShowDialog();
             }
