@@ -136,6 +136,12 @@
     <Compile Include="Presentation\Main\Form_employees_history.Designer.cs">
       <DependentUpon>Form_employees_history.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\Main\Form_employees_report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Main\Form_employees_report.Designer.cs">
+      <DependentUpon>Form_employees_report.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Main\Form_invoice.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -227,6 +233,9 @@
     <EmbeddedResource Include="Presentation\Main\Form_employees_history.resx">
       <DependentUpon>Form_employees_history.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Main\Form_employees_report.resx">
+      <DependentUpon>Form_employees_report.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Main\Form_invoice.resx">
       <DependentUpon>Form_invoice.cs</DependentUpon>
     </EmbeddedResource>
@@ -262,6 +271,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Report\Report_clients.rdlc" />
+    <EmbeddedResource Include="Report\Report_employees.rdlc" />
     <EmbeddedResource Include="Report\Report_invoice.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -18,6 +18,7 @@ namespace ensueno.Presentation.Main
         readonly Values val = new Values();
         private readonly Employees employees = new Employees();
         private Form_employees_history fh;
+        private Form_employees_report fr;
         public Form_employees()
         {
             InitializeComponent();
@@ -285,6 +286,12 @@ namespace ensueno.Presentation.Main
         private void TextBox_read_by_last_name_KeyPress(object sender, KeyPressEventArgs e)
         {
             val.Search_by_letters(TextBox_read_by_last_name, e);
+        }
+
+        private void Button_report_Click(object sender, EventArgs e)
+        {
+            fr = new Form_employees_report();
+            fr.ShowDialog();
         }
     }
 }
