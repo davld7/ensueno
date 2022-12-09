@@ -36,7 +36,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_invoice_detail));
             this.Button_delete = new Guna.UI2.WinForms.Guna2GradientButton();
             this.Button_update = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.Button_create = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.Button_report = new Guna.UI2.WinForms.Guna2GradientButton();
             this.Button_clear = new Guna.UI2.WinForms.Guna2CircleButton();
             this.TextBox_Precio = new Guna.UI2.WinForms.Guna2TextBox();
             this.TextBox_amount = new Guna.UI2.WinForms.Guna2TextBox();
@@ -105,25 +105,25 @@
             this.Button_update.Text = "ACTUALIZAR";
             this.Button_update.Click += new System.EventHandler(this.Button_update_Click);
             // 
-            // Button_create
+            // Button_report
             // 
-            this.Button_create.Animated = true;
-            this.Button_create.AutoRoundedCorners = true;
-            this.Button_create.BorderRadius = 14;
-            this.Button_create.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.Button_create.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.Button_create.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.Button_create.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.Button_create.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.Button_create.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Button_create.ForeColor = System.Drawing.Color.White;
-            this.Button_create.IndicateFocus = true;
-            this.Button_create.Location = new System.Drawing.Point(653, 347);
-            this.Button_create.Name = "Button_create";
-            this.Button_create.Size = new System.Drawing.Size(185, 30);
-            this.Button_create.TabIndex = 37;
-            this.Button_create.Text = "REPORTE";
-            this.Button_create.Click += new System.EventHandler(this.Button_create_Click);
+            this.Button_report.Animated = true;
+            this.Button_report.AutoRoundedCorners = true;
+            this.Button_report.BorderRadius = 14;
+            this.Button_report.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.Button_report.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.Button_report.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Button_report.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.Button_report.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.Button_report.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button_report.ForeColor = System.Drawing.Color.White;
+            this.Button_report.IndicateFocus = true;
+            this.Button_report.Location = new System.Drawing.Point(653, 347);
+            this.Button_report.Name = "Button_report";
+            this.Button_report.Size = new System.Drawing.Size(185, 30);
+            this.Button_report.TabIndex = 37;
+            this.Button_report.Text = "REPORTE";
+            this.Button_report.Click += new System.EventHandler(this.Button_report_Click);
             // 
             // Button_clear
             // 
@@ -617,7 +617,7 @@
             this.Controls.Add(this.DataGridView_invoice_detail);
             this.Controls.Add(this.Button_delete);
             this.Controls.Add(this.Button_update);
-            this.Controls.Add(this.Button_create);
+            this.Controls.Add(this.Button_report);
             this.Controls.Add(this.Button_clear);
             this.Controls.Add(this.TextBox_Precio);
             this.Controls.Add(this.TextBox_amount);
@@ -637,7 +637,7 @@
         #endregion
         private Guna.UI2.WinForms.Guna2GradientButton Button_delete;
         private Guna.UI2.WinForms.Guna2GradientButton Button_update;
-        private Guna.UI2.WinForms.Guna2GradientButton Button_create;
+        private Guna.UI2.WinForms.Guna2GradientButton Button_report;
         private Guna.UI2.WinForms.Guna2CircleButton Button_clear;
         private Guna.UI2.WinForms.Guna2TextBox TextBox_Precio;
         private Guna.UI2.WinForms.Guna2TextBox TextBox_amount;

@@ -23,6 +23,7 @@ namespace ensueno.Presentation.Main
         private Form_invoice_create fic;
         private Form_invoice fi;
         private int invoice_id;
+        private Form_invoice_report fr;
         public Form_invoice_detail()
         {
             InitializeComponent();
@@ -39,12 +40,6 @@ namespace ensueno.Presentation.Main
             {
                 this.BackColor = Color.FromArgb(238, 238, 238);
             }
-        }
-
-        private void Button_create_Click(object sender, EventArgs e)
-        {
-            fic = new Form_invoice_create();
-            fic.ShowDialog();
         }
 
         private void Button_invoice_Click(object sender, EventArgs e)
@@ -331,7 +326,7 @@ namespace ensueno.Presentation.Main
                else if (Read_history_by_invoice_id(Program.Values.invoice_id)==true)
                 {
                     Button_agregar_producto.Visible = false;
-                    Button_create.Visible = false;
+                    Button_report.Visible = false;
                     Button_update.Visible = false;
                     Button_delete.Visible = false;
                     Button_history.Visible = false;
@@ -361,7 +356,7 @@ namespace ensueno.Presentation.Main
         {
             Read_invoice_detail(Program.Values.invoice_id);
             Button_agregar_producto.Visible = true;
-            Button_create.Visible = true;
+            Button_report.Visible = true;
             Button_update.Visible = true;
             Button_delete.Visible = true;
             Button_history.Visible = true;
@@ -454,6 +449,20 @@ namespace ensueno.Presentation.Main
         private void TextBox_search_product_Invoice_d_TextChanged(object sender, EventArgs e)
         {
             DataGridView_invoice_detail.DataSource = invoices_detail.Search_invoice_detail_product(Program.Values.invoice_id, TextBox_search_product_Invoice_d.Text);
+        }
+
+        private void Button_report_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Program.Values.invoice_id = int.Parse(TextBox_invoice_id.Text);
+                fr = new Form_invoice_report();
+                fr.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void Autocomplete_Product()
