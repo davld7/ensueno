@@ -418,7 +418,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet_invoice_detail</DataSetName>
-        <Top>0.36724cm</Top>
+        <Top>3.36724cm</Top>
         <Left>0.39447cm</Left>
         <Height>1.2cm</Height>
         <Width>15cm</Width>
@@ -524,7 +524,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet_detail_total</DataSetName>
-        <Top>1.56724cm</Top>
+        <Top>4.56724cm</Top>
         <Left>12.89447cm</Left>
         <Height>1.2cm</Height>
         <Width>2.5cm</Width>
@@ -535,8 +535,98 @@
           </Border>
         </Style>
       </Tablix>
+      <Line Name="Line1">
+        <Top>0.17639cm</Top>
+        <Left>0cm</Left>
+        <Height>0cm</Height>
+        <Width>16.20035cm</Width>
+        <ZIndex>2</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
+      <Line Name="Line2">
+        <Top>7.15257cm</Top>
+        <Left>0cm</Left>
+        <Height>0cm</Height>
+        <Width>16.20035cm</Width>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Line>
+      <Textbox Name="Textbox3">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>="Factura #"&amp;First(Fields!IdFactura.Value, "DataSet_invoice_detail")</Value>
+                <Style>
+                  <FontFamily>Britannic Bold</FontFamily>
+                  <FontSize>14pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox2</rd:DefaultName>
+        <Top>0.35278cm</Top>
+        <Left>0.73679cm</Left>
+        <Height>0.62646cm</Height>
+        <Width>3.98557cm</Width>
+        <ZIndex>4</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox14">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>="Fecha: "&amp;Globals!ExecutionTime</Value>
+                <Style>
+                  <FontFamily>Britannic Bold</FontFamily>
+                  <FontSize>11pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox14</rd:DefaultName>
+        <Top>1.15562cm</Top>
+        <Left>0.73679cm</Left>
+        <Height>0.6cm</Height>
+        <Width>9.14104cm</Width>
+        <ZIndex>5</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
-    <Height>2in</Height>
+    <Height>2.88542in</Height>
     <Style />
   </Body>
   <Width>6.37809in</Width>
@@ -546,38 +636,6 @@
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
-        <Textbox Name="Textbox14">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>="Fecha de creación: "&amp;Globals!ExecutionTime</Value>
-                  <Style>
-                    <FontFamily>Britannic Bold</FontFamily>
-                    <FontSize>11pt</FontSize>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox14</rd:DefaultName>
-          <Top>0.59206cm</Top>
-          <Left>4.17994cm</Left>
-          <Height>0.6cm</Height>
-          <Width>9.14104cm</Width>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
         <Textbox Name="Textbox2">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
@@ -585,7 +643,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Factura</Value>
+                  <Value>Perfumería Ensueño</Value>
                   <Style>
                     <FontFamily>Britannic Bold</FontFamily>
                     <FontSize>18pt</FontSize>
@@ -596,11 +654,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>1.47257cm</Top>
-          <Left>5.35057cm</Left>
+          <Top>1.05689cm</Top>
+          <Left>5.39447cm</Left>
           <Height>0.89104cm</Height>
-          <Width>7.28896cm</Width>
-          <ZIndex>1</ZIndex>
+          <Width>6.23453cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -619,7 +676,7 @@
           <Left>0.39447cm</Left>
           <Height>1.97901cm</Height>
           <Width>2.13276cm</Width>
-          <ZIndex>2</ZIndex>
+          <ZIndex>1</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
