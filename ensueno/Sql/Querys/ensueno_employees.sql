@@ -88,7 +88,7 @@ create procedure employees_read
 as
 begin
     select e.employee_id as 'ID', e.employee_id_card as 'Cédula', e.employee_name as 'Nombre', e.employee_last_name as 'Apellido', e.employee_phone as 'Teléfono', e.employee_address as 'Dirección', e.employee_user as 'Usuario', e.employee_admin as 'Administrador'
-    ,e.date_time as 'Fecha de registro'
+    ,e.date_time as 'FechaRegistro'
 	from EMPLOYEES as e
     where employee_active=1
 end

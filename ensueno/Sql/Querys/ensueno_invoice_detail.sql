@@ -105,7 +105,7 @@ go
 create procedure invoice_detail_read_by_id(
 @Invoice_id int
 )as begin
-select ID.invoice_id AS 'Id Facura', ID.product_id AS 'Id Producto', P.product_name as 'Nombre Producto',
+select ID.invoice_id AS 'Id Factura', ID.product_id AS 'Id Producto', P.product_name as 'Nombre Producto',
 cast(round(ID.price,2) as decimal(20,2)) AS 'Precio',ID.units AS 'Unidades',cast(round(ID.subtotal,2) as decimal (20,2)) AS 'Subtotal',
 cast(round(ID.iva,2)as decimal(20,2)) AS 'IVA',cast(round(total,2) as decimal(20,2)) AS 'Total'
 from INVOICE_DETAIL ID
@@ -117,7 +117,7 @@ go
 create procedure invoice_detail_read_history_by_Id(
 @Invoice_id int
 )as begin
-select ID.invoice_id AS 'Id Facura', ID.product_id AS 'Id Producto', P.product_name as 'Nombre Producto',
+select ID.invoice_id AS 'Id Factura', ID.product_id AS 'Id Producto', P.product_name as 'Nombre Producto',
 cast(round(ID.price,2) as decimal(20,2)) AS 'Precio',ID.units AS 'Unidades',cast(round(ID.subtotal,2) as decimal (20,2)) AS 'Subtotal',
 cast(round(ID.iva,2)as decimal(20,2)) AS 'IVA',cast(round(total,2) as decimal(20,2)) AS 'Total'
 from INVOICE_DETAIL ID
@@ -168,16 +168,19 @@ create procedure  Validate_Units(
 )as begin 
 select units from INVOICE_DETAIL where invoice_id=@Invoice_id and product_id=@Product_id
 end
---buscar producto en detalle factura
+
+--Buscar producto en detalle facturas
 go
+
 create procedure invoice_detail_search_product_name(
 @Invoice_id int,
 @Product_name nvarchar(50)
 )as begin
-select ID.invoice_id AS 'Id Facura', ID.product_id AS 'Id Producto', P.product_name as 'Nombre Producto',
+select ID.invoice_id AS 'Id Factura', ID.product_id AS 'Id Producto', P.product_name as 'Nombre Producto',
 cast(round(ID.price,2) as decimal(20,2)) AS 'Precio',ID.units AS 'Unidades',cast(round(ID.subtotal,2) as decimal (20,2)) AS 'Subtotal',
 cast(round(ID.iva,2)as decimal(20,2)) AS 'IVA',cast(round(total,2) as decimal(20,2)) AS 'Total'
 from INVOICE_DETAIL ID
 inner join PRODUCTS P on ID.product_id=P.product_id
 where ID.invoice_detail_active=1 and ID.invoice_id=@Invoice_id and P.product_name like '%'+@Product_name+'%'
 END
+go

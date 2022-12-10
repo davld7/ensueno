@@ -50,7 +50,7 @@ create procedure clients_read
 as
 begin
     select c.client_id as 'ID', c.client_id_card as 'Cédula', c.client_name as 'Nombre', c.client_last_name as 'Apellido', c.client_phone as 'Teléfono', c.client_address as 'Dirección',
-	c.date_time as 'Fecha de registro'
+	c.date_time as 'FechaRegistro'
     from CLIENTS as c
     where client_active=1
 end

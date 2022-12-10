@@ -45,14 +45,14 @@ go
 
 --Leer productos activos.
 
-create procedure products_read
-as
-begin
-    select p.product_id as 'ID', p.product_name as 'Nombre', p.product_stock as 'Existencia', p.product_unit_price as 'Precio unitario'
-    from PRODUCTS as p
-    where product_active=1
-end
-go
+--create procedure products_read
+--as
+--begin
+--    select p.product_id as 'ID', p.product_name as 'Nombre', p.product_stock as 'Existencia', p.product_unit_price as 'Precio unitario'
+--    from PRODUCTS as p
+--    where product_active=1
+--end
+--go
 
 --Leer imagen del producto.
 
@@ -106,11 +106,12 @@ go
 create procedure products_read
 as
 begin
-    select p.product_id as 'ID', p.product_name as 'Nombre', p.product_stock as 'Existencia', p.product_unit_price as 'Precio unitario'
-    ,p.date_time as 'Fecha de registro'
+    select p.product_id as 'ID', p.product_name as 'Nombre', p.product_stock as 'Existencia', p.product_unit_price as 'PrecioUnitario'
+    ,p.date_time as 'FechaRegistro'
 	from PRODUCTS as p
     where product_active=1
 end
+go
 
 
 

@@ -80,9 +80,8 @@ go
 
 --Obtencion del ultimo id
 SELECT max(invoice_id) as 'Valor ID' FROM INVOICE
-
---Procedimiento para buscar Factura por id
 go
+
 create procedure Search_invoice_id
 (@Invoice_id int)
 as begin
@@ -93,3 +92,4 @@ inner join CLIENTS C ON I.client_id=C.client_id
 inner join EMPLOYEES E ON I.employee_id=E.employee_id
 where active=1 and I.invoice_id = @Invoice_id
 END
+go
