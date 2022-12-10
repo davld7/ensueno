@@ -448,7 +448,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Total detalle</Value>
+                              <Value>Total a Pagar</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -577,9 +577,9 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>0.35278cm</Top>
+        <Top>0.28222cm</Top>
         <Left>0.73679cm</Left>
-        <Height>0.62646cm</Height>
+        <Height>0.83812cm</Height>
         <Width>3.98557cm</Width>
         <ZIndex>4</ZIndex>
         <Style>
@@ -602,7 +602,7 @@
                 <Value>="Fecha: "&amp;Globals!ExecutionTime</Value>
                 <Style>
                   <FontFamily>Britannic Bold</FontFamily>
-                  <FontSize>11pt</FontSize>
+                  <FontSize>12pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -610,11 +610,110 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox14</rd:DefaultName>
-        <Top>1.15562cm</Top>
-        <Left>0.73679cm</Left>
+        <Top>1.75562cm</Top>
+        <Left>7.89447cm</Left>
         <Height>0.6cm</Height>
-        <Width>9.14104cm</Width>
+        <Width>7.79104cm</Width>
         <ZIndex>5</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox4">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>="ID del Cliente: " &amp; First(Fields!IdCliente.Value, "DataSet_invoice_detail")</Value>
+                <Style>
+                  <FontFamily>Britannic Bold</FontFamily>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox2</rd:DefaultName>
+        <Top>1.12916cm</Top>
+        <Left>0.73679cm</Left>
+        <Height>0.62646cm</Height>
+        <Width>3.98557cm</Width>
+        <ZIndex>6</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox5">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>="Nombre del Cliente: " &amp; First(Fields!NombreCliente.Value, "DataSet_invoice_detail")</Value>
+                <Style>
+                  <FontFamily>Britannic Bold</FontFamily>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox2</rd:DefaultName>
+        <Top>1.1027cm</Top>
+        <Left>7.89447cm</Left>
+        <Height>0.62646cm</Height>
+        <Width>7.79104cm</Width>
+        <ZIndex>7</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox9">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>="Nombre del Empleado: " &amp; First(Fields!NombreEmpleado.Value, "DataSet_invoice_detail")</Value>
+                <Style>
+                  <FontFamily>Britannic Bold</FontFamily>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox2</rd:DefaultName>
+        <Top>0.47624cm</Top>
+        <Left>7.89447cm</Left>
+        <Height>0.62646cm</Height>
+        <Width>7.79104cm</Width>
+        <ZIndex>8</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -646,7 +745,7 @@
                   <Value>Perfumería Ensueño</Value>
                   <Style>
                     <FontFamily>Britannic Bold</FontFamily>
-                    <FontSize>18pt</FontSize>
+                    <FontSize>20pt</FontSize>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -654,10 +753,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>1.05689cm</Top>
-          <Left>5.39447cm</Left>
+          <Top>0.76585cm</Top>
+          <Left>5.07697cm</Left>
           <Height>0.89104cm</Height>
-          <Width>6.23453cm</Width>
+          <Width>6.79015cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -714,7 +813,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox13</rd:DefaultName>
           <Top>0.38792cm</Top>
-          <Left>1.29241cm</Left>
+          <Left>3.40908cm</Left>
           <Height>0.6cm</Height>
           <Width>10.01417cm</Width>
           <Style>
