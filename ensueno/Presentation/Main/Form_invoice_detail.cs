@@ -20,7 +20,6 @@ namespace ensueno.Presentation.Main
         private readonly Invoices_Detail invoices_detail = new Invoices_Detail();
         private DataTable dt = new DataTable();
         readonly Values val = new Values();
-        private Form_invoice_create fic;
         private Form_invoice fi;
         private int invoice_id;
         private Form_invoice_report fr;
