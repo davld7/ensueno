@@ -368,7 +368,6 @@
             this.Name = "Form_main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
-            this.Load += new System.EventHandler(this.Form_main_Load);
             this.Slide_panel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

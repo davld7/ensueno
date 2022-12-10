@@ -141,7 +141,7 @@ namespace ensueno.Presentation.Main
                 else if (Validate_product_invoice_detail(Program.Values.invoice_id, int.Parse(TextBox_product_id.Text)) == true)
                 {
                     Clear_textboxes();
-                    MessageBox.Show("Este producto ya esta registrado en esta facturs\nVerifique en detalle o historial");
+                    MessageBox.Show("Este producto ya esta registrado en esta factura\nVerifique en detalle o historial");
                 }
                 else if (Stock_() < int.Parse(TextBox_amount.Text)) 
                 {
