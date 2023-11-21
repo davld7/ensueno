@@ -137,7 +137,7 @@
             this.Button_login.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.Button_login.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.Button_login.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.Button_login.Font = new System.Drawing.Font("Britannic Bold", 14.25F);
+            this.Button_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.Button_login.ForeColor = System.Drawing.Color.White;
             this.Button_login.IndicateFocus = true;
             this.Button_login.Location = new System.Drawing.Point(308, 190);
@@ -185,11 +185,12 @@
             this.TextBox_password.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.TextBox_password.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.TextBox_password.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TextBox_password.Font = new System.Drawing.Font("Britannic Bold", 11.25F);
+            this.TextBox_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.TextBox_password.ForeColor = System.Drawing.SystemColors.GrayText;
             this.TextBox_password.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TextBox_password.IconLeft = global::ensueno.Properties.Resources.password;
             this.TextBox_password.Location = new System.Drawing.Point(308, 126);
+            this.TextBox_password.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TextBox_password.Name = "TextBox_password";
             this.TextBox_password.PasswordChar = '●';
             this.TextBox_password.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
@@ -212,11 +213,12 @@
             this.TextBox_user.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.TextBox_user.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.TextBox_user.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.TextBox_user.Font = new System.Drawing.Font("Britannic Bold", 11.25F);
+            this.TextBox_user.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.TextBox_user.ForeColor = System.Drawing.SystemColors.GrayText;
             this.TextBox_user.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.TextBox_user.IconLeft = global::ensueno.Properties.Resources.user;
             this.TextBox_user.Location = new System.Drawing.Point(308, 75);
+            this.TextBox_user.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TextBox_user.Name = "TextBox_user";
             this.TextBox_user.PasswordChar = '\0';
             this.TextBox_user.PlaceholderForeColor = System.Drawing.SystemColors.GrayText;
@@ -239,11 +241,11 @@
             // Label_about
             // 
             this.Label_about.AutoSize = true;
-            this.Label_about.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_about.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label_about.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Label_about.Location = new System.Drawing.Point(374, 240);
+            this.Label_about.Location = new System.Drawing.Point(362, 240);
             this.Label_about.Name = "Label_about";
-            this.Label_about.Size = new System.Drawing.Size(102, 21);
+            this.Label_about.Size = new System.Drawing.Size(119, 24);
             this.Label_about.TabIndex = 9;
             this.Label_about.TabStop = true;
             this.Label_about.Text = "ACERCA DE";
