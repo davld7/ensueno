@@ -90,7 +90,7 @@
             this.Button_bills.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.Button_bills.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.Button_bills.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.Button_bills.Font = new System.Drawing.Font("Britannic Bold", 14.25F);
+            this.Button_bills.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.Button_bills.ForeColor = System.Drawing.Color.White;
             this.Button_bills.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Button_bills.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(165)))));
@@ -116,7 +116,7 @@
             this.Button_products.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.Button_products.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.Button_products.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.Button_products.Font = new System.Drawing.Font("Britannic Bold", 14.25F);
+            this.Button_products.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.Button_products.ForeColor = System.Drawing.Color.White;
             this.Button_products.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Button_products.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(165)))));
@@ -142,7 +142,7 @@
             this.Button_clients.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.Button_clients.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.Button_clients.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.Button_clients.Font = new System.Drawing.Font("Britannic Bold", 14.25F);
+            this.Button_clients.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.Button_clients.ForeColor = System.Drawing.Color.White;
             this.Button_clients.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Button_clients.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(165)))));
@@ -180,7 +180,7 @@
             this.Button_employees.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.Button_employees.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.Button_employees.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.Button_employees.Font = new System.Drawing.Font("Britannic Bold", 14.25F);
+            this.Button_employees.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.Button_employees.ForeColor = System.Drawing.Color.White;
             this.Button_employees.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.Button_employees.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(165)))));
@@ -256,11 +256,11 @@
             this.Label_user_role.AutoSize = true;
             this.Transition_slide_panel_show.SetDecoration(this.Label_user_role, Guna.UI2.AnimatorNS.DecorationType.None);
             this.Transition_slide_panel_hide.SetDecoration(this.Label_user_role, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.Label_user_role.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_user_role.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label_user_role.ForeColor = System.Drawing.SystemColors.GrayText;
             this.Label_user_role.Location = new System.Drawing.Point(267, 8);
             this.Label_user_role.Name = "Label_user_role";
-            this.Label_user_role.Size = new System.Drawing.Size(132, 21);
+            this.Label_user_role.Size = new System.Drawing.Size(132, 24);
             this.Label_user_role.TabIndex = 14;
             this.Label_user_role.Text = "Rol de usuario";
             // 
@@ -314,11 +314,11 @@
             this.Label_form_selected.AutoSize = true;
             this.Transition_slide_panel_show.SetDecoration(this.Label_form_selected, Guna.UI2.AnimatorNS.DecorationType.None);
             this.Transition_slide_panel_hide.SetDecoration(this.Label_form_selected, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.Label_form_selected.Font = new System.Drawing.Font("Britannic Bold", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_form_selected.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label_form_selected.ForeColor = System.Drawing.SystemColors.GrayText;
             this.Label_form_selected.Location = new System.Drawing.Point(606, 9);
             this.Label_form_selected.Name = "Label_form_selected";
-            this.Label_form_selected.Size = new System.Drawing.Size(0, 36);
+            this.Label_form_selected.Size = new System.Drawing.Size(0, 37);
             this.Label_form_selected.TabIndex = 19;
             // 
             // guna2DragControl1
